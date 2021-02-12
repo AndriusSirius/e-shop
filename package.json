@@ -14,8 +14,11 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+<<<<<<< HEAD
     },
     "dependencies": {
         "tailwindcss": "^2.0.3"
+=======
+>>>>>>> upstream/main
     }
 }
