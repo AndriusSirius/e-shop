@@ -11,13 +11,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>    </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
 
