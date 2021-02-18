@@ -3,14 +3,26 @@
 
     <section class="py-12">
         <div class="container mx-auto">
+            <nav class="text-black font-bold my-8" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                    <a href="#">Pagrindinis</a>
+                    <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                    </li>
+                    <li>
+                    <a href="#" class="text-gray-500" aria-current="page">Prisijungimas</a>
+                    </li>
+                </ol>
+            </nav>
             <div>
-                <h4 class="text-2xl font-black text-gray-1000 pb-6 px-6 md:px-12">
+                <h4 class="text-2xl font-black text-gray-1000">
                    Vartotojo prisijungimas
                 </h4>
             </div>
+            <br>
             <div class="flex flex-wrap px-6 ml-10 mr-10">
-                <div class="w-full lg:w-1/2   md:px-4 lg:px-6 py-5">
-                    <div class="flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+                <div class="w-full lg:w-1/2 md:px-4 lg:px-6 py-5">
+                    <div class="flex items-center justify-center bg-gray-100 rounded py-12 px-4 sm:px-6 lg:px-8">
                         <div class="max-w-md w-full space-y-8">
 
                         <h3 class="font-bold text-lg">
@@ -66,7 +78,7 @@
 
                 </div>
                 <div class="w-full lg:w-1/2   md:px-4 lg:px-6 py-5">
-                    <div class="flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-center bg-gray-100 rounded py-12 px-4 sm:px-6 lg:px-8">
                         <div class="px-4 py-4 md:px-10">
                             <h1 class="font-bold text-lg">
                                 Naujas vartotojas?
@@ -99,22 +111,19 @@
             <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
 
                 <div class="sm:px-6 lg:px-8">
-                <br>
-                <p class="font-bold text-lg text-center">Product support</p>
-                <br>
-                <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                <br>
-                <p class="font-bold text-lg text-center">Personal account</p>
+                <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9730;</span><br><br>Product support</p>
                 <br>
                 <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
                 </div>
 
                 <div class="sm:px-6 lg:px-8">
+                <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9729;</span><br><br>Personal account</p>
                 <br>
-                <p class="font-bold text-lg text-center">Amazing saving</p>
+                <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
+                </div>
+
+                <div class="sm:px-6 lg:px-8">
+                <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9993;</span><br><br>Amazing saving</p>
                 <br>
                 <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
             </div>
