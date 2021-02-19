@@ -28,10 +28,10 @@
     </head>
 
     <body class="antialiased">
-    <div class="w-full text-blue-700 bg-blue-400 dark-mode:text-blue-200 dark-mode:bg-blue-800">
-        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-            <div class="p-4 flex flex-row items-center justify-between">
-                <a href="" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">HouseHold</a>
+    <div class="w-full text-blue-700 bg-white border-b dark-mode:text-blue-200 dark-mode:bg-blue-800">
+        <div x-data="{ open: false }" class="flex flex-col mx-auto md:items-center md:justify-around md:flex-row">
+            <div class="p-4 flex flex-row items-left justify-around">
+                <img class="ml-16 object-contain h-20 w-full" src="http://127.0.0.1/e-shop/resources/views/images/Logotipas.png">
                 <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -41,7 +41,7 @@
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-center md:flex-row">
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-blue-600 dark-mode:hover:bg-blue-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-blue-900 focus:text-blue-900 hover:bg-blue-200 focus:bg-blue-200 focus:outline-none focus:shadow-outline">
+                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-bold text-black text-base">
                         <span>Buitinė technika</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
@@ -53,20 +53,41 @@
                         </div>
                     </div>
                 </div>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-blue-600 dark-mode:focus:bg-blue-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-blue-200 md:mt-0 md:ml-4 hover:text-blue-900 focus:text-blue-900 hover:bg-blue-200 focus:bg-blue-200 focus:outline-none focus:shadow-outline" href="#">Kažkas1</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-blue-600 dark-mode:focus:bg-blue-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-blue-200 md:mt-0 md:ml-4 hover:text-blue-900 focus:text-blue-900 hover:bg-blue-200 focus:bg-blue-200 focus:outline-none focus:shadow-outline" href="#">Kažkas1</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-blue-600 dark-mode:focus:bg-blue-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-blue-200 md:mt-0 md:ml-4 hover:text-blue-900 focus:text-blue-900 hover:bg-blue-200 focus:bg-blue-200 focus:outline-none focus:shadow-outline" href="#">Kažkas1</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Pirmas</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Antras</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Trečias</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Ketvirtas</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Penktas</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Šeštas</a>
+                <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Septintas</a>
+                <a href="" class="px-4 py-2 mt-2 ml-4 border-2 w-36 text-sm text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white">
+                    Our Deals
+                </a>
             </nav>
+            @if (Route::has('login'))
+            <div class="inline mr-16 flex flex-grow pb-4 md:pb-0">
+                <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <svg class="w-6 h-6 m-2 stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <div class="flex -space-x-1 overflow-hidden">
+                    <img class="inline-block h-8 w-8 m-2 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </div>
+            </div>
+            @endif
         </div>
     </div>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        <div class="flex justify-center  bg-gray-100 dark:bg-gray-900 ">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                     @else
+                    Norėdami prisijungti arba užsiregistruoti -
                         <a href="{{ route('login') }}"><button
-                                    class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none"
+                                    class="px-4 py-2 mt-2 ml-4 border-2 w-36 text-sm text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white"
                                 >
                                 Prisijungti
                                 </button></a>
