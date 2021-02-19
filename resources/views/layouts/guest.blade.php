@@ -12,14 +12,17 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+        @livewireStyles
         <!-- Scripts -->
-        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>    </head>
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     </head>
+
     <body>
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
     </body>
+
 </html>
