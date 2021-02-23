@@ -25,31 +25,19 @@
 
         <div class="bg-gray-100 w-1/3 p-6">
             <ul class="-ml-6 pl-6">
-                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_info')">Vartotojo informacija</li>
-                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_address')">Adresai</li>
+                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_info')">Vartotojo nustatymai</li>
+                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_address')">Vartotojo informacija</li>
                 <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_orders')">Mano užsakymai</li>
                 <hr>
-                <li class="tablinks text-lg mt-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_settings')">Vartotojo valdymas</li>
+                <li class="tablinks text-lg mt-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_settings')">Adresai</li>
             </ul>
         </div>
 
         <div class="w-full ml-14">
 
             <div id="user_info" class="tabcontent active">
-                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Vartotojo informacija</h2>
-            </div>
-
-            <div id="user_address" class="tabcontent hidden">
-                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Adresai</h2>
-            </div>
-
-            <div id="user_orders" class="tabcontent hidden">
-                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Mano užsakymai</h2>
-            </div>
-
-            <div id="user_settings" class="tabcontent hidden">
                 <div>
-                    <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Nustatymai</h2>
+                    <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Vartotojo nustatymai</h2>
 
                     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -87,6 +75,18 @@
                         @endif
                     </div>
                 </div>
+            </div>
+
+            <div id="user_address" class="tabcontent hidden">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Vartotojo informacija</h2>
+            </div>
+
+            <div id="user_orders" class="tabcontent hidden">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Mano užsakymai</h2>
+            </div>
+
+            <div id="user_settings" class="tabcontent hidden">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Adresai</h2>
             </div>
 
         </div>
