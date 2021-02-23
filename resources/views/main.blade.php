@@ -95,5 +95,6 @@
                 </div>
             @endif
         </div>
+        @extends('product_list')
     </body>
 </html>
