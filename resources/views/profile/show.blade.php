@@ -24,58 +24,87 @@
     <div class="flex flex-grow">
 
         <div class="bg-gray-100 w-1/3 p-6">
-            <ul class="border-l-4 border-blue-700 -ml-6 pl-6 mb-2">
-                <li class="text-lg font-black text-gray-1000">Vartotojo valdymas</li>
-            </ul>
             <ul class="-ml-6 pl-6">
-                <li class="text-lg font-black text-gray-500 mb-2">Vartotojo informacija</li>
-                <li class="text-lg font-black text-gray-500 mb-2">Adresas</li>
+                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_info')">Vartotojo informacija</li>
+                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_address')">Adresai</li>
+                <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_orders')">Mano užsakymai</li>
                 <hr>
-                <li class="text-lg font-black text-gray-500 mb-2 mt-2">Nustatymai</li>
-                <li class="text-lg font-black text-gray-500 mb-2">Redagavimas</li>
+                <li class="tablinks text-lg mt-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openCity(event, 'user_settings')">Vartotojo valdymas</li>
             </ul>
         </div>
 
-        <div class="bg-gray-100 w-full ml-10 p-6">
-        Nepabaigta vieta.
+        <div class="w-full ml-14">
+
+            <div id="user_info" class="tabcontent active">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Vartotojo informacija</h2>
+            </div>
+
+            <div id="user_address" class="tabcontent hidden">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Adresai</h2>
+            </div>
+
+            <div id="user_orders" class="tabcontent hidden">
+                <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Mano užsakymai</h2>
+            </div>
+
+            <div id="user_settings" class="tabcontent hidden">
+                <div>
+                    <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Nustatymai</h2>
+
+                    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                        @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                            @livewire('profile.update-profile-information-form')
+
+                            <x-jet-section-border />
+                        @endif
+
+                        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                            <div class="mt-10 sm:mt-0">
+                                @livewire('profile.update-password-form')
+                            </div>
+
+                            <x-jet-section-border />
+                        @endif
+
+                        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+                            <div class="mt-10 sm:mt-0">
+                                @livewire('profile.two-factor-authentication-form')
+                            </div>
+
+                            <x-jet-section-border />
+                        @endif
+
+                        <div class="mt-10 sm:mt-0">
+                            @livewire('profile.logout-other-browser-sessions-form')
+                        </div>
+
+                        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                            <x-jet-section-border />
+
+                            <div class="mt-10 sm:mt-0">
+                                @livewire('profile.delete-user-form')
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
         </div>
     
     </div>
-    <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-                @livewire('profile.update-profile-information-form')
-
-                <x-jet-section-border />
-            @endif
-
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.update-password-form')
-                </div>
-
-                <x-jet-section-border />
-            @endif
-
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.two-factor-authentication-form')
-                </div>
-
-                <x-jet-section-border />
-            @endif
-
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.logout-other-browser-sessions-form')
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-                <x-jet-section-border />
-
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.delete-user-form')
-                </div>
-            @endif
-        </div>
-    </div>
+    <script>
+        function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active text-gray-900 border-l-4 border-blue-600 p-1", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active text-gray-900 border-l-4 border-blue-600 p-1";
+        }
+    </script>
 </x-app-layout>

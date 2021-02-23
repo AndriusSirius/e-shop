@@ -1,10 +1,10 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Delete Account') }}
+        {{ __('Ištrinti paskyrą') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Permanently delete your account.') }}
+        {{ __('Visam laikui ištrinsite savo paskyrą.') }}
     </x-slot>
 
     <x-slot name="content">
