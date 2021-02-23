@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -17,6 +19,8 @@ class User extends Authenticatable
     use HasFactory;
     use HasProfilePhoto;
     use HasTeams;
+    use HasPermissions;
+    use HasRoles;
     use Notifiable;
     use TwoFactorAuthenticatable;
 
