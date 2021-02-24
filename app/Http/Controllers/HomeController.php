@@ -25,7 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-//            $permission = Permission::create(['name'=>'kaka']);
+//        Permission::create(['name'=>'all']);
+//        Permission::create(['name'=>'buy_products']);
+//        Role::create(['name'=>'user']);
+//        Role::create(['name'=>'admin']);
 //        $role = Role::findById(7);
 //        $role->givePermissionTo('all');
         auth()->user()->assignRole('user');
