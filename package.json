@@ -19,6 +19,7 @@
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
+<<<<<<< HEAD
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
         "postcss-import": "^12.0.1",
@@ -28,5 +29,14 @@
         "tailwindcss": "^2.0.3",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+=======
+        "postcss": "^8.1.14"
+<<<<<<< HEAD
+    },
+    "dependencies": {
+        "tailwindcss": "^2.0.3"
+=======
+>>>>>>> upstream/main
+>>>>>>> upstream/main
     }
 }

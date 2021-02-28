@@ -42,8 +42,9 @@ class DashboardController extends Controller
         // $role = Role::findById(2);
         // $role->givePermissionTo('buy_products');
         // Jei viskas suveikė, tuomet atkomentuojame šias eilutes:
-            auth()->user()->assignRole('user');
-            auth()->user()->givePermissionTo('buy_products');
+           auth()->user()->assignRole('user');
+             auth()->user()->givePermissionTo('buy_products');
+
         // Pagal default nustatymus naujas narys bus user ir turės leidimą buy_products
         // Norint padaryti administratoriumi, reikės tai atlikti duomenų bazėje.
         return view('dashboard');
