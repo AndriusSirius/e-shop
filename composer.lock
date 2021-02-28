@@ -6145,6 +6145,7 @@
         {
             "name": "laravel/sail",
             "version": "v1.4.3",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
@@ -6156,6 +6157,7 @@
                 "reference": "ce4861be1a528a36c98416c9954f3014d2500415",
 
             "version": "v1.3.1",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
@@ -6211,8 +6213,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+
+
             "time": "2021-02-09T16:44:58+00:00"
         }},
+
         {
             "name": "mockery/mockery",
             "version": "1.4.3",
