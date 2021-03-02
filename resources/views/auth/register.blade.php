@@ -107,6 +107,27 @@
                                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                             </div>
 
+                            <br><br>
+
+                            <h2>Jūsų Adresas:</h2>
+                            <hr>
+                            
+                            <div class="mt-4">
+                                <x-jet-label for="city" value="{{ __('Miestas') }}" />
+                                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" required autocomplete="city" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="address" value="{{ __('Rajonas, gatvė, namo(buto) numeris') }}" />
+                                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" required autocomplete="address" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="phone_number" value="{{ __('Telefono numeris') }}" />
+                                <x-jet-input id="phone_number" class="block mt-1 w-full" type="number" name="phone_number" required autocomplete="phone_number" />
+                            </div>
+
+
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                                 <div class="mt-4">
                                     <x-jet-label for="terms">

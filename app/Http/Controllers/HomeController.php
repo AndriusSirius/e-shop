@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         //            $permission = Permission::create(['name'=>'kaka']);
         // $role = Role::findById(2);
         // $role->givePermissionTo('all');
@@ -32,5 +33,17 @@ class HomeController extends Controller
         // auth()->user()->givePermissionTo('buy_products');
         //            return auth()->user()->permissions;
         return view('dashboard');
+=======
+//        Permission::create(['name'=>'all']);
+//        Permission::create(['name'=>'buy_products']);
+//        Role::create(['name'=>'user']);
+//        Role::create(['name'=>'admin']);
+//        $role = Role::findById(7);
+//        $role->givePermissionTo('all');
+        auth()->user()->assignRole('user');
+        auth()->user()->givePermissionTo('buy_products');
+//            return auth()->user()->permissions;
+//        return view('dashboard');
+>>>>>>> 12134b3b9bcb6fa42f4e64a53705b939a1e018fd
     }
 }
