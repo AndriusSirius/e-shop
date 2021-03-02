@@ -189,6 +189,6 @@
                 </div>
             @endif
         </div>
-        @extends('e-shop.resources.views.product_list')
+        @extends('product_list')
     </body>
 </html>
