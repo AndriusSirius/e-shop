@@ -26,6 +26,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
+    
         auth()->user()->assignRole('user');
         auth()->user()->givePermissionTo('buy_products');
         return view('dashboard');

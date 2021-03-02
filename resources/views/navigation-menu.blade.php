@@ -1,7 +1,7 @@
 <div class="w-full text-blue-700 bg-white border-b dark-mode:text-blue-200 dark-mode:bg-blue-800">
     <div x-data="{ open: false }" class="flex flex-col mx-auto md:items-center md:justify-around md:flex-row">
         <div class="p-4 flex flex-row items-left justify-around">
-            <img class="ml-16 object-contain h-20 w-full" src="http://127.0.0.1/e-shop/resources/views/images/Logotipas.png">
+        <img class="ml-16 object-contain h-20 w-full" src="{{ asset('images/Logotipas.png') }}" >
             <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                     <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>

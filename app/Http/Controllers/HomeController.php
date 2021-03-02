@@ -25,12 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-//            $permission = Permission::create(['name'=>'kaka']);
-//        $role = Role::findById(7);
-//        $role->givePermissionTo('all');
-        auth()->user()->assignRole('user');
-        auth()->user()->givePermissionTo('buy_products');
-//            return auth()->user()->permissions;
-//        return view('dashboard');
+        //            $permission = Permission::create(['name'=>'kaka']);
+        // $role = Role::findById(2);
+        // $role->givePermissionTo('all');
+        // auth()->user()->assignRole('user');
+        // auth()->user()->givePermissionTo('buy_products');
+        //            return auth()->user()->permissions;
+        return view('dashboard');
     }
 }
