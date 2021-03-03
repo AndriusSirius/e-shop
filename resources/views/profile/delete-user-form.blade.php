@@ -1,10 +1,10 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Ištrinti paskyrą') }}
+        {{ __('Delete Account') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Visam laikui ištrinsite savo paskyrą.') }}
+        {{ __('Permanently delete your account.') }}
     </x-slot>
 
     <x-slot name="content">
@@ -40,7 +40,7 @@
 
             <x-slot name="footer">
                 <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
-                    {{ __('Nevermind') }}
+                    {{ __('Cancel') }}
                 </x-jet-secondary-button>
 
                 <x-jet-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">

@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
-Auth::routes();
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/main', function () {
+    return view('main');
+})->name('main');
