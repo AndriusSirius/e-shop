@@ -23,6 +23,7 @@
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
+
     @include('navigation-menu')
 
     <body class="antialiased">
@@ -30,5 +31,6 @@
     </body>
 
 {{--        @extand('footer')--}}
+
 
 </html>

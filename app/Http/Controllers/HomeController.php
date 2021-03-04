@@ -11,9 +11,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-        return view('home', compact('ParentCategories'));
-
+        return view('home');
     }
 
 }

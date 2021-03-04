@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+//use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,22 @@ use App\Http\Controllers\HomeController;
 */
 
 //Route::get('/login', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
-//Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //Route::get('/category',[\App\Http\Controllers\CategoryController::class, 'home'])->name('category');
-Route::get('/', [HomeController::class,'home'])->name('home');
+//Route::get('/', [HomeController::class,'home'])->name('home');
+//
+//
+//Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
+//    return view('home');
+//})->name('home');
 
+//Route::resource('category','CategoryController');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+//PAGRINDINIS
 Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('home');
 })->name('home');
 
-//Route::resource('category','CategoryController');
+//KREPŠELIS
+Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
+    return view('cart');
+})->name('cart');
