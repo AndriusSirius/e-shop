@@ -106,7 +106,7 @@
             </div>
         </section>
     </div>
-
+    @include('Footer')
     <div class="bg-gray-100">
         <div class="container mx-auto">
             <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
