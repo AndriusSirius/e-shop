@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/main', function () {
     return view('main');
 })->name('main');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
+    return view('cart');
+})->name('cart');
