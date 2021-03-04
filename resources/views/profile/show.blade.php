@@ -56,14 +56,6 @@
                         <x-jet-section-border />
                     @endif
 
-                    @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                        <div class="mt-10 sm:mt-0">
-                            @livewire('profile.two-factor-authentication-form')
-                        </div>
-
-                        <x-jet-section-border />
-                    @endif
-
                     <div class="mt-10 sm:mt-0">
                         @livewire('profile.logout-other-browser-sessions-form')
                     </div>
@@ -94,20 +86,17 @@
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->phone_number }}</p>
                                 <br>
 
-                                <a href="" class="underline text-blue-700 text-left">Redaguoti</a>
-                                <a href="" class="underline text-blue-700 text-right ml-5">Pakeisti slaptažodį</a>
-
                             </div>
 
                             <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-                                <h3 class="text-lg text-gray-900 font-sans font-semibold">Naujienlaiškis</h3>
-                                <br>
+                            <h3 class="text-lg text-gray-900 font-sans font-semibold">Naujienlaiškis</h3>
+                            <br>
 
-                                <p class="text-lg text-gray-500 font-sans font-semibold">Jūs nesate užsisake jokio mūsų naujienlaiškio.</p>
-                                <br>
+                            <p class="text-lg text-gray-500 font-sans font-semibold">Jūs nesate užsisake jokio mūsų naujienlaiškio.</p>
+                            <br>
 
-                                <a href="" class="underline text-blue-700 text-left">Užsisakyti</a>
+                            <a href="" class="underline text-blue-700 text-left">Užsisakyti</a>
 
                             </div>
 
@@ -133,6 +122,11 @@
 
                                 <a href="" class="underline text-blue-700 text-left">Redaguoti</a>
                                 <a href="" class="underline text-blue-700 text-right ml-5">Ištrinti adresą</a>
+
+                            </div>
+
+                            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
 
                             </div>
 
