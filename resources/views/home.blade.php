@@ -28,7 +28,7 @@
     <body class="antialiased">
         @extends('product_list')
     </body>
-    
-        @extands('footer')
-    
+
+{{--        @extand('footer')--}}
+
 </html>
