@@ -23,9 +23,9 @@
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
-    @include('navigation-menu')
+    @include('cart')
 
-    <body class="antialiased">
+    <!-- <body class="antialiased">
         @extends('product_list')
-    </body>
+    </body> -->
 </html>
