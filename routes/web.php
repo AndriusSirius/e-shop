@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('main');
 });
 
+//PAGRINDINIS
 Route::middleware(['auth:sanctum', 'verified'])->get('/main', function () {
     return view('main');
 })->name('main');
 
+//KREPŠELIS
 Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
     return view('cart');
 })->name('cart');
