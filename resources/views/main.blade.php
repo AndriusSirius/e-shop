@@ -28,4 +28,7 @@
     <body class="antialiased">
         @extends('product_list')
     </body>
+    
+        @extands('footer')
+    
 </html>
