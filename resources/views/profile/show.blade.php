@@ -48,6 +48,12 @@
                         <x-jet-section-border />
                     @endif
 
+                        <div class="mt-10 sm:mt-0">
+                        @livewire('profile-address-update')
+                        </div>
+                        <x-jet-section-border />
+
+
                     @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                         <div class="mt-10 sm:mt-0">
                             @livewire('profile.update-password-form')
@@ -119,14 +125,6 @@
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->address }},</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->post_code}}</p>
                                 <br>
-
-                                <a href="" class="underline text-blue-700 text-left">Redaguoti</a>
-                                <a href="" class="underline text-blue-700 text-right ml-5">Ištrinti adresą</a>
-
-                            </div>
-
-                            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
 
                             </div>
 
