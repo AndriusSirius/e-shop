@@ -30,5 +30,7 @@
         @extends('product_list')
     </body>
 
-    
+{{--        @extand('footer')--}}
+
+
 </html>

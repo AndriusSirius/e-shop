@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
+        view()->share('ParentCategories',$ParentCategories);
     }
 }
