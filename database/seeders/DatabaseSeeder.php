@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Permission;
 use Illuminate\Database\Seeder;
 use Prophecy\Call\Call;
 
@@ -14,9 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         $this->call([
-            UserSeeder::class,
+            CategorySeeder::class,
+            RolesSeeder::class,
+            PermissionsSeeder::class,
+            Role_Has_Permissions::class,
+            Model_Has_Permissions::class,
+            Model_Has_Roles::class,
+             UserSeeder::class,
             productsSeeder::class,
             discountSeeder::class,
 
