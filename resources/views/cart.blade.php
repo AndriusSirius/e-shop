@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section class="py-12">
+    <section class="py-6">
         <div class="container mx-auto">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
@@ -23,9 +23,9 @@
     </section>
 
     <div class="flex container mx-auto">
-        <div class="flex-1 mt-10">
-            <div class="flex my-10">
-                <div class="w-3/4 bg-white px-10 py-10">
+        <div class="flex-1 mt-4">
+            <div class="flex my-4">
+                <div class="w-3/4 bg-white px-4 py-4">
 
                     <div class="flex mb-5 border-b p-5">
                         <h3 class="font-semibold text-black-600 text-xs uppercase w-2/5">Prekė</h3>
