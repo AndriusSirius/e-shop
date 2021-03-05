@@ -1,7 +1,7 @@
 @include('navigation-menu')
 
 <x-guest-layout>
-    <section class="py-12">
+    <section class="py-6">
         <div class="container mx-auto">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
