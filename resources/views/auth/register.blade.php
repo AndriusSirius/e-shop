@@ -44,6 +44,11 @@
                                 </div>
 
                                 <div class="mt-4">
+                                    <x-jet-label for="Lastname" value="{{ __('Pavardė') }}" />
+                                    <x-jet-input id="Lastname" class="block mt-1 w-full" type="text" name="Lastname" :value="old('Lastname')" required autofocus autocomplete="Lastname" />
+                                </div>
+
+                                <div class="mt-4">
                                     <x-jet-label for="email" value="{{ __('El paštas') }}" />
                                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                                 </div>
@@ -119,6 +124,10 @@
     </section>
     </div>
 
+<<<<<<< HEAD
    @include('Footer')
+=======
+    @include('section')
+>>>>>>> 57710cde715e428136f68d84d4e531c018a02de9
 
 </x-guest-layout>
