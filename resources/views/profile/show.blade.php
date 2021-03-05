@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container mx-auto">
 
-        <section class="py-12">
+        <section class="py-6">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
                     <li class="flex items-center">
