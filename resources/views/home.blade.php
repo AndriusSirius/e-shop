@@ -23,20 +23,6 @@
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
-<<<<<<< HEAD:resources/views/main.blade.php
-    
-    <body class="">
-        <main>
-        @include('navigation-menu')
-
-        @include('product_list')
-        </main>
-        
-        @include('footer')
-       
-    </body>
-    
-=======
 
     @include('navigation-menu')
 
@@ -45,5 +31,5 @@
     </body>
 
     @include('footer')
->>>>>>> 57710cde715e428136f68d84d4e531c018a02de9:resources/views/home.blade.php
+
 </html>

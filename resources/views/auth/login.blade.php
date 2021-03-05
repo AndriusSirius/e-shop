@@ -106,12 +106,7 @@
             </div>
         </section>
     </div>
-<<<<<<< HEAD
-    @include('Footer')
-    
-=======
 
     @include('section')
->>>>>>> 57710cde715e428136f68d84d4e531c018a02de9
 
 </x-guest-layout>

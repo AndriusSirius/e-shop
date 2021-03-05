@@ -145,17 +145,11 @@
         </div>
     </div>
     </div>
-<<<<<<< HEAD
-<div class="pt-3">
-@include('footer')
-</div>
-=======
 
     <br><br>
 
     @include('section')
 
->>>>>>> 57710cde715e428136f68d84d4e531c018a02de9
         <script>
             function openAcc(evt, cityName) {
                 var i, tabcontent, tablinks;
