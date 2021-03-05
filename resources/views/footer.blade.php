@@ -15,12 +15,12 @@
                     <input type="email" placeholder="yourmail@gmail.com" class="flex-1 appearance-none bg-black rounded shadow py-3 text-white mr-2 focus:outline-none">
                     <button type="submit" class="inline-block px-6 py-3 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">Subscribe</button>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
-    
+
     <div class="container mx-auto px-6">
-        <div class="sm:flex sm:mt-8">            
+        <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col">
                     <span class="font-bold text-gray-100 py-3 uppercase mb-2">Information</span>

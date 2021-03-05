@@ -87,7 +87,7 @@
                                 <h3 class="text-lg text-gray-900 font-sans font-semibold">Paskyros informacija</h3>
                                 <br>
 
-                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }}</p>
+                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }} {{ Auth::user()->Lastname }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->email }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->phone_number }}</p>
                                 <br>
@@ -148,29 +148,7 @@
 
     <br><br>
 
-    <div class="bg-gray-100 mt-10">
-        <div class="container mx-auto">
-            <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9730;</span><br><br>Product support</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9729;</span><br><br>Personal account</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9993;</span><br><br>Amazing saving</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-            </div>
-        </div>
+    @include('section')
 
         <script>
             function openAcc(evt, cityName) {

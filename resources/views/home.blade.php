@@ -27,10 +27,8 @@
     @include('navigation-menu')
 
     <body class="antialiased">
-        @extends('product_list')
+        @include('product.product_list')
     </body>
 
-{{--        @extand('footer')--}}
-
-
+    @include('footer')
 </html>

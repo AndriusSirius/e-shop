@@ -14,6 +14,7 @@ class Category extends Model
      * @return void
      */
     protected $guarded = [];
+
     protected $fillable = [
         'id',
         'name',
