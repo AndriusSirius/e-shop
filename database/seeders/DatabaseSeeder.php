@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
             Role_Has_Permissions::class,
             Model_Has_Permissions::class,
             Model_Has_Roles::class,
+             UserSeeder::class,
+            productsSeeder::class,
+            discountSeeder::class,
 
         ]);
     }
