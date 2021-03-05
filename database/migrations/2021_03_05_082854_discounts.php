@@ -14,7 +14,7 @@ class Discounts extends Migration
     public function up()
     {
         Schema::create('discounts', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
+            $table->id();
             $table->UnsignedBigInteger('products_id');
             $table->integer('percentage');
             $table->date('from')->nullable();
