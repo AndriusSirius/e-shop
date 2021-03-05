@@ -87,7 +87,7 @@
                                 <h3 class="text-lg text-gray-900 font-sans font-semibold">Paskyros informacija</h3>
                                 <br>
 
-                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }}</p>
+                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }} {{ Auth::user()->Lastname }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->email }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->phone_number }}</p>
                                 <br>
