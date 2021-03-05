@@ -44,6 +44,11 @@
                                 </div>
 
                                 <div class="mt-4">
+                                    <x-jet-label for="Lastname" value="{{ __('Pavardė') }}" />
+                                    <x-jet-input id="Lastname" class="block mt-1 w-full" type="text" name="Lastname" :value="old('Lastname')" required autofocus autocomplete="Lastname" />
+                                </div>
+
+                                <div class="mt-4">
                                     <x-jet-label for="email" value="{{ __('El paštas') }}" />
                                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                                 </div>
@@ -119,28 +124,6 @@
     </section>
     </div>
 
-    <div class="bg-gray-100">
-        <div class="container mx-auto">
-            <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9730;</span><br><br>Product support</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9729;</span><br><br>Personal account</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9993;</span><br><br>Amazing saving</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-            </div>
-        </div>
+    @include('section')
 
 </x-guest-layout>

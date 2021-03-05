@@ -48,6 +48,12 @@
                         <x-jet-section-border />
                     @endif
 
+                        <div class="mt-10 sm:mt-0">
+                        @livewire('profile-address-update')
+                        </div>
+                        <x-jet-section-border />
+
+
                     @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                         <div class="mt-10 sm:mt-0">
                             @livewire('profile.update-password-form')
@@ -81,7 +87,7 @@
                                 <h3 class="text-lg text-gray-900 font-sans font-semibold">Paskyros informacija</h3>
                                 <br>
 
-                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }}</p>
+                                <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->name }} {{ Auth::user()->Lastname }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->email }}</p>
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->phone_number }}</p>
                                 <br>
@@ -120,14 +126,6 @@
                                 <p class="text-lg text-gray-500 font-sans font-semibold">{{ Auth::user()->post_code}}</p>
                                 <br>
 
-                                <a href="" class="underline text-blue-700 text-left">Redaguoti</a>
-                                <a href="" class="underline text-blue-700 text-right ml-5">Ištrinti adresą</a>
-
-                            </div>
-
-                            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-
                             </div>
 
                         </div>
@@ -150,29 +148,7 @@
 
     <br><br>
 
-    <div class="bg-gray-100 mt-10">
-        <div class="container mx-auto">
-            <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9730;</span><br><br>Product support</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9729;</span><br><br>Personal account</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-
-                <div class="sm:px-6 lg:px-8">
-                    <p class="font-bold text-lg text-center"><span style="font-size:50px; color:black;">&#9993;</span><br><br>Amazing saving</p>
-                    <br>
-                    <p class="text-center text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat aliquid tenetur optio neque molestias maxime?</p>
-                </div>
-            </div>
-        </div>
+    @include('section')
 
         <script>
             function openAcc(evt, cityName) {
