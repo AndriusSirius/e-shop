@@ -26,9 +26,8 @@ use Illuminate\Support\Facades\Route;
 //Route::resource('category','CategoryController');
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //PAGRINDINIS
-Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
 
 //KREPŠELIS
 Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
