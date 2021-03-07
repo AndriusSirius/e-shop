@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
+use ProductCategory;
 use Prophecy\Call\Call;
 
 class DatabaseSeeder extends Seeder
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
              UserSeeder::class,
             productsSeeder::class,
             discountSeeder::class,
+            product_categoriesSeeder::class,
             ImagesSeeder::class,
         ]);
     }
