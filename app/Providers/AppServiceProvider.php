@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,7 +26,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
         view()->share('ParentCategories',$ParentCategories);
+
+        $discounts = DB::table('discounts')->join('products', 'discounts.products_id', '=', 'products.id')->get();
         $products = \App\Models\Product::all();
-         view()->share("products", $products);
+        return view('home', compact('discounts', 'products', 'ParentCategories'));
+
     }
 }

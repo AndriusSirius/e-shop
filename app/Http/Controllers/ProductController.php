@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Discounts;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,22 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.product_list');
+//        $discounts = \App\Models\Product::join('products', 'products.id', '=', 'discounts.products_id')->get();
+//        dd($parentCategories);
+        $discounts = DB::table('discounts')->join('products', 'discounts.products_id', '=', 'products.id')->get();
+ $products = \App\Models\Product::all();
+
+//        foreach($discounts as $discount){
+//            echo $discount->precentage;
+////                dd($discounts);
+//
+//        }
+//        if($discounts->precentage != null){
+//            dd($discounts);
+//        }
+        return view('home', compact('discounts', 'products'));
+
+        //        return view('product.product_list');
     }
 
     /**
@@ -46,7 +63,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return redirect()->route('product_list');
+
     }
 
     /**

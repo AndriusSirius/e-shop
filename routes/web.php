@@ -14,20 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/login', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
-//Route::get('/category',[\App\Http\Controllers\CategoryController::class, 'home'])->name('category');
-//Route::get('/', [HomeController::class,'home'])->name('home');
-//
-//
-//Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
-//    return view('home');
-//})->name('home');
-
-//Route::resource('category','CategoryController');
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //PAGRINDINIS
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+//Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->name('index');
 
+//Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'],[\App\Http\Controllers\ProductController::class, 'index']);
+//Route::get('/home', [\App\Http\Controllers\ProductController::class, 'index'])->name('index');
 
 //KREPŠELIS
 Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
