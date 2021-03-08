@@ -29,6 +29,7 @@ class ProductController extends Controller
         //            dd($discounts);
         //        }
         
+        
         return view('home', compact('discounts', 'products'));
 
         //        return view('product.product_list');

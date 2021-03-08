@@ -50,7 +50,7 @@
     <div class=" flex  w-6/12 bg-white-900 block">
         <div class="flex flex-col">
             <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
+                <img class="object-contain w-full  h-full cursor-pointer" src="{{ asset($product->path) }}" alt="Trulli" onclick="myFunction(this);">
             </div>
             <div class="w-24 h-15 m-5">
                 <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
