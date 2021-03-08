@@ -33,6 +33,11 @@ class ProductController extends Controller
 
         //        return view('product.product_list');
     }
+    public function detail ($id){
+        $data = Product::find($id);
+        return view('product.product',['product' => $data]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
