@@ -26,5 +26,9 @@ class ImagesSeeder extends Seeder
             'products_id' => 3,
             'path'=> 'images/virdulys.jpg'
         ]);
+        DB::table('images')->insert([
+            'products_id' => 1,
+            'path'=> 'images/saldytuvas2.jpg'
+        ]);
     }
 }

@@ -32,5 +32,47 @@ class discountSeeder extends Seeder
             'from' =>  '2021-03-08',
             'to' =>  '2021-03-14'
         ]);
+        DB::table('discounts')->insert([
+            'products_id' => 4,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 5,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 6,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 7,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 8,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 9,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
+        DB::table('discounts')->insert([
+            'products_id' => 10,
+            'percentage'=> 0,
+            'from' =>  '2021-03-07',
+            'to' =>  '2021-03-15'
+        ]);
     }
 }
