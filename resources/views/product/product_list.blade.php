@@ -14,7 +14,7 @@
                 <div class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <div class="mx-auto h-16">
                         <h1 class="text-lg text-center">
-                            <a class="no-underline hover:underline text-black" href="#">
+                            <a class="no-underline hover:underline text-black" href="product/{{$product->id}}">
                                 {{$product->title}}
                             </a>
 

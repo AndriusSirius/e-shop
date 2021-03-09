@@ -28,7 +28,7 @@ class ProductController extends Controller
         //        if($discounts->precentage != null){
         //            dd($discounts);
         //        }
-        
+
         return view('home', compact('discounts', 'products'));
 
         //        return view('product.product_list');
