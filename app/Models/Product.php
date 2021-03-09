@@ -10,7 +10,6 @@ class Product extends Model
     use HasFactory;
     protected $guarded = [];
     protected $fillable = [
-        'id',
         'title',
         'summary',
         'type',
@@ -19,4 +18,12 @@ class Product extends Model
         'content'
 
     ];
+
+    public function images(){
+        return $this->hasMany(Image::class, 'products_id');
+    }
+
+    public function discounts(){
+        return $this->hasMany(Discounts::class, 'products_id');
+    }
 }

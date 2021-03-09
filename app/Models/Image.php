@@ -14,4 +14,8 @@ class Image extends Model
         'products_id',
         'path'
     ];
+
+    public function product(){
+        return $this->belongsTo(Product::class, 'products_id');
+    }
 }

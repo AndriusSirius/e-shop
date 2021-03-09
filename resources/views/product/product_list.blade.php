@@ -1,8 +1,11 @@
 <section class="container mx-auto  my-7  ">
 
     <div class="flex flex-wrap justify-between w-2/3 mx-auto ">
+
         @foreach($products as $product)
         {{-- {{$product->title}}--}}
+
+
         <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg max-h-full">
