@@ -1,11 +1,12 @@
 <x-app-layout>
+{{$product}}
 <div class=" py-3 flex justify-between border-solid border-2 border-light-black-500 pb-5">
     <div class="  w-1/3">
         <button class=" font-semibold h-7 p-6 tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'aboutProduct')">Apie produktą</button>
         <button class="font-semibold h-7   p-6 tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'tech')">Techninės charakteristikos</button>
     </div>
     <div class=" flex  w-1/3">
-        <!-- <span  class=" flex flex-end ">Xjievru</span> -->
+
         <label class=" text-sm font-bold" for="price">{{$product['price']}}€
             <input class=" my-3 mr-3  h-10 w-16 bg-gray-200" min="0" type="number" id="price">
         </label>
@@ -48,12 +49,12 @@
     </div>
 
     <div class=" flex  w-6/12 bg-white-900 block">
+
         <div class="flex flex-col">
+
+
             <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
-            </div>
-            <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
+                <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('') }}" alt="Trulli" onclick="myFunction(this);">
             </div>
             <div class="w-24 h-15 m-5">
                 <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli " onclick="myFunction(this);">
