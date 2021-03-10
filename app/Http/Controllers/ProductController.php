@@ -28,9 +28,9 @@ class ProductController extends Controller
         //        if($discounts->precentage != null){
         //            dd($discounts);
         //        }
-
-
-        return view('home', compact('discounts', 'products'));
+//
+//        $products = Product::with(['images', 'discounts'])->get();
+//        return view('home', compact( 'products'));
 
         //        return view('product.product_list');
     }
