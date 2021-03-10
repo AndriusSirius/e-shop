@@ -21,6 +21,7 @@ class Products extends Migration
             $table->integer('price');
             $table->integer('quantity');
             $table->longText('content');
+            $table->longText('tech_content');
 
         });
     }

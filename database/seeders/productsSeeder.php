@@ -20,7 +20,10 @@ class productsSeeder extends Seeder
             'type' => 'RF31SM-S0002F0',
             'price' => '93',
             'quantity' => 4,
-            'content' => 'saldytuvas snaige tiesios Zuuper!!!'
+            'content' => 'saldytuvas snaige tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
 
         DB::table('products')->insert([
@@ -29,7 +32,10 @@ class productsSeeder extends Seeder
             'type' => ' RB34T675ES9/EF',
             'price' => '507',
             'quantity' => 5,
-            'content' => 'saldytuvas Samsung tiesios Zuuper!!!'
+            'content' => 'saldytuvas Samsung tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Šaldytuvas Samsung RB31HSR2DSA/EF',
@@ -37,7 +43,10 @@ class productsSeeder extends Seeder
             'type' => ' RB31HSR2DSA/EF',
             'price' => '360',
             'quantity' => 10,
-            'content' => 'saldytuvas Samsung tiesios Zuuper!!!'
+            'content' => 'saldytuvas Samsung tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina Electrolux EW7W447W',
@@ -45,7 +54,10 @@ class productsSeeder extends Seeder
             'type' => ' EW7W447W',
             'price' => '455',
             'quantity' => 110,
-            'content' => 'Skalbimo mašina tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina AEG L6SE47SE',
@@ -53,7 +65,10 @@ class productsSeeder extends Seeder
             'type' => 'AEG L6SE47SE',
             'price' => '405',
             'quantity' => 11,
-            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina Beko WUE 8633 XST',
@@ -61,7 +76,10 @@ class productsSeeder extends Seeder
             'type' => 'Beko WUE 8633 XST',
             'price' => '265',
             'quantity' => 21,
-            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina Electrolux EW7W447W',
@@ -69,7 +87,10 @@ class productsSeeder extends Seeder
             'type' => ' EW7W447W',
             'price' => '455',
             'quantity' => 110,
-            'content' => 'Skalbimo mašina tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina AEG L6SE47SE',
@@ -77,7 +98,10 @@ class productsSeeder extends Seeder
             'type' => 'AEG L6SE47SE',
             'price' => '405',
             'quantity' => 11,
-            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Skalbimo mašina Beko WUE 8633 XST',
@@ -85,7 +109,10 @@ class productsSeeder extends Seeder
             'type' => 'Beko WUE 8633 XST',
             'price' => '265',
             'quantity' => 21,
-            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!'
+            'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
         DB::table('products')->insert([
             'title' => 'Kavos virimo aparatas PHILIPS LatteGo EP5334/10',
@@ -93,7 +120,10 @@ class productsSeeder extends Seeder
             'type' => 'EP5334/10',
             'price' => '265',
             'quantity' => 21,
-            'content' => 'PHILIPS LatteGo  tiesiog Zuuper!!!'
+            'content' => 'PHILIPS LatteGo  tiesiog Zuuper!!!',
+            'tech_content' =>'Ryja mažai elektros. Patikimas ilgaamžis šaldytuvas. Lalalalalalalalala.
+            bumčik bumčik. bum bum tralialia. lorem lorem. Kebabas skanu. Mėsa: kiauliena, vištiena, jautiena.
+            trobelė skraido. Balionai irgi. LALALALALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL'
         ]);
     }
 }
