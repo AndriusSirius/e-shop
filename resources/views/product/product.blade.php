@@ -18,30 +18,16 @@
             <span class="text-3xl font-bold   ">{{$product['title']}} </span>
             <p class="mt-5 ">Apie Produktą:</p>
             <ul class=" mx-4 my-5 list-disc ">
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
+                {{$product['content']}}
             </ul>
             <p class="pb-2">Turite klausimų? <a class="underline" href="">Kontaktai</a></p>
         </div>
+
         <div id="tech" class="tabcontent hidden flex mx-auto w-6/12  mt-5  ">
             <span class="text-3xl font-bold ">{{$product['title']}}</span>
             <p class="mt-5 ">Techninės charakteristikos:</p>
             <ul class=" mx-4 my-5 list-disc">
-                <li class="leading-6">tech</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
-                <li class="leading-6">lorem</li>
+                {{$product['tech_content']}}
             </ul>
             <p class="pb-2">Turite klausimų? <a class="underline" href="">Kontaktai</a></p>
         </div>
@@ -49,18 +35,11 @@
 
     <div class=" flex  w-6/12 bg-white-900 block">
         <div class="flex flex-col">
+        @foreach($product->images as $img)
             <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full cursor-pointer" src="{{ asset($product->path) }}" alt="Trulli" onclick="myFunction(this);">
+                <img class="object-contain w-full  h-full cursor-pointer" src="{{ asset($img->path) }}" alt="Trulli" onclick="myFunction(this);">
             </div>
-            <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
-            </div>
-            <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli " onclick="myFunction(this);">
-            </div>
-            <div class="w-24 h-15 m-5">
-                <img class="object-contain w-full  h-full  cursor-pointer" src="{{ asset('images/kitchen.jpg') }}" alt="Trulli" onclick="myFunction(this);">
-            </div>
+        @endforeach
         </div>
         <div class="hidden relative m-5">
             <span class="font-bold text-3xl cursor-pointer absolute right-1" onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
