@@ -26,4 +26,8 @@ class Product extends Model
     public function discounts(){
         return $this->hasMany(Discounts::class, 'products_id');
     }
+
+    public function cart(){
+        return $this->hasMany(Cart::class, 'products_id');
+    }
 }

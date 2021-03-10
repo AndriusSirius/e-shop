@@ -15,9 +15,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        $cart = DB::table('cart')->join('products', 'cart.products_id', '=', 'products.id')->join('users', 'cart.user_id', '=', 'user.id')->get();
+        $cart = \App\Models\Cart::with(['products', 'users'])->get();
 
-        return view('home', compact('cart'));
+        return view('cart', compact('cart'));
     }
 
     /**
