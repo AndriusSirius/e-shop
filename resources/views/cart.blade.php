@@ -22,6 +22,8 @@
         </div>
     </section>
 
+    {{$cart}}
+
     <div class="flex container mx-auto">
         <div class="flex-1 mt-4">
             <div class="flex my-4">
@@ -41,7 +43,7 @@
                                 <img class="h-24" src="{{ asset('images/kitchen.jpg') }}" alt="">
                             </div>
                             <div class="flex flex-col justify-between ml-4 flex-grow">
-                                <span class="font-bold text-lg">Lorem, ipsum.</span>
+                                <span class="font-bold text-lg">Lorem, ipsum dolor.</span>
                                 <span class="text-black-700 text-sm font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, corrupti?</span>
                             </div>
                         </div>
@@ -161,7 +163,7 @@
         </div>
     </div>
 
-    
+
     @include('section')
 
 </x-app-layout>

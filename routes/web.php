@@ -14,11 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 //PAGRINDINIS
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
+//KREPŠELIS
+// Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->name('index');
+
+
 // Produktas
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'detail']);
+
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->name('index');
