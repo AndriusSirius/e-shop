@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         $products = Product::with(['images', 'discounts'])->get();
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-    
+
         return view('home', compact('products', 'ParentCategories'));
 
     }
