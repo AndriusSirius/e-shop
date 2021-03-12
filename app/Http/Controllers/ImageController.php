@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Product;
-use App\Models\Discounts;
 
-class ProductController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,30 +13,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //        $discounts = \App\Models\Product::join('products', 'products.id', '=', 'discounts.products_id')->get();
-        //        dd($parentCategories);
-
-
-        //        foreach($discounts as $discount){
-        //            echo $discount->precentage;
-        ////                dd($discounts);
         //
-        //        }
-        //        if($discounts->precentage != null){
-        //            dd($discounts);
-        //        }
-//
-//        $products = Product::with(['images', 'discounts'])->get();
-//        return view('home', compact( 'products'));
 
-        //        return view('product.product_list');
+        return view('home', compact('discounts', 'products'));
     }
-    public function detail ($id){
-//        $data = Product::find($id);
-        $product = Product::with(['images', 'discounts'])->find($id);
-        return view('product.product', compact('product'));
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -70,7 +47,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return redirect()->route('product_list');
+        //
     }
 
     /**

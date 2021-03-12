@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire;
 //use App\Http\Controllers\HomeController;
 
 /*
@@ -14,23 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/login', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
-//Route::get('/category',[\App\Http\Controllers\CategoryController::class, 'home'])->name('category');
-//Route::get('/', [HomeController::class,'home'])->name('home');
-//
-//
-//Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
-//    return view('home');
-//})->name('home');
 
-//Route::resource('category','CategoryController');
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //PAGRINDINIS
-Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
-    return view('home');
-})->name('home');
-
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('cart');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+//Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS
-Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
-    return view('cart');
-})->name('cart');
+
+Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
+
+
+// Produktas
+Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'detail']);
+
+

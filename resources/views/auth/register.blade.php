@@ -1,4 +1,4 @@
-@include('navigation-menu')
+@include('livewire.navigation-menu')
 
 <x-guest-layout>
     <section class="py-6">
@@ -82,7 +82,7 @@
                                     <x-jet-label for="phone_number" value="{{ __('Telefono numeris') }}" />
                                     <x-jet-input id="phone_number" class="block mt-1 w-full" type="number" name="phone_number" required autocomplete="phone_number" />
                                 </div>
-                                
+
                                 <div class="mt-4">
                                     <x-jet-label for="post_code" value="{{ __('Pašto kodas') }}" />
                                     <x-jet-input id="post_code" class="block mt-1 w-full" type="text" name="post_code" required autocomplete="post_code" />

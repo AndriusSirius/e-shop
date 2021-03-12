@@ -1,4 +1,4 @@
-@include('navigation-menu')
+@include('livewire.navigation-menu')
 
 <x-guest-layout>
 

@@ -59,7 +59,7 @@
                     <span class="my-2"><a href="#" class="text-white py-1 text-md hover:text-white-500">Lorem ipsum</a></span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-bold text-gray-100 uppercase mt-4 md:mt-0 mb-2">Adress</span>
+                    <span class="font-bold text-gray-100 uppercase mt-4 md:mt-0 mb-2">Address</span>
                     <span class="my-2"><a  class="text-white  text-md hover:text-white-500">Lorem ipsum</a></span>
                     <span class="my-2"><a  class="text-white  text-md hover:text-white-500">Lorem ipsum</a></span>
                     <span class="my-2"><a  class="text-white  text-md hover:text-white-500">Lorem ipsum</a></span>
@@ -80,3 +80,4 @@
         </div>
     </div>
 </footer>
+</html>
