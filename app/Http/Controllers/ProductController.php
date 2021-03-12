@@ -16,26 +16,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //        $discounts = \App\Models\Product::join('products', 'products.id', '=', 'discounts.products_id')->get();
-        //        dd($parentCategories);
 
 
-        //        foreach($discounts as $discount){
-        //            echo $discount->precentage;
-        ////                dd($discounts);
-        //
-        //        }
-        //        if($discounts->precentage != null){
-        //            dd($discounts);
-        //        }
-//
-//        $products = Product::with(['images', 'discounts'])->get();
-//        return view('home', compact( 'products'));
-
-        //        return view('product.product_list');
     }
     public function detail ($id){
-//        $data = Product::find($id);
         $product = Product::with(['images', 'discounts'])->find($id);
         return view('livewire.product', compact('product'));
     }

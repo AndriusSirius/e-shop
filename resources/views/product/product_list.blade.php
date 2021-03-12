@@ -10,7 +10,7 @@
             <article class="overflow-hidden rounded-lg shadow-lg max-h-full">
                 @foreach($product->images as $img)
 
-                <a href="#">
+                <a href="product/{{$product->id}}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full" src="{{ asset($product->images[0]->path) }}">
                 </a>
                 @break
@@ -20,7 +20,9 @@
                 <div class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <div class="mx-auto h-16">
                         <h1 class="text-lg text-center">
-                            <a class="no-underline hover:underline text-black" href="product/{{ $product->id }}">
+                            <a class="no-underline hover:underline text-black" href="product/{{$product->id}}">
+
+
                                 {{$product->title}}
                             </a>
 

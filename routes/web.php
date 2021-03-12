@@ -22,7 +22,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS
 
+
 Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
+
 
 
 // Produktas
