@@ -17,12 +17,11 @@ class ProductController extends Controller
     public function index()
     {
 
-        return view('home', compact('discounts', 'products'));
 
     }
     public function detail ($id){
         $product = Product::with(['images', 'discounts'])->find($id);
-        return view('product.product', compact('product'));
+        return view('livewire.product', compact('product'));
     }
 
 

@@ -1,6 +1,6 @@
     @include('head')
 
-    @include('navigation-menu')
+    @include('livewire.navigation-menu')
 
     <body class="antialiased">
         @include('product.product_list')

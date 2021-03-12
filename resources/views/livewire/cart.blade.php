@@ -22,6 +22,8 @@
         </div>
     </section>
 
+    {{$cart}}
+
     <div class="flex container mx-auto">
         <div class="flex-1 mt-4">
             <div class="flex my-4">
@@ -41,7 +43,7 @@
                                 <img class="h-24" src="{{ asset('images/kitchen.jpg') }}" alt="">
                             </div>
                             <div class="flex flex-col justify-between ml-4 flex-grow">
-                                <span class="font-bold text-lg">Lorem, ipsum.</span>
+                                <span class="font-bold text-lg">Lorem, ipsum dolor.</span>
                                 <span class="text-black-700 text-sm font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, corrupti?</span>
                             </div>
                         </div>
@@ -50,7 +52,7 @@
                                 <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                             </svg>
 
-                            <input class="mx-2 border text-center w-8" type="text" value="1">
+                            <input class="mx-2 border text-center w-14" type="text" value="1">
 
                             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                                 <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
@@ -161,7 +163,7 @@
         </div>
     </div>
 
-    
+
     @include('section')
 
 </x-app-layout>

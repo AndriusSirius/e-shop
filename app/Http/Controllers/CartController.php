@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use Illuminate\Support\Facades\DB;
+use App\Http\Livewire\Header;
 
 class CartController extends Controller
 {
@@ -15,9 +16,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        $cart = DB::table('cart')->join('products', 'cart.products_id', '=', 'products.id')->join('users', 'cart.user_id', '=', 'user.id')->get();
+        $cart = \App\Models\Cart::with(['products', 'users'])->get();
 
-        return view('home', compact('cart'));
+        return view('livewire.cart', compact('cart'));
     }
 
     /**

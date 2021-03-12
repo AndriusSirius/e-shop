@@ -10,10 +10,17 @@ class Cart extends Model
     use HasFactory;
     protected $guarded = [];
     protected $fillable = [
-        'id',
         'user_id',
         'products_id',
         'created_at',
         'updated_at'
     ];
+
+    public function products(){
+        return $this->hasMany(Product::class, 'id');
+    }
+
+    public function users(){
+        return $this->hasMany(User::class, 'id');
+    }
 }
