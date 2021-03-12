@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Livewire\Header;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Cart;
@@ -21,16 +22,17 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @return void
+     * @return
      */
     public function boot()
     {
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
         view()->share('ParentCategories',$ParentCategories);
 
+
         $discounts = DB::table('discounts')->join('products', 'discounts.products_id', '=', 'products.id')->get();
         $products = \App\Models\Product::all();
-        return view('home', compact('discounts', 'products', 'ParentCategories'));
+        return view('home', compact('discounts', 'products'));
 
     }
 }
