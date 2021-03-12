@@ -7,9 +7,12 @@ use Livewire\Component;
 class Cart extends Component
 {
     public $cart;
+    public $cartTotal;
 
     public function mount(): void
     {
+        $this->cartTotal = \App\Models\Cart::where('user_id', Auth::id())->count();
+
         $this->cart = CartFacade::get();
     }
     public function render()

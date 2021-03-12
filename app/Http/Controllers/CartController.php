@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use App\Http\Livewire\Header;
 
@@ -28,7 +29,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return 5;
     }
 
     /**

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire;
 //use App\Http\Controllers\HomeController;
+use App\Http\Livewire\Header;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +27,5 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 
 Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
 
-
-
 // Produktas
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'detail']);
-
-
