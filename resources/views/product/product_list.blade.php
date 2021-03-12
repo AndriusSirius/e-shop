@@ -10,7 +10,7 @@
             <article class="overflow-hidden rounded-lg shadow-lg max-h-full">
                 @foreach($product->images as $img)
 
-                <a href="#">
+                <a href="product/{{$product->id}}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full" src="{{ asset($product->images[0]->path) }}">
                 </a>
                 @break
