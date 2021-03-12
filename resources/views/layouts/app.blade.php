@@ -32,7 +32,7 @@
         <x-jet-banner />
 
         <div>
-            @include('livewire.navigation-menu')
+            @yield("nav-menu")
 
             <!-- Page Heading -->
             @if (isset($header))
