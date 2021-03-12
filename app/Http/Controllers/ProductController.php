@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function detail ($id){
 //        $data = Product::find($id);
         $product = Product::with(['images', 'discounts'])->find($id);
-        return view('product.product', compact('product'));
+        return view('livewire.product', compact('product'));
     }
 
 
