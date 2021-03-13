@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class Cart extends Component
 {
@@ -15,15 +16,18 @@ class Cart extends Component
 
         $this->cart = CartFacade::get();
     }
+
     public function render()
     {
         return view('livewire.cart');
     }
+
     public function removeFromCart($productId): void
     {
         CartFacade::remove($productId);
         $this->cart = CartFacade::get();
     }
+
     public function checkout(): void
     {
         CartFacade::clear();

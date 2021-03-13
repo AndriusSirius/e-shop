@@ -36,4 +36,5 @@ class Products extends Component
 
         $this->emit('productAdded');
     }
+    
 }
