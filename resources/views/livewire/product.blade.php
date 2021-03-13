@@ -1,7 +1,5 @@
 <x-app-layout>
-    @section("nav-menu")
-        @include('livewire.navigation-menu')
-    @endsection
+@livewire('header')
     <div class="w-full">
         <div class=" py-3 flex sm:w-full justify-around border-solid border-2 border-light-black-500 pb-5">
             <div class=" flex w-1/3">

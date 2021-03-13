@@ -32,7 +32,6 @@
         <x-jet-banner />
 
         <div>
-            @yield("nav-menu")
 {{--            @include('livewire.navigation-menu')--}}
 {{--            @livewire('header')--}}
             <!-- Page Heading -->
