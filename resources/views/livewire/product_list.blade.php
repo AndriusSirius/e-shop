@@ -22,7 +22,7 @@
                         <h1 class="text-lg text-center">
                             <a class="no-underline hover:underline text-black" href="{{route('product', [$product->id])}}">
 
-{{--                                product/{{$product->id}}--}}
+                                {{-- product/{{$product->id}}--}}
                                 {{$product->title}}
                             </a>
 
@@ -43,7 +43,7 @@
                 <div class="flex items-center mx-auto h-16 justify-around leading-none p-2 md:p-4">
                     @if(($disc->percentage) > 0)
 
-                    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center  sm:text-center">
+                    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center sm:text-center">
                         {{$product->price}}€
                     </p>
                     <p class="font-bold text-lg lg:text-left md:text-center  sm:text-center">
@@ -53,13 +53,13 @@
 
                     <p class="text-xs text-red-500 ">{{ (($disc->percentage)) }} %</p>
                     @else
-                    <p class="font-bold text-lg lg:text-right md:text-center  sm:text-center">
+                    <p class="font-bold text-lg lg:text-right md:text-center sm:text-center">
                         <!-- KAINA BE NUOLAIDOS -->
                         {{$product->price}} €
                     </p>
                     @endif
 
-                @endforeach
+                    @endforeach
                 </div>
 
             </article>
