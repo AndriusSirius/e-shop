@@ -5,7 +5,7 @@
         @foreach($products as $product)
         {{-- {{$product->title}}--}}
 
-        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        <div class="my-3 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg max-h-full">
                 @foreach($product->images as $img)
@@ -20,9 +20,9 @@
                 <div class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <div class="mx-auto h-16">
                         <h1 class="text-lg text-center">
-                            <a class="no-underline hover:underline text-black" href="product/{{$product->id}}">
+                            <a class="no-underline hover:underline text-black" href="{{route('product', [$product->id])}}">
 
-
+                                {{-- product/{{$product->id}}--}}
                                 {{$product->title}}
                             </a>
 
@@ -41,25 +41,28 @@
                 @foreach($product->discounts as $disc)
 
                 <div class="flex items-center mx-auto h-16 justify-around leading-none p-2 md:p-4">
-                    @if(($disc->percentage) > 0)
 
-                    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center  sm:text-center">
-                        {{$product->price}}€
-                    </p>
-                    <p class="font-bold text-lg lg:text-left md:text-center  sm:text-center">
-                        <!-- KAINA SU NUOLAIDA -->
-                        {{ ($product->price)*(100-($disc->percentage))/100 }} €
-                    </p>
+                        @if(($disc->percentage) > 0)
+                        @if(now() > $disc->from && now() <= $disc->to)
+                        <p class="text-sm text-gray-600 line-through lg:text-left md:text-center  sm:text-center">
+                            {{$product->price}}€
+                        </p>
+                        <p class="font-bold text-lg lg:text-left md:text-center  sm:text-center">
+                            <!-- KAINA SU NUOLAIDA -->
+                            {{ ($product->price)*(100-($disc->percentage))/100 }} €
+                        </p>
 
-                    <p class="text-xs text-red-500 ">{{ (($disc->percentage)) }} %</p>
-                    @else
-                    <p class="font-bold text-lg lg:text-right md:text-center  sm:text-center">
-                        <!-- KAINA BE NUOLAIDOS -->
-                        {{$product->price}} €
-                    </p>
-                    @endif
+                        <p class="text-xs text-red-500 ">{{ (($disc->percentage)) }} %</p>
+                        @endif
+                        @else
+                        <p class="font-bold text-lg lg:text-right md:text-center  sm:text-center">
+                            <!-- KAINA BE NUOLAIDOS -->
+                            {{$product->price}} €
+                        </p>
 
-                @endforeach
+                        @endif
+
+                        @endforeach
                 </div>
 
             </article>

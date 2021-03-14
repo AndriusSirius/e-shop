@@ -1,36 +1,33 @@
-<div x-data="{ open: false }" class="flex flex-col mx-auto md:items-center md:justify-around md:flex-row border-b">
-    <div class="p-4 flex flex-row items-left justify-around">
-        <a href="{{ route('home') }}"><img class="ml-16 object-contain h-20 w-full" src="{{ asset('images/Logotipas.png') }}"></a>
-        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+<nav x-data="{ open: false }" class="flex  flex-col mx-auto lg:items-center lg:justify-around lg:flex-row border-b">
+    <div class=" flex flex-row  ">
+    <div class="mx-auto">
+        <a href="{{ route('home') }}"><img class="object-contain h-20  " src="{{ asset('images/Logotipas.png') }}"></a>
+        </div>
+        <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
             <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                 <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                 <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
         </button>
     </div>
-    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-center md:flex-row sm:z-auto">
+    <div :class="{'flex': open, 'hidden': !open}" class="flex-col  pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
         @include('category.category')
-        <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Apie mus</a>
-        <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Kontaktai</a>
-        <a class="px-4 py-2 mt-2 text-sm font-bold text-black text-base" href="#">Septintas</a>
-        <a href="" class="px-4 py-2 mt-2 ml-4 border-2 w-36 text-sm text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white">
-            Pasiūlymai
-        </a>
-    </nav>
-    <div class="inline mr-16 flex flex-grow pb-4 md:pb-0">
+
+    </div>
+    <div class="inline  flex justify-end  pb-4 lg:pb-0">
         @Auth
         <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
-        <a href="{{ route('cart') }}">
-            <svg class="relative w-6 h-6 m-2 stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        <a class="relative" href="{{ route('cart') }}">
+            <svg class=" w-6 h-6 m-2 stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round"  strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-                <span class="z-50 absolute top-7 ml-7 text-xs inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-blue-700 rounded-full">
+                <span class="z-50 absolute top-0.5 ml-5  lg:top-0.5 lg:ml-5 sm:top-8 md:top-0.5 text-xs inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-blue-700 rounded-full">
                         {{ $cartTotal }}
                 </span>
         </a>
-        <x-jet-dropdown align="right" width="48">
+        <x-jet-dropdown >
 
             <x-slot name="trigger">
 
@@ -85,5 +82,5 @@
             </a>
         @endguest
     </div>
-</div>
-</div>
+</nav>
+
