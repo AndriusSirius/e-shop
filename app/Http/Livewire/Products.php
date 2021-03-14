@@ -16,7 +16,7 @@ class Products extends Component
 
     protected $updatesQueryString = ['search'];
 
-    public function mount(): void
+    public function mount()
     {
         $this->search = request()->query('search', $this->search);
     }
@@ -32,8 +32,11 @@ class Products extends Component
 
     public function addToCart(int $productId)
     {
-        \App\Models\Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId ]);
+        \App\Models\Cart::create(['user_id'=>Auth::id(), 'products_id'=>$productId ]);
 
         $this->emit('productAdded');
+    }
+    public function testing(){
+        $this->dd("lalalalala");
     }
 }

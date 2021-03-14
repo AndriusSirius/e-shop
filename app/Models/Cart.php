@@ -17,12 +17,12 @@ class Cart extends Model
     ];
 
     public function products(){
-        return $this->hasMany(Product::class, 'id');
+        return $this->belongsTo(Product::class, 'products_id');
     }
     public function users(){
-        return $this->hasMany(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
     public function images(){
-        return $this->hasMany(Image::class, 'id');
+        return $this->hasMany(Image::class, 'products_id', 'products_id');
     }
 }
