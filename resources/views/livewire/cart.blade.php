@@ -1,5 +1,5 @@
 <x-app-layout>
-    @livewire('cart')
+    @livewire('header')
     <section class="py-6">
         <div class="container mx-auto">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
@@ -65,7 +65,10 @@
                         <span class="text-center w-1/5 font-semibold text-sm">{{$data->products->price}} €</span>
 
                         <span class="text-center w-1/5 font-semibold text-sm">{{$data->products->price}} €</span>
-                        <button wire:click="removeFromCart({{$data->products->id}})" class="font-semibold hover:text-red-500 text-gray-500 text-lg border-none">x</button>
+                        <div>
+                            <button wire:click="test" class="font-semibold hover:text-red-500 text-gray-500 text-lg border-none">x</button>
+                        </div>
+
                     </div>
                     @endforeach
 
@@ -117,7 +120,6 @@
             </div>
         </div>
     </div>
-
 
     @include('section')
 

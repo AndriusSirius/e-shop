@@ -29,6 +29,7 @@
                         </h1>
                     </div>
                 </div>
+
                 <div class="flex justify-center">
                     <button wire:click="addToCart({{$product->id}})" class="bg-white w-64 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
                         <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
