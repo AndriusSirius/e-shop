@@ -6,13 +6,14 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Models\Cart;
 
 class Products extends Component
 {
     use WithPagination;
 
     public $search;
-    public $test = 5;
+    public $test = 1;
 
     protected $updatesQueryString = ['search'];
 
@@ -32,9 +33,8 @@ class Products extends Component
 
     public function addToCart(int $productId)
     {
-        \App\Models\Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId ]);
+        Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId]);
 
         $this->emit('productAdded');
     }
-    
 }

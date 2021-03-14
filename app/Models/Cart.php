@@ -27,4 +27,5 @@ class Cart extends Model
     {
         return $this->hasMany(Image::class, 'products_id', 'products_id');
     }
+    
 }
