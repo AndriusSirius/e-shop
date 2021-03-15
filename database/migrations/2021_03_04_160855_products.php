@@ -22,6 +22,8 @@ class Products extends Migration
             $table->integer('quantity');
             $table->longText('content');
             $table->longText('tech_content');
+            $table->timestamps();
+
 
         });
     }
