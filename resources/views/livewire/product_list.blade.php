@@ -94,4 +94,14 @@
                 <!-- END Article -->
             </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+<script>
+$('button').click(function(e) {
+    $(this).attr("disabled", true);
+    var self = this;
+    setTimeout(function() {
+        $(self).removeAttr("disabled");
+    }, 2000);
+});
+</script>
