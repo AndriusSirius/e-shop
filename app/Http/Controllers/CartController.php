@@ -16,6 +16,7 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();

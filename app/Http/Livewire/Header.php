@@ -14,7 +14,6 @@ class Header extends Component
         'productAdded' => 'updateCartTotal',
         'productRemoved' => 'updateCartTotal',
         'clearCart' => 'updateCartTotal',
-        'testas' => 'test'
     ];
 
     public function mount()
@@ -34,8 +33,4 @@ class Header extends Component
     }
 
 
-    public function test()
-    {
-        return redirect()->to('/test');
-    }
 }
