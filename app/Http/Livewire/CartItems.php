@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Product;
+use Discounts;
 
 class CartItems extends Component
 {
@@ -24,7 +26,9 @@ class CartItems extends Component
     public function render()
     {
         $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
-        return view('livewire.cart-items', compact('cart'));
+        $products = Product::with(['discounts'])->get();
+
+        return view('livewire.cart-items', compact('cart','products'));
     }
 
     public function removeCart(int $productId)
