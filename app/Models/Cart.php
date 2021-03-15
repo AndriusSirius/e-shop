@@ -15,12 +15,16 @@ class Cart extends Model
         'created_at',
         'updated_at'
     ];
-
-    public function products(){
-        return $this->hasMany(Product::class, 'id');
+    public function products()
+    {
+        return $this->belongsTo(Product::class, 'products_id');
     }
-
-    public function users(){
-        return $this->hasMany(User::class, 'id');
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'products_id', 'products_id');
     }
 }

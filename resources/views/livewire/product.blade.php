@@ -1,20 +1,19 @@
 <x-app-layout>
-    @section("nav-menu")
-        @include('livewire.navigation-menu')
-    @endsection
+@livewire('header')
     <div class="w-full">
-        <div class=" py-3 flex sm:w-full justify-around border-solid border-2 border-light-black-500 pb-5">
-            <div class=" flex w-1/3">
-                <button class="  font-semibold mx-2 lg:h-20   lg:p-6 md:h-16 md:mx-4 tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'aboutProduct') ">Apie produktą</button>
+        <div class=" w-full py-3 flex sm:w-full justify-between  border-solid border-2 border-light-black-500 pb-5">
+            <div class=" flex w-1/3 self-center ">
+                <button class=" mx-5  font-semibold  lg:h-20   lg:p-6 md:h-16 md:mx-4 tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'aboutProduct') ">Apie produktą</button>
                 <button class=" font-semibold lg:h-20   lg:p-6 md:h-16  tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'tech')">Techninės charakteristikos</button>
             </div>
-            <div class="flex  justify-end w-1/6">
-                <button class=" my-4 bg-blue-600 font-semibold text-white rounded-full  w-32 h-12  hover:bg-blue-600 hover: focus:outline-none  focus:shadow-outline  "> Add to cart</button>
+            <div class="flex  justify-self-center self-center lg:w-1/6 w-2/6">
+            <button  class=" bg-white lg:w-36 lg:h-12 md:w-24  md:h-10  w-24 h-8 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold "> Į krepšelį </button>
             </div>
         </div>
-        <section class="width-full flex ">
-            <div class=" w-6/12 bg-gray-100">
-                <div id="aboutProduct" class="tabcontent hidden  mt-5  flex mx-auto w-6/12  ">
+        <section class="w-full flex ">
+            <div class="w-full  bg-gray-100">
+
+                <div id="aboutProduct" style="display: block;" class="tabcontent flex ml-7 mt-5">
                     <span class="text-3xl font-bold   ">{{$product['title']}} </span>
                     <p class="mt-5 ">Apie Produktą:</p>
                     <ul class=" mx-4 my-5 list-disc ">
@@ -23,7 +22,7 @@
                     <p class="pb-2">Turite klausimų? <a class="underline" href="">Kontaktai</a></p>
                 </div>
 
-                <div id="tech" class="tabcontent hidden flex mx-auto w-6/12  mt-5  ">
+                <div id="tech" class="tabcontent hidden flex ml-7 mt-5">
                     <span class="text-3xl font-bold ">{{$product['title']}}</span>
                     <p class="mt-5 ">Techninės charakteristikos:</p>
                     <ul class=" mx-4 my-5 list-disc">

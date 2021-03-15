@@ -1,7 +1,5 @@
 <x-app-layout>
-    @section("nav-menu")
-        @include('livewire.navigation-menu')
-    @endsection
+    @livewire('cart')
     <section class="py-6">
         <div class="container mx-auto">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
@@ -25,8 +23,6 @@
         </div>
     </section>
 
-    {{$cart}}
-
     <div class="flex container mx-auto">
         <div class="flex-1 mt-4">
             <div class="flex my-4">
@@ -38,86 +34,40 @@
                         <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Kaina</h3>
                         <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Iš viso</h3>
                     </div>
-
+                    @foreach($cart as $data)
                     <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                         <div class="flex w-2/5">
                             <!-- product -->
+                            @foreach($data->images as $img)
                             <div class="w-20">
-                                <img class="h-24" src="{{ asset('images/kitchen.jpg') }}" alt="">
+                                <img class="h-24" src="{{ asset($img->path) }}" alt="">
                             </div>
+                            @break
+                            @endforeach
+
                             <div class="flex flex-col justify-between ml-4 flex-grow">
-                                <span class="font-bold text-lg">Lorem, ipsum dolor.</span>
-                                <span class="text-black-700 text-sm font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, corrupti?</span>
+                                <span class="font-bold text-lg">{{ $data->products->title}}</span>
+                                <span class="text-black-700 text-sm font-semibold">{{ $data->products->summary }}</span>
                             </div>
+
                         </div>
                         <div class="flex justify-center w-1/5">
                             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                                 <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                             </svg>
 
-                            <input class="mx-2 border text-center w-14" type="text" value="1">
+                            <input class="mx-2 border text-center w-14" type="text" value="{{$data->quantity}}">
 
                             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                                 <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                             </svg>
                         </div>
-                        <span class="text-center w-1/5 font-semibold text-sm">€400.00</span>
-                        <span class="text-center w-1/5 font-semibold text-sm">€400.00</span>
-                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-lg">x</a>
+                        <span class="text-center w-1/5 font-semibold text-sm">{{$data->products->price}} €</span>
+
+                        <span class="text-center w-1/5 font-semibold text-sm">{{$data->products->price}} €</span>
+                        <button wire:click="removeFromCart({{$data->products->id}})" class="font-semibold hover:text-red-500 text-gray-500 text-lg border-none">x</button>
                     </div>
-
-                    <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                        <div class="flex w-2/5">
-                            <!-- product -->
-                            <div class="w-20">
-                                <img class="h-24" src="{{ asset('images/kitchen.jpg') }}" alt="">
-                            </div>
-                            <div class="flex flex-col justify-between ml-4 flex-grow">
-                                <span class="font-bold text-lg">Lorem, ipsum.</span>
-                                <span class="text-black-700 text-sm font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, corrupti?</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-center w-1/5">
-                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                                <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                            </svg>
-
-                            <input class="mx-2 border text-center w-8" type="text" value="1">
-
-                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                            </svg>
-                        </div>
-                        <span class="text-center w-1/5 font-semibold text-sm">€40.00</span>
-                        <span class="text-center w-1/5 font-semibold text-sm">€40.00</span>
-                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-lg">x</a>
-                    </div>
-
-                    <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                        <div class="flex w-2/5">
-                            <!-- product -->
-                            <div class="w-20">
-                                <img class="h-24" src="{{ asset('images/kitchen.jpg') }}" alt="">
-                            </div>
-                            <div class="flex flex-col justify-between ml-4 flex-grow">
-                                <span class="font-bold text-lg">Lorem, ipsum.</span>
-                                <span class="text-black-700 text-sm font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, corrupti?</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-center w-1/5">
-                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                                <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                            </svg>
-                            <input class="mx-2 border text-center w-8" type="text" value="1">
-
-                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                            </svg>
-                        </div>
-                        <span class="text-center w-1/5 font-semibold text-sm">€150.00</span>
-                        <span class="text-center w-1/5 font-semibold text-sm">€150.00</span>
-                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-lg">x</a>
-                    </div>
+                    @endforeach
 
                     <a href="{{ route('home') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
@@ -128,10 +78,11 @@
                     </a>
                 </div>
 
+
                 <div id="summary" class="px-8 py-10 bg-gray-100 sm:w-1/3 md:w-1/3 lg:w-1/4">
                     <h1 class="font-semibold text-2xl border-b pb-8">Užsakymo apskaita</h1>
                     <div class="flex justify-between mt-10 mb-5">
-                        <span class="font-semibold text-sm uppercase">Prekės: 3</span>
+                        <span class="font-semibold text-sm uppercase">Prekės: {{$data->quantity}}</span>
                         <span class="font-semibold text-sm">Kaina be PVM: 590€</span>
                     </div>
                     <div>
@@ -161,6 +112,7 @@
                         <button class="border-2 text-sm uppercase w-full text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white">pereiti prie apmokėjimo</button>
                     </div>
                 </div>
+
 
             </div>
         </div>
