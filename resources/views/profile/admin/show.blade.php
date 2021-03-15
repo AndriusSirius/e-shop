@@ -30,7 +30,7 @@
                     <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openAcc(event, 'user_info')">Paskyros nustatymai</li>
                     <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openAcc(event, 'product_add')">Prekiu pridejimas</li>
                     <li class="tablinks text-lg mb-2 p-1 text-gray-500 font-sans font-semibold cursor-pointer" onClick="openAcc(event, 'category_add')">Kategoriju pridejimas</li>
-                    
+
                 </ul>
             </div>
 
@@ -40,13 +40,12 @@
                     <div>
                         <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Vartotojo nustatymai</h2>
 
-                        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8"> 
+                        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                                 <div class="mt-10 sm:mt-0">
-                                    @livewire('profile.update-password-form')
                                 </div>
                                 <x-jet-section-border />
-                            @endif 
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -54,27 +53,25 @@
                 <div id="product_add" class="tabcontent hidden">
                     <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Prideti produkta</h2>
                     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                        <!-- @if -->
                         <div class="mt-10 sm:mt-0">
-                            @livewire('profile.admin.product-add')
+                            @include('profile.admin.product-add')
                         </div>
 
-                        <x-jet-section-border />        
+                        <x-jet-section-border />
 
                     </div>
                     <br><br>
-                </div>                
+                </div>
 
                 <div id="category_add" class="tabcontent hidden">
                     <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Prideti kategorija</h2>
                     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                        <!-- @if -->
                         <div class="mt-10 sm:mt-0">
-                            @livewire('profile.admin.category-add')
+                            @include('profile.admin.category-add')
                         </div>
-                        <x-jet-section-border />                    
-                        <br><br>                
-                
+                        <x-jet-section-border />
+                        <br><br>
+
                     </div>
                 </div>
             </div>

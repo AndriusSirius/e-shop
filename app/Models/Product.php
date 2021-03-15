@@ -15,7 +15,9 @@ class Product extends Model
         'type',
         'price',
         'quantity',
-        'content'
+        'content',
+        'created_at',
+        'updated_at'
 
     ];
 
