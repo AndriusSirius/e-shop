@@ -24,13 +24,19 @@
         <div class="flex-1 mt-4">
             <div class="flex my-4">
                 <div class="w-3/4 bg-white px-4 py-4">
-
+                        @if(count($cart) < 1)
+                    <h5>Jusų krepšelyje prekių nėra. Prašome pridėti prekes, kad galėtumėte jas valdyti. </h5>
+                        @else
                     <div class="flex mb-5 border-b p-5">
                         <h3 class="font-semibold text-black-600 text-xs uppercase w-2/5">Prekė</h3>
                         <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Kiekis</h3>
                         <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Kaina</h3>
                         <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Iš viso</h3>
                     </div>
+                         @endif
+
+
+
                     @foreach($cart as $data)
                     <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                         <div class="flex w-2/5">
@@ -81,7 +87,7 @@
                 <div id="summary" class="px-8 py-10 bg-gray-100 sm:w-1/3 md:w-1/3 lg:w-1/4">
                     <h1 class="font-semibold text-2xl border-b pb-8">Užsakymo apskaita</h1>
                     <div class="flex justify-between mt-10 mb-5">
-                        <span class="font-semibold text-sm uppercase">Prekės: {{$data->quantity}}</span>
+{{--                        <span class="font-semibold text-sm uppercase">Prekės: {{$data->quantity}}</span>--}}
                         <span class="font-semibold text-sm">Kaina be PVM: 590€</span>
                     </div>
                     <div>

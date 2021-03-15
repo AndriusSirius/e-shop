@@ -14,7 +14,7 @@ class CartItems extends Component
     {
         return redirect()->to('/test');
     }
-    
+
     public function mount()
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
@@ -29,6 +29,7 @@ class CartItems extends Component
 
     public function removeCart(int $productId)
     {
+
         $this->cart = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->delete();
     }
 }

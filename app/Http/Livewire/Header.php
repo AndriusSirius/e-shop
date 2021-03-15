@@ -13,7 +13,7 @@ class Header extends Component
     protected $listeners = [
         'productAdded' => 'updateCartTotal',
         'productRemoved' => 'updateCartTotal',
-        'clearCart' => 'updateCartTotal'
+        'clearCart' => 'updateCartTotal',
     ];
 
     public function mount()
@@ -31,5 +31,6 @@ class Header extends Component
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
     }
+
 
 }
