@@ -14,6 +14,7 @@ class Products extends Component
 
     public $search;
     public $test = 1;
+    public $quantity =+ 1;
 
     protected $updatesQueryString = ['search'];
 
@@ -40,12 +41,6 @@ class Products extends Component
 
     public function addToCartQuantity($productId){
 
-        $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
-        Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);
-
-
-//        Cart::update($product. $qty);
-//        $count = Cart::where('quantity')->count();
 
         $this->emit('productAdded');
     }
