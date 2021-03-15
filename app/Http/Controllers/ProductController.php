@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Cart;
 use App\Models\Discounts;
+use App\Http\Livewire\Header;
+
 
 class ProductController extends Controller
 {
@@ -20,8 +25,11 @@ class ProductController extends Controller
 
     }
     public function detail ($id){
-        $product = Product::with(['images', 'discounts'])->find($id);
-        return view('livewire.product', compact('product'));
+        $product = Product::with(['cart','images', 'discounts'])->find($id);
+        $cartTotal = Cart::where('user_id', Auth::id())->count();
+
+        return view('livewire.product', compact('product', 'cartTotal'));
+
     }
 
 

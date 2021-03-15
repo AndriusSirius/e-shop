@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Livewire\Header;
 
@@ -14,11 +16,12 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        $cart = \App\Models\Cart::with(['products', 'users'])->get();
-
-        return view('livewire.cart', compact('cart'));
+        $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
+        $cartTotal = Cart::where('user_id', Auth::id())->count();
+        return view('livewire.cart', compact('cart', 'cartTotal'));
     }
 
     /**
@@ -28,7 +31,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return 5;
     }
 
     /**
