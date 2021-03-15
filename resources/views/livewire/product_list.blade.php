@@ -22,13 +22,14 @@
                         <h1 class="text-lg text-center">
                             <a class="no-underline hover:underline text-black" href="{{route('product', [$product->id])}}">
 
-{{--                                product/{{$product->id}}--}}
+                                {{-- product/{{$product->id}}--}}
                                 {{$product->title}}
                             </a>
 
                         </h1>
                     </div>
                 </div>
+
                 <div class="flex justify-center">
                     <button wire:click="addToCart({{$product->id}})" class="bg-white w-64 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
                         <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +44,7 @@
                 <div class="flex items-center mx-auto h-16 justify-around leading-none p-2 md:p-4">
                     @if(($disc->percentage) > 0)
 
-                    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center  sm:text-center">
+                    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center sm:text-center">
                         {{$product->price}}€
                     </p>
                     <p class="font-bold text-lg lg:text-left md:text-center  sm:text-center">
@@ -53,13 +54,13 @@
 
                     <p class="text-xs text-red-500 ">{{ (($disc->percentage)) }} %</p>
                     @else
-                    <p class="font-bold text-lg lg:text-right md:text-center  sm:text-center">
+                    <p class="font-bold text-lg lg:text-right md:text-center sm:text-center">
                         <!-- KAINA BE NUOLAIDOS -->
                         {{$product->price}} €
                     </p>
                     @endif
 
-                @endforeach
+                    @endforeach
                 </div>
 
             </article>

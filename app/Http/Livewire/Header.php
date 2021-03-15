@@ -13,7 +13,8 @@ class Header extends Component
     protected $listeners = [
         'productAdded' => 'updateCartTotal',
         'productRemoved' => 'updateCartTotal',
-        'clearCart' => 'updateCartTotal'
+        'clearCart' => 'updateCartTotal',
+        'testas' => 'test'
     ];
 
     public function mount()
@@ -31,9 +32,10 @@ class Header extends Component
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
     }
-    public function testas(){
-        $this->dd("kebabas");
 
+
+    public function test()
+    {
+        return redirect()->to('/test');
     }
-
 }

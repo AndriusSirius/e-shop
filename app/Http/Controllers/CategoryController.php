@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index(){
 
 //        $parentCategories = \App\Models\Category::where('parent_id',0)->get();
-////        dd($parentCategories);
+// //        dd($parentCategories);
 //        return view('category.category', compact('parentCategories'));
     }
 

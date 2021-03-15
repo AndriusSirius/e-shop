@@ -7,12 +7,13 @@
                 <button class=" font-semibold lg:h-20   lg:p-6 md:h-16  tablinks focus:outline-none  focus:shadow-outline" onClick="openAcc(event, 'tech')">Techninės charakteristikos</button>
             </div>
             <div class="flex  justify-end w-1/6">
-                <button class=" my-4 bg-blue-600 font-semibold text-white rounded-full  w-32 h-12  hover:bg-blue-600 hover: focus:outline-none  focus:shadow-outline  "> Add to cart</button>
+                <button class=" my-4 bg-blue-600 font-semibold text-white rounded-full  w-36 h-12  hover:bg-blue-600 hover: focus:outline-none  focus:shadow-outline  "> Pridėti į krepšelį</button>
             </div>
         </div>
         <section class="width-full flex ">
             <div class=" w-6/12 bg-gray-100">
-                <div id="aboutProduct" class="tabcontent hidden  mt-5  flex mx-auto w-6/12  ">
+            
+                <div id="aboutProduct" style="display: block;" class="tabcontent flex mx-auto w-6/12 mt-5">
                     <span class="text-3xl font-bold   ">{{$product['title']}} </span>
                     <p class="mt-5 ">Apie Produktą:</p>
                     <ul class=" mx-4 my-5 list-disc ">
@@ -21,7 +22,7 @@
                     <p class="pb-2">Turite klausimų? <a class="underline" href="">Kontaktai</a></p>
                 </div>
 
-                <div id="tech" class="tabcontent hidden flex mx-auto w-6/12  mt-5  ">
+                <div id="tech" class="tabcontent hidden flex mx-auto w-6/12 mt-5">
                     <span class="text-3xl font-bold ">{{$product['title']}}</span>
                     <p class="mt-5 ">Techninės charakteristikos:</p>
                     <ul class=" mx-4 my-5 list-disc">

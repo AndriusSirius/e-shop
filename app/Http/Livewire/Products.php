@@ -32,11 +32,8 @@ class Products extends Component
 
     public function addToCart(int $productId)
     {
-        \App\Models\Cart::create(['user_id'=>Auth::id(), 'products_id'=>$productId ]);
+        \App\Models\Cart::create(['user_id' => Auth::id(), 'products_id' => $productId]);
 
         $this->emit('productAdded');
-    }
-    public function testing(){
-        $this->dd("lalalalala");
     }
 }
