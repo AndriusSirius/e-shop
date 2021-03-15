@@ -19,7 +19,7 @@ use App\Http\Controllers\CartController;
 
 
 //PAGRINDINIS
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home'])->name('cart');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home']);
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS

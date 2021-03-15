@@ -15,10 +15,9 @@ use App\Models\Cart;
 class HomeController extends Controller{
     public function home()
     {
-        $thistime = now();
         // $products = DB::table('discounts')->join('products', 'discounts.products_id', '=', 'products.id')->join('images', 'images.products_id', '=', 'products.id')->get();
 
-        $products = Product::with(['images', 'discounts'])->get();
+        $products = Product::all();
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
         return view('home', compact('products', 'ParentCategories'));
 

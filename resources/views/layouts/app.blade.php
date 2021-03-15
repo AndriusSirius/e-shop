@@ -32,8 +32,10 @@
         <x-jet-banner />
 
         <div>
+
 {{--            @include('livewire.navigation-menu')--}}
 {{--            @livewire('header')--}}
+
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
