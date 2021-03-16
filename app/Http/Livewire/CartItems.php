@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Product;
+use Discounts;
 
 class CartItems extends Component
 {
@@ -14,7 +16,7 @@ class CartItems extends Component
     {
         return redirect()->to('/test');
     }
-    
+
     public function mount()
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
@@ -24,11 +26,23 @@ class CartItems extends Component
     public function render()
     {
         $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
-        return view('livewire.cart-items', compact('cart'));
+        $products = Product::with(['discounts'])->get();
+
+        return view('livewire.cart-items', compact('cart','products'));
     }
 
     public function removeCart(int $productId)
     {
+
+        $this->cart = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->delete();
+    }
+    public function checkout($productId){
+        $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity')[0]['quantity'];
+        $quantityProduct = Product::where(["id"=>$productId])->get(['quantity'])[0]['quantity'];
+//        echo($qty);
+        $qtyPrdc = $quantityProduct - $qty;
+
+        Product::where(['id'=>$productId])->update(['quantity'=> $qtyPrdc]);
         $this->cart = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->delete();
     }
 }

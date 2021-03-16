@@ -14,10 +14,11 @@ class Products extends Component
 
     public $search;
     public $test = 1;
+    public $quantity =+ 1;
 
     protected $updatesQueryString = ['search'];
 
-    public function mount(): void
+    public function mount()
     {
         $this->search = request()->query('search', $this->search);
     }
@@ -27,13 +28,24 @@ class Products extends Component
         return view('livewire.product_list', [
             'products' => $this->search === null ?
                 Product::paginate(12) :
-                Product::where('name', 'like', '%' . $this->search . '%')->paginate(12)
+                Product::where('name', 'like', '%' . $this->search . '%')->paginate(12),
+                Product::with('cart')
         ]);
     }
 
-    public function addToCart(int $productId)
+    public function addToCart($productId)
     {
         Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId]);
+        $this->emit('productAdded');
+    }
+
+    public function addToCartQuantity($productId){
+        $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
+        Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);
+
+
+//        Cart::update($product. $qty);
+//        $count = Cart::where('quantity')->count();
 
         $this->emit('productAdded');
     }
