@@ -25,16 +25,27 @@ class CartItems extends Component
 
     public function render()
     {
-        $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
-        $products = Product::with(['discounts'])->get();
+//        $discounts = Product::all()->discounts();
+        $cart = \App\Models\Cart::with(['products', 'images', 'users' , 'discounts'])->get();
+//        $products = Product::with(['discounts'])->get('products_id');
 
-        return view('livewire.cart-items', compact('cart','products'));
+        return view('livewire.cart-items', compact('cart'));
     }
 
     public function removeCart(int $productId)
     {
 
         $this->cart = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->delete();
+    }
+    public function removeFromCartQuantity($productId){
+        $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
+        Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity-1]);
+
+    }
+    public function addToCartQuantity($productId){
+        $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
+        Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);
+
     }
     public function checkout($productId){
         $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity')[0]['quantity'];

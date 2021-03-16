@@ -102,6 +102,6 @@ $('button').click(function(e) {
     var self = this;
     setTimeout(function() {
         $(self).removeAttr("disabled");
-    }, 2000);
+    }, 9999);
 });
 </script>
