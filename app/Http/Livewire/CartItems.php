@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Product;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Product;
+use Discounts;
 
 class CartItems extends Component
 {
@@ -25,7 +26,9 @@ class CartItems extends Component
     public function render()
     {
 //        $discounts = Product::all()->discounts();
-        $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
+        $cart = \App\Models\Cart::with(['products', 'images', 'users' , 'discounts'])->get();
+//        $products = Product::with(['discounts'])->get('products_id');
+
         return view('livewire.cart-items', compact('cart'));
     }
 
