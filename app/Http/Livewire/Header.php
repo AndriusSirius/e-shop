@@ -23,8 +23,7 @@ class Header extends Component
 
     public function render()
     {
-        $cartTotal = $this->cartTotal;
-        return view('livewire.navigation-menu', compact("cartTotal"));
+        return view('livewire.navigation-menu');
     }
 
     public function updateCartTotal()
