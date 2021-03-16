@@ -21,9 +21,11 @@
                         <span class="my-2"><a href="#" class="text-white py-1 text-md hover:text-white-500">Kontakai</a></span>
 
                     </div>
-                    <div>
+                    <div class="flex flex-col mt-1">
+                        <span class="font-bold text-gray-100 uppercase mt-4 md:mt-0 mb-2">SUSISIEKTI SU MUMIS</span>
+                        <hr>
                         <form action="" method="POST">
-                            <div class="mb-3 pt-0 flex flex-row">
+                            <div class="mb-3 mt-3 pt-0 flex flex-row">
                                 <input type="text" placeholder="Vardas..." class="px-3 py-3 mr-5 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full" />
                                 <input type="mail" placeholder="El.paštas..." class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full" />
 
@@ -31,6 +33,9 @@
                             <label class="block">
                                 <textarea class="form-textarea mt-1 rounded block w-full" rows="5" placeholder="Jūsų tekstas..."></textarea>
                             </label>
+                            <button class="bg-none mt-3 w-36 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold">
+                                Siųsti
+                            </button>
                         </form>
                     </div>
 

@@ -17,11 +17,15 @@ class Products extends Migration
             $table->id();
             $table->string('title');
             $table->string('summary');
-            $table->string('type');
+            $table->string('model');
             $table->integer('price');
             $table->integer('quantity');
             $table->longText('content');
-            $table->longText('tech_content');
+            $table->string('type');
+            $table->string('product_sign');
+            $table->string('color');
+            $table->string('energy');
+            $table->string('warranty');
             $table->timestamps();
 
 

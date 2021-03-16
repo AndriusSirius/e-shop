@@ -107,24 +107,31 @@
                 <ul class="block w-11/12 my-4 mx-auto" x-data="{selected:null}">
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 0 ? selected = 0 : selected = null"
-                            class="cursor-pointer px-5 py-3 bg-indigo-300 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">Charakteristikos
+                            class="py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t"><i class="fas fa-plus"></i> Charakteristikos
                             </h4>
-                        <p x-show="selected == 0" class="border py-4 px-2">
-                            This is made with Alpine JS and Tailwind CSS
-                        </p>
+                        <div x-show="selected == 0" class="border py-4 px-2">
+                            <ul class="ml-4">
+                                <li class="border-b-2 border-solid p-2">Modelis <span class="font-bold">{{ $product['model'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Tipas <span class="font-bold">{{ $product['type'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2"> Prekės ženklas <span class="font-bold">{{ $product['product_sign'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Spalva <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['color'] }} </span></li>
+                                <li class="border-b-2 border-solid p-2"> Energija <span class="font-bold">{{ $product['energy'] }}</li>
+                                <li class="border-b-2 border-solid p-2">Garantija <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['warranty'] }} </span></li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 1 ? selected = 1 : selected = null"
-                            class="cursor-pointer px-5 py-3 bg-indigo-400 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3">Apie prekę</h4>
+                            class="mt-2 py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3"><i class="fas fa-plus"></i> Apie prekę</h4>
                         <p x-show="selected == 1" class="border py-4 px-2">
-                             There's no external CSS or JS
+                            {{ $product['content'] }}
                         </p>
                     </li>
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 2 ? selected = 2 : selected = null"
-                            :class="{'cursor-pointer px-5 py-3 bg-indigo-500 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}">Svarbu</h4>
+                            :class="{'mt-2 py-4 border-solid border-2 border-blue-700  cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}"><i class="fas fa-plus"></i> Svarbu</h4>
                         <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
-                            Svarbu
+                            Perkrauti kompiuteri kad veiktų
                         </p>
                     </li>
                 </ul>
