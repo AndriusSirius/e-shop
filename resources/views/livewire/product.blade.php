@@ -75,22 +75,25 @@
                             </label>
                         </div>
                         <div class="my-8">
-                            <button wire:click="addToCart({{$product->id}})"
+                            <button wire:click="addToCart({{ $product->id }})"
                                 class="bg-white w-64 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
-                            <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                 viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                            Į krepšelį
-                        </button>
+                                <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Į krepšelį
+                            </button>
                         </div>
                         <div class="my-8 border-b-2 font-semibold text-gray-500">
                             SVARBU
                         </div>
                         <ul class="my-6 px-6 ">
                             <li class="pb-2 list-disc">Turite klausimų? <a class="underline" href="">Kontaktai</a></li>
-                            <li class="pb-2 list-disc">Nuotrauka yra iliustracinio pobūdžio. Prekės spalvos, išvaizda ir techninės charakteristikos gali šiek tiek skirtis nuo svetainėje pateikiamos informacijos. Visus su šia preke susijusius klausimus galite mums užduoti telefonu 860000000 arba el. paštu info@household.lt
+                            <li class="pb-2 list-disc">Nuotrauka yra iliustracinio pobūdžio. Prekės spalvos, išvaizda ir
+                                techninės charakteristikos gali šiek tiek skirtis nuo svetainėje pateikiamos
+                                informacijos. Visus su šia preke susijusius klausimus galite mums užduoti telefonu
+                                860000000 arba el. paštu info@household.lt
 
                                 Jei prekė ekspozicinė, konsultantas su Jumis susisieks aptarti prekės išvaizdą.</li>
                         </ul>
@@ -99,6 +102,34 @@
             </div>
         </div>
 
+        <div class="flex h-full">
+            <div class="container mx-auto bg-white m-5">
+                <ul class="block w-11/12 my-4 mx-auto" x-data="{selected:null}">
+                    <li class="flex align-center flex-col">
+                        <h4 @click="selected !== 0 ? selected = 0 : selected = null"
+                            class="cursor-pointer px-5 py-3 bg-indigo-300 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">Charakteristikos
+                            </h4>
+                        <p x-show="selected == 0" class="border py-4 px-2">
+                            This is made with Alpine JS and Tailwind CSS
+                        </p>
+                    </li>
+                    <li class="flex align-center flex-col">
+                        <h4 @click="selected !== 1 ? selected = 1 : selected = null"
+                            class="cursor-pointer px-5 py-3 bg-indigo-400 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3">Apie prekę</h4>
+                        <p x-show="selected == 1" class="border py-4 px-2">
+                             There's no external CSS or JS
+                        </p>
+                    </li>
+                    <li class="flex align-center flex-col">
+                        <h4 @click="selected !== 2 ? selected = 2 : selected = null"
+                            :class="{'cursor-pointer px-5 py-3 bg-indigo-500 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}">Svarbu</h4>
+                        <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
+                            Svarbu
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
     </div>
 
