@@ -1,4 +1,4 @@
-<div class="bg-gray-100 mb-16">
+<div class="bg-gray-100 mb-16 mt-6">
     <div class="container mx-auto">
         <div class="flex justify-center grid grid-cols-3 gap-4 py-12 px-4 sm:px-6 lg:px-8">
 
