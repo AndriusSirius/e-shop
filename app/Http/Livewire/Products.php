@@ -13,7 +13,9 @@ class Products extends Component
     use WithPagination;
 
     public $search;
-    public $test = 1;
+    public $quantity;
+
+
     public $quantity =+ 1;
 
     protected $updatesQueryString = ['search'];
