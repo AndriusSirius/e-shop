@@ -28,13 +28,8 @@
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased ">
         <x-jet-banner />
-
-        <div>
-
-{{--            @include('livewire.navigation-menu')--}}
-{{--            @livewire('header')--}}
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -50,10 +45,8 @@
                 {{ $slot }}
             </main>
             @include('footer')
-        </div>
 
         @stack('modals')
 
         @livewireScripts
-    </body>
 </html>

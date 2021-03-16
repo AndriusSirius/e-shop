@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="flex  flex-col mx-auto lg:items-center w-full lg:justify-between lg:flex-row border-b ">
+<nav x-data="{ open: false }" class="flex bg-white flex-col mx-auto lg:items-center w-full lg:justify-between lg:flex-row border-b ">
     <div class=" flex flex-row justify-between ">
     <div class="">
         <a href="{{ route('home') }}"><img class="object-contain h-24 ml-7  " src="{{ asset('images/Logotipas.png') }}"></a>
