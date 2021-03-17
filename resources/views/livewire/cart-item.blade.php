@@ -2,16 +2,16 @@
     <div class="flex w-2/5">
         <!-- product -->
         @foreach($cart_item->images as $img)
-            <div class="w-20">
-                <img class="h-24" src="{{ asset($img->path) }}" alt="">
+           <div class="w-20 hidden lg:block md:block">
+                <img class="object-contain h-36" src="{{ asset($img->path) }}" alt="">
             </div>
             @break
         @endforeach
 
         <div class="flex flex-col justify-between ml-4 flex-grow">
-            <span class="font-bold text-lg">{{ $cart_item->products->title}}</span>
+            <span class="font-bold lg:text-sm md:text-sm text-xs">{{ $cart_item->products->title}}</span>
             <span
-                class="text-black-700 text-sm font-semibold">{{ $cart_item->products->summary }}</span>
+                class="hidden lg:block md:block text-black-700 font-semibold lg:text-sm md:text-sm">{{ $cart_item->products->summary }}</span>
         </div>
     </div>
 
@@ -24,7 +24,8 @@
             </svg>
         </button>
 
-        <input class="mx-2 border text-center w-14" type="text" wire:model="quantity">
+        <input class="border text-center w-10 m-2 lg:w-14 md:w-14" type="text" wire:model="quantity">
+
         <button wire:click="plusQuantity">
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                 <path
@@ -36,17 +37,17 @@
         @if(($discount->percentage) > 0)
             @if(now() > $discount->from && now() <= $discount->to)
                 <span
-                    class="text-center w-1/5 font-semibold text-sm">{{($cart_item->products->price)*(100-($discount->percentage))/100}} €
+                    class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{($cart_item->products->price)*(100-($discount->percentage))/100}} €
                                     </span>
 
             @else
                 <span
-                    class="text-center w-1/5 font-semibold text-sm">{{$cart_item->products->price}} €
+                    class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{$cart_item->products->price}} €
                                     </span>
             @endif
         @else
             <span
-                class="text-center w-1/5 font-semibold text-sm">{{$cart_item->products->price}} €
+                class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{$cart_item->products->price}} €
                                     </span>
 
         @endif
@@ -56,17 +57,17 @@
         @if(($discount->percentage) > 0)
             @if(now() > $discount->from && now() <= $discount->to)
                 <span
-                    class="text-center w-1/5 font-semibold text-sm">{{($cart_item->products->price)*(100-($discount->percentage))/100*($cart_item->quantity)}} €
+                    class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{($cart_item->products->price)*(100-($discount->percentage))/100*($cart_item->quantity)}} €
                                     </span>
 
             @else
                 <span
-                    class="text-center w-1/5 font-semibold text-sm">{{$cart_item->products->price*($cart_item->quantity)}} €
+                    class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{$cart_item->products->price*($cart_item->quantity)}} €
                                     </span>
             @endif
         @else
             <span
-                class="text-center w-1/5 font-semibold text-sm">{{$cart_item->products->price*($cart_item->quantity)}} €
+                class="text-center w-1/5 font-semibold lg:text-sm md:text-sm text-xs">{{$cart_item->products->price*($cart_item->quantity)}} €
                                     </span>
 
         @endif

@@ -1,5 +1,5 @@
 <section class="py-6 container mx-auto ">
-    <div class="w-full   ">
+    <div class="w-full">
         <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
             <ol class="list-none p-0 inline-flex">
                 <li class="flex items-center">
@@ -21,9 +21,10 @@
         </div>
     </div>
 
-    <div class="flex  w-full ">
-        <div class="flex-1 mt-4">
-            <div class="flex my-4  lg:flex-row flex-col">
+    <div class="w-full">
+        <div class="flex mt-4">
+            <div class="flex flex-col container mx-auto my-4 lg:flex-row lg:flex-1">
+
                 <div class="lg:w-3/4 w-full bg-white px-4 py-4">
                     @if(count($cart) < 1) <h5>Jusų krepšelyje prekių nėra. Prašome pridėti prekes, kad galėtumėte jas
                         valdyti. </h5>

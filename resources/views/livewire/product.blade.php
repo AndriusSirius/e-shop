@@ -38,7 +38,12 @@
                 </div>
                 <div class="md:flex">
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
-
+                        <div id="owl-demo">
+                            @foreach ($product->images as $img)
+                                <div class="item m-3"><img class="block w-full h-auto" src="{{ asset($img->path) }}" alt="Owl Image"></div>
+                             @endforeach
+                        </div>
+{{-- 
                         <div class="swiper-container max-h-96">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
@@ -60,7 +65,7 @@
 
                             <!-- If we need scrollbar -->
                             <div class="swiper-scrollbar"></div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="px-6 flex flex-col w-full">
 
@@ -144,28 +149,50 @@
 
 </x-app-layout>
 
+{{-- OWL --}}
+<!-- Important Owl stylesheet -->
+<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+<!-- Default Theme -->
+<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+<!--  jQuery 1.7+  -->
+<script src="jquery-1.9.1.min.js"></script>
+<!-- Include js plugin -->
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    const swiper = new Swiper('.swiper-container', {
+    // const swiper = new Swiper('.swiper-container', {
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
+    //     // If we need pagination
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //     },
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    //     // Navigation arrows
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
 
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
-
+    //     // And if we need scrollbar
+    //     scrollbar: {
+    //         el: '.swiper-scrollbar',
+    //     },
+    // });
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 2,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+ 
+  });
+ 
+});
 </script>
