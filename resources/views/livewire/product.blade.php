@@ -40,10 +40,9 @@
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
                         <div class="owl-carousel owl-theme">
                             @foreach ($product->images as $img)
-                                <div class="item ">
-                                    <img class="object-contain w-full border-gray-500 border   h-96 cursor-pointer"
+                                    <img  class=" item object-contain w-full lg:ml-24   h-96 cursor-pointer"
                                         src="{{ asset($img->path) }}" alt="Trulli" ">
-                                </div>
+
 
 
                             @endforeach
