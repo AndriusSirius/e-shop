@@ -43,7 +43,7 @@
                                 <div class="item m-3"><img class="block w-full h-auto" src="{{ asset($img->path) }}" alt="Owl Image"></div>
                              @endforeach
                         </div>
-{{-- 
+{{--
                         <div class="swiper-container max-h-96">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
@@ -90,6 +90,7 @@
                                 Į krepšelį
                             </button>
                         </div>
+
                         <div class="my-8 border-b-2 font-semibold text-gray-500">
                             SVARBU
                         </div>
@@ -183,16 +184,16 @@
     //     },
     // });
 $(document).ready(function() {
- 
+
   $("#owl-demo").owlCarousel({
- 
+
       autoPlay: 3000, //Set AutoPlay to 3 seconds
- 
+
       items : 2,
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,3]
- 
+
   });
- 
+
 });
 </script>
