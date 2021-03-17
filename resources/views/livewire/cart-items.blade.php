@@ -1,6 +1,6 @@
-<section class="py-6">
-    <div class="container mx-auto">
-        <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
+<section class="py-6 container mx-auto ">
+    <div class="w-full   ">
+        <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
             <ol class="list-none p-0 inline-flex">
                 <li class="flex items-center">
                     <p>Pagrindinis</p>
@@ -13,7 +13,7 @@
                     <p class="text-gray-500" aria-current="page">Krepšelis</p>
                 </li>
             </ol>
-        </nav>
+        </div>
         <div>
             <h4 class="text-2xl font-medium text-gray-1000 ml-5">
                 Jūsų krepšelis
@@ -21,10 +21,10 @@
         </div>
     </div>
 
-    <div class="flex container mx-auto">
+    <div class="flex  w-full ">
         <div class="flex-1 mt-4">
-            <div class="flex my-4">
-                <div class="w-3/4 bg-white px-4 py-4">
+            <div class="flex my-4  lg:flex-row flex-col">
+                <div class="lg:w-3/4 w-full bg-white px-4 py-4">
                     @if(count($cart) < 1) <h5>Jusų krepšelyje prekių nėra. Prašome pridėti prekes, kad galėtumėte jas
                         valdyti. </h5>
                     @else
