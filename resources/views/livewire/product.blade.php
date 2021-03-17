@@ -38,34 +38,17 @@
                 </div>
                 <div class="md:flex">
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
-                        <div id="owl-demo">
+                        <div class="owl-carousel owl-theme">
                             @foreach ($product->images as $img)
-                                <div class="item m-3"><img class="block w-full h-auto" src="{{ asset($img->path) }}" alt="Owl Image"></div>
-                             @endforeach
+                                <div class="item ">
+                                    <img class="object-contain w-full border-gray-500 border   h-96 cursor-pointer"
+                                        src="{{ asset($img->path) }}" alt="Trulli" ">
+                                </div>
+
+
+                            @endforeach
                         </div>
-{{-- 
-                        <div class="swiper-container max-h-96">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                @foreach ($product->images as $img)
-                                    <div class="swiper-slide">
-                                        <img class="object-contain w-full h-full cursor-pointer"
-                                            src="{{ asset($img->path) }}" alt="Trulli" onclick="myFunction(this);">
-                                    </div>
-                                @endforeach
 
-                            </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                            <!-- If we need scrollbar -->
-                            <div class="swiper-scrollbar"></div>
-                        </div> --}}
                     </div>
                     <div class="px-6 flex flex-col w-full">
 
@@ -94,8 +77,10 @@
                             SVARBU
                         </div>
                         <ul class="my-6 px-6 ">
-                            <li class="pb-2 list-disc">Turite klausimų? <a class="underline" href="">Kontaktai</a></li>
-                            <li class="pb-2 list-disc">Nuotrauka yra iliustracinio pobūdžio. Prekės spalvos, išvaizda ir
+                            <li class="pb-2 list-disc">Turite klausimų? <a class="underline" href="">Kontaktai</a>
+                            </li>
+                            <li class="pb-2 list-disc">Nuotrauka yra iliustracinio pobūdžio. Prekės spalvos,
+                                išvaizda ir
                                 techninės charakteristikos gali šiek tiek skirtis nuo svetainėje pateikiamos
                                 informacijos. Visus su šia preke susijusius klausimus galite mums užduoti telefonu
                                 860000000 arba el. paštu info@household.lt
@@ -112,29 +97,42 @@
                 <ul class="block w-11/12 my-4 mx-auto" x-data="{selected:null}">
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 0 ? selected = 0 : selected = null"
-                            class="py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t"><i class="fas fa-plus"></i> Charakteristikos
-                            </h4>
+                            class="py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">
+                            <i class="fas fa-plus"></i> Charakteristikos
+                        </h4>
                         <div x-show="selected == 0" class="border py-4 px-2">
                             <ul class="ml-4">
-                                <li class="border-b-2 border-solid p-2">Modelis <span class="font-bold">{{ $product['model'] }}</span></li>
-                                <li class="border-b-2 border-solid p-2">Tipas <span class="font-bold">{{ $product['type'] }}</span></li>
-                                <li class="border-b-2 border-solid p-2"> Prekės ženklas <span class="font-bold">{{ $product['product_sign'] }}</span></li>
-                                <li class="border-b-2 border-solid p-2">Spalva <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['color'] }} </span></li>
-                                <li class="border-b-2 border-solid p-2"> Energija <span class="font-bold">{{ $product['energy'] }}</li>
-                                <li class="border-b-2 border-solid p-2">Garantija <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['warranty'] }} </span></li>
+                                <li class="border-b-2 border-solid p-2">Modelis <span
+                                        class="font-bold">{{ $product['model'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Tipas <span
+                                        class="font-bold">{{ $product['type'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2"> Prekės ženklas <span
+                                        class="font-bold">{{ $product['product_sign'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Spalva <i
+                                        class="text-lg fas fa-info-circle"></i>: <span
+                                        class="font-bold">{{ $product['color'] }} </span></li>
+                                <li class="border-b-2 border-solid p-2"> Energija <span
+                                        class="font-bold">{{ $product['energy'] }}</li>
+                                <li class="border-b-2 border-solid p-2">Garantija <i
+                                        class="text-lg fas fa-info-circle"></i>: <span
+                                        class="font-bold">{{ $product['warranty'] }} </span></li>
                             </ul>
                         </div>
                     </li>
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 1 ? selected = 1 : selected = null"
-                            class="mt-2 py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3"><i class="fas fa-plus"></i> Apie prekę</h4>
+                            class="mt-2 py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3">
+                            <i class="fas fa-plus"></i> Apie prekę
+                        </h4>
                         <p x-show="selected == 1" class="border py-4 px-2">
                             {{ $product['content'] }}
                         </p>
                     </li>
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 2 ? selected = 2 : selected = null"
-                            :class="{'mt-2 py-4 border-solid border-2 border-blue-700  cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}"><i class="fas fa-plus"></i> Svarbu</h4>
+                            :class="{'mt-2 py-4 border-solid border-2 border-blue-700  cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}">
+                            <i class="fas fa-plus"></i> Svarbu
+                        </h4>
                         <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
                             Perkrauti kompiuteri kad veiktų
                         </p>
@@ -150,49 +148,18 @@
 </x-app-layout>
 
 {{-- OWL --}}
-<!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-<!-- Default Theme -->
-<link rel="stylesheet" href="owl-carousel/owl.theme.css">
-<!--  jQuery 1.7+  -->
-<script src="jquery-1.9.1.min.js"></script>
-<!-- Include js plugin -->
-<script src="assets/owl-carousel/owl.carousel.js"></script>
+<link rel="stylesheet" href="{{ asset('owl/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('owl/owl.theme.default.css') }}">
+<script type="text/javascript" src="{{ asset('owl/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.js') }}"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-    // const swiper = new Swiper('.swiper-container', {
-
-    //     // If we need pagination
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //     },
-
-    //     // Navigation arrows
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     },
-
-    //     // And if we need scrollbar
-    //     scrollbar: {
-    //         el: '.swiper-scrollbar',
-    //     },
-    // });
-$(document).ready(function() {
- 
-  $("#owl-demo").owlCarousel({
- 
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
- 
-      items : 2,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
- 
-  });
- 
+$('.owl-carousel').owlCarousel({
+    items:1,
+    margin:10,
+    autoHeight:true
 });
+
 </script>
