@@ -4,4 +4,5 @@
     @livewire('order-checkout')
 
     @include('section')
+
 </x-app-layout>

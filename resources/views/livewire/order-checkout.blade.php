@@ -50,56 +50,58 @@
                                         </button>
                                     </div>
                                 </div>
+                                @foreach ($user as $userinfo)
 
-                                <div class="mt-8">
-                                    <h4 class="text-sm text-gray-500 font-medium">Pristatymo adresas</h4>
-                                    <div class="mt-6 flex">
-                                        <label class="block w-3/12">
-                                            <select class="form-select text-gray-700 mt-1 block w-full">
-                                                <option>Lietuva</option>
-                                            </select>
-                                        </label>
-                                        <label class="block flex-1 ml-3">
-                                            <input type="text" class="form-input mt-1 block w-full text-gray-700"
-                                                placeholder="Miestas">
-                                        </label>
-                                        <label class="block flex-1 ml-3">
-                                            <input type="text" class="form-input mt-1 block w-full text-gray-700"
-                                                placeholder="Pašto kodas">
-                                        </label>
-                                    </div>
-                                    <label class="block flex-1">
-                                        <input type="text" class="form-input mt-1 block w-full text-gray-700"
-                                            placeholder="Adresas">
-                                    </label>
-                                    <label class="block flex-1">
-                                        <input type="number" class="form-input mt-1 block w-full text-gray-700"
-                                            placeholder="Telefono numeris">
-                                    </label>
-                                </div>
-
-                                <div class="mt-8">
-                                    <h4 class="text-sm text-gray-500 font-medium">Papildomas komentaras</h4>
-                                    <div class="mt-6 flex">
+                                    <div class="mt-8">
+                                        <h4 class="text-sm text-gray-500 font-medium">Pristatymo adresas</h4>
+                                        <div class="mt-6 flex">
+                                            <label class="block w-3/12">
+                                                <select class="form-select text-gray-700 mt-1 block w-full">
+                                                    <option>{{ $userinfo->country }}</option>
+                                                </select>
+                                            </label>
+                                            <label class="block flex-1 ml-3">
+                                                <input type="text" class="form-input mt-1 block w-full text-gray-700"
+                                                    placeholder="Miestas" value="{{ $userinfo->city }}">
+                                            </label>
+                                            <label class="block flex-1 ml-3">
+                                                <input type="text" class="form-input mt-1 block w-full text-gray-700"
+                                                    placeholder="Pašto kodas" value="{{ $userinfo->post_code }}">
+                                            </label>
+                                        </div>
                                         <label class="block flex-1">
-                                            <textarea type="text" class="form-input mt-1 block w-full text-gray-700"
-                                                placeholder="Komentaras"></textarea>
+                                            <input type="text" class="form-input mt-1 block w-full text-gray-700"
+                                                placeholder="Adresas" value="{{ $userinfo->address }}">
                                         </label>
-                                    </div>
-                                </div>
-
-                                <div class="mt-8">
-                                    <h4 class="text-sm text-gray-500 font-medium">Apmokėjimo metodas</h4>
-                                    <div class="mt-6 flex">
                                         <label class="block flex-1">
-                                            <select>
-                                                <option>Bankiniu pavedimu</option>
-                                                <option>Kreditinė kortele</option>
-                                                <option>Paysera</option>
-                                            </select>
+                                            <input type="number" class="form-input mt-1 block w-full text-gray-700"
+                                                placeholder="Telefono numeris" value="{{ $userinfo->phone_number }}">
                                         </label>
                                     </div>
-                                </div>
+
+                                    <div class="mt-8">
+                                        <h4 class="text-sm text-gray-500 font-medium">Papildomas komentaras</h4>
+                                        <div class="mt-6 flex">
+                                            <label class="block flex-1">
+                                                <textarea type="text" class="form-input mt-1 block w-full text-gray-700"
+                                                    placeholder="Komentaras"></textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-8">
+                                        <h4 class="text-sm text-gray-500 font-medium">Apmokėjimo metodas</h4>
+                                        <div class="mt-6 flex">
+                                            <label class="block flex-1">
+                                                <select>
+                                                    <option>Bankiniu pavedimu</option>
+                                                    <option>Kreditinė kortele</option>
+                                                    <option>Paysera</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                @endforeach
 
                                 <div class="border-t-2 mt-6">
                                     <div class="flex items-center justify-between mt-8">
@@ -138,46 +140,35 @@
                                                 class="flex items-center justify-center border-2 border-blue-500 rounded-full h-5 w-5 mr-2">2</span>
                                             Apmokėjimas</button>
                                     </div>
+
                                     <div class="border p-4">
                                         <div class="flex items-center justify-between">
-                                            <h3 class="text-gray-700 font-medium">Krepšelyje (2)</h3>
+                                            <h3 class="text-gray-700 font-medium">Krepšelyje ({{ $cartTotal }})</h3>
                                         </div>
+                                        @foreach ($order as $orderitem)
+                                            <div class="flex justify-between mt-6">
+                                                <div class="flex">
+                                                    @foreach ($orderitem->images as $img)
+                                                        <img class="h-20 w-20 object-contain rounded"
+                                                            src="{{ asset($img->path) }}" alt="">
+                                                        @break
+                                                    @endforeach
+                                                    <div class="mx-3">
+                                                        <h3 class="text-sm text-gray-600">
+                                                            {{ $orderitem->products->title }}
+                                                        </h3>
 
-                                        <div class="flex justify-between mt-6">
-                                            <div class="flex">
-                                                <img class="h-20 w-20 object-contain rounded"
-                                                    src="http://localhost/e-shop/public/images/saldytuvas1.png" alt="">
-                                                <div class="mx-3">
-                                                    <h3 class="text-sm text-gray-600">Šaldytuvas Snaigė RF31SM-S0002F0
-                                                    </h3>
-                                                    <div class="flex items-center mt-2">
-                                                        <button
-                                                            class="text-gray-500 focus:outline-none focus:text-gray-600">
-                                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
-                                                                stroke-linejoin="round" stroke-width="2"
-                                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path
-                                                                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                                </path>
-                                                            </svg>
-                                                        </button>
-                                                        <span class="text-black mx-2">2</span>
-                                                        <button
-                                                            class="text-gray-500 focus:outline-none focus:text-gray-600">
-                                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
-                                                                stroke-linejoin="round" stroke-width="2"
-                                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                                </path>
-                                                            </svg>
-                                                        </button>
+                                                        @livewire('order-minus-plus', ['order_item' => $orderitem],key($orderitem->id))
+
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <span class="text-black font-semibold">70.68€</span>
-                                        </div>
+                                                <span
+                                                    class="text-black font-semibold">{{ $orderitem->products->price }}€</span>
+                                            </div>
+                                        @endforeach
                                     </div>
+
                                 </div>
                             </div>
                         </div>
