@@ -40,32 +40,12 @@
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
                         <div class="owl-carousel owl-theme">
                             @foreach ($product->images as $img)
-                                {{-- <div class="item m-3"><img class="block w-full h-auto" src="{{ asset($img->path) }}" alt="Owl Image"></div> --}}
                                 <div class="item h-96" data-merge="7"><img class="object-contain w-full h-full cursor-pointer"
                                     src="{{ asset($img->path) }}" alt="Trulli" ></div>
 
                                 @endforeach
                         </div>
-{{--
-                        <div class="swiper-container max-h-96">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                @foreach ($product->images as $img)
-                                    <div class="swiper-slide">
-                                        <img class="object-contain w-full h-full cursor-pointer"
-                                            src="{{ asset($img->path) }}" alt="Trulli" onclick="myFunction(this);">
-                                    </div>
-                                @endforeach
-                            </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                            <!-- If we need scrollbar -->
-                            <div class="swiper-scrollbar"></div>
-                        </div> --}}
+
                     </div>
                     <div class="px-6 flex flex-col w-full">
 
@@ -176,3 +156,4 @@
 });
 
 </script>
+

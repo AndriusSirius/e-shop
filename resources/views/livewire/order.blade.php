@@ -1,7 +1,7 @@
 <x-app-layout>
     @livewire('header')
 
-    @livewire('cart-items')
+    @livewire('order-checkout')
 
     @include('section')
 </x-app-layout>

@@ -26,5 +26,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 
 Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
 
+Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('order');
+
 // Produktas
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');
