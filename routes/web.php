@@ -28,3 +28,7 @@ Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->mid
 
 // Produktas
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');
+
+// Kategorijos
+
+Route::get('/{nuoroda1}/{nuoroda2?}/{nuoroda3?}/', [CategoryController::class, 'listing3'])->name('category_list');
