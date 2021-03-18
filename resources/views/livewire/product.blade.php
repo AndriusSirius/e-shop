@@ -38,34 +38,14 @@
                 </div>
                 <div class="md:flex">
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
-                        <div id="owl-demo">
+                        <div class="owl-carousel owl-theme">
                             @foreach ($product->images as $img)
-                                <div class="item m-3"><img class="block w-full h-auto" src="{{ asset($img->path) }}" alt="Owl Image"></div>
-                             @endforeach
-                        </div>
-{{--
-                        <div class="swiper-container max-h-96">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                @foreach ($product->images as $img)
-                                    <div class="swiper-slide">
-                                        <img class="object-contain w-full h-full cursor-pointer"
-                                            src="{{ asset($img->path) }}" alt="Trulli" onclick="myFunction(this);">
-                                    </div>
+                                <div class="item h-96" data-merge="7"><img class="object-contain w-full h-full cursor-pointer"
+                                    src="{{ asset($img->path) }}" alt="Trulli" ></div>
+
                                 @endforeach
+                        </div>
 
-                            </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                            <!-- If we need scrollbar -->
-                            <div class="swiper-scrollbar"></div>
-                        </div> --}}
                     </div>
                     <div class="px-6 flex flex-col w-full">
 
@@ -146,54 +126,34 @@
 
     </div>
 
-    @include('section')
+
+        @include('section')
 
 </x-app-layout>
 
 {{-- OWL --}}
-<!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-<!-- Default Theme -->
-<link rel="stylesheet" href="owl-carousel/owl.theme.css">
-<!--  jQuery 1.7+  -->
-<script src="jquery-1.9.1.min.js"></script>
-<!-- Include js plugin -->
-<script src="assets/owl-carousel/owl.carousel.js"></script>
+<link rel="stylesheet" href="{{ asset('owl/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('owl/owl.theme.default.css') }}">
+<script type="text/javascript" src="{{ asset('owl/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.js') }}"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-    // const swiper = new Swiper('.swiper-container', {
-
-    //     // If we need pagination
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //     },
-
-    //     // Navigation arrows
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     },
-
-    //     // And if we need scrollbar
-    //     scrollbar: {
-    //         el: '.swiper-scrollbar',
-    //     },
-    // });
-$(document).ready(function() {
-
-  $("#owl-demo").owlCarousel({
-
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-      items : 2,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
-
-  });
-
+  $('.owl-carousel').owlCarousel({
+    items:5,
+    loop:true,
+    margin:2,
+    merge:true,
+    responsive:{
+        678:{
+            mergeFit:true
+        },
+        1000:{
+            mergeFit:false
+        }
+    }
 });
+
 </script>
+
