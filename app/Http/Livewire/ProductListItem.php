@@ -20,7 +20,7 @@ class ProductListItem extends Component
             if ($disc->percentage > 0){
                 if (now() > $disc->from && now() <= $disc->to){
                     $this->discount = $disc->percentage;
-                    $this->priceWithDiscount = ($this->price * 100 - $this->discount) / 100;
+                    $this->priceWithDiscount = ($this->price * (100-$this->discount) / 100);
                 }
             }
         }

@@ -5,12 +5,14 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Product;
 
 class CartItems extends Component
 {
     public $cartTotal = 0;
     public $cart;
+    public $user;
     protected $listeners = [
         'updateCart'=>'render',
     ];
@@ -19,6 +21,7 @@ class CartItems extends Component
     public function mount()
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
+        $this->user = User::where('id', Auth::id())->get();
         $this->cart = Cart::with(['products', 'images', 'users' , 'discounts'])->where('user_id', Auth::id())->get();
     }
 

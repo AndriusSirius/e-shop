@@ -3,19 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-class OrderCheckout extends Component
+class OrderPrice extends Component
 {
-    public $cartTotal = 0;
-    public $user;
-    public $order;
-
-    protected $listeners = [
-        'updateOrder'=>'render',
-    ];
+    public $price, $priceWithDiscount, $discount, $priceWithoutDiscount;
+    public $order_list;
 
     public function mount()
     {
@@ -28,18 +22,16 @@ class OrderCheckout extends Component
                     $this->priceWithDiscount = ($this->price * (100 - $this->discount) / 100) * $this->order_list->quantity;
                 }
             } elseif($disc->percentage == 0) {
-                $this->priceWithoutDiscount = $this->price * $this->order_list->quantity;
-            }
+                        $this->priceWithoutDiscount = $this->price * $this->order_list->quantity;
+                }
         }
+//                        print_r($this->priceWithoutDiscount);
+        $this->emit('updateCart');
 
-//        $this->cartTotal = Cart::where('user_id', Auth::id())->count();
-//        $this->user = User::all();
-//        $this->order = Cart::with(['products', 'images', 'discounts'])->where('user_id', Auth::id())->get();
     }
 
     public function render()
     {
-        return view('livewire.order-checkout');
+        return view('livewire.order-price');
     }
-
 }
