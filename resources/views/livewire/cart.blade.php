@@ -1,7 +1,7 @@
 <x-app-layout>
-@livewire('header')
+    @livewire('header')
 
-@livewire('cart-items')
+    @livewire('cart-items')
 
-@include('section')
+    @include('section')
 </x-app-layout>

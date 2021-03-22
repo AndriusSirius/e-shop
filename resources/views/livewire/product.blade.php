@@ -36,29 +36,14 @@
                 </div>
                 <div class="md:flex">
                     <div class="bg-white flex lg:w-1/3 sm:w-44 border m-4">
+                        <div class="owl-carousel owl-theme">
+                            @foreach ($product->images as $img)
+                                <div class="item h-96" data-merge="7"><img class="object-contain w-full h-full cursor-pointer"
+                                    src="{{ asset($img->path) }}" alt="Trulli" ></div>
 
-                        <div class="swiper-container max-h-96">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                @foreach ($product->images as $img)
-                                    <div class="swiper-slide">
-                                        <img class="object-contain w-full h-full cursor-pointer"
-                                            src="{{ asset($img->path) }}" alt="Trulli" onclick="myFunction(this);">
-                                    </div>
                                 @endforeach
-
-                            </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                            <!-- If we need scrollbar -->
-                            <div class="swiper-scrollbar"></div>
                         </div>
+
                     </div>
                     <div class="px-6 flex flex-col w-full">
 
@@ -83,6 +68,7 @@
                                 Į krepšelį
                             </button>
                         </div>
+
                         <div class="my-8 border-b-2 font-semibold text-gray-500">
                             SVARBU
                         </div>
@@ -138,32 +124,34 @@
 
     </div>
 
-    @include('section')
+
+        @include('section')
 
 </x-app-layout>
 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{{-- OWL --}}
+<link rel="stylesheet" href="{{ asset('owl/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('owl/owl.theme.default.css') }}">
+<script type="text/javascript" src="{{ asset('owl/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('owl/owl.carousel.js') }}"></script>
+
+
 <script>
-    const swiper = new Swiper('.swiper-container', {
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
+  $('.owl-carousel').owlCarousel({
+    items:5,
+    loop:true,
+    margin:2,
+    merge:true,
+    responsive:{
+        678:{
+            mergeFit:true
         },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
+        1000:{
+            mergeFit:false
+        }
+    }
+});
 
 </script>
+
