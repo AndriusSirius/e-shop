@@ -1,7 +1,5 @@
 <x-app-layout>
-
-    @livewire('header')
-
+{{--    @livewire('header')--}}
     <div class="bg-gray-100">
         <div class="py-6 container mx-auto">
             <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">

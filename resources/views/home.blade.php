@@ -3,8 +3,9 @@
 @include('head')
 <body class="antialiased">
     @livewire('header')
-    @livewire('products')
+    @livewire('home-products'))
     @include('footer')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     @livewireScripts
 </body>
 </html>

@@ -25,8 +25,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 //KREPŠELIS
 
 Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
-
-Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('order');
-
+Route::get('/order_checkout', [\App\Http\Controllers\OrderController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('order_checkout');
 // Produktas
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');
+// Kategorijos
+
+//Route::get('/{nuoroda1}/{nuoroda2?}/{nuoroda3?}/', [CategoryController::class, 'listing3'])->name('category_list');

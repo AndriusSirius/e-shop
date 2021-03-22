@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Models\Cart;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class OrderController extends Controller
 {
@@ -14,8 +17,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order = \App\Models\Order::with(['products', 'cart', 'users'])->get();
-        return view('livewire.order', compact('order'));
+        $cartTotal = Cart::where('user_id', Auth::id())->count();
+        $user = User::where('id', Auth::id())->get();
+        $order = Cart::with(['products', 'images' , 'discounts'])->where('user_id', Auth::id())->get();
+        return view('livewire.order-checkout', compact('order', 'cartTotal', 'user'));
     }
 
     /**
