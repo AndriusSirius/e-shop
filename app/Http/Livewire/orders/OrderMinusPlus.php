@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Orders;
 
 use Livewire\Component;
 use App\Models\Cart;
@@ -16,7 +16,7 @@ class OrderMinusPlus extends Component
     }
     public function render()
     {
-        return view('livewire.order-minus-plus');
+        return view('livewire.orders.order-minus-plus');
     }
 
     public function delete()

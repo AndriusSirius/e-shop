@@ -24,7 +24,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS
 
-Route::get('/cart', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cart');
+Route::get('/carts', [\App\Http\Controllers\CartController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('carts');
 Route::get('/order_checkout', [\App\Http\Controllers\OrderController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('order_checkout');
 // Produktas
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');

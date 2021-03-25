@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Carts;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -17,21 +17,25 @@ class CartItems extends Component
         'updateCart'=>'render',
     ];
 
+    public function fireUpdateCart(){
+        $this->emit('updateCart');
+    }
+
 
     public function mount()
     {
         $this->cartTotal = Cart::where('user_id', Auth::id())->count();
         $this->user = User::where('id', Auth::id())->get();
-        $this->cart = Cart::with(['products', 'images', 'users' , 'discounts'])->where('user_id', Auth::id())->get();
+        $this->cart = Cart::with(['products', 'images', 'users' , 'discount'])->where('user_id', Auth::id())->get();
     }
 
     public function render()
     {
 
 //        $discounts = ProductListItem::all()->discounts();
-//        $products = ProductListItem::with(['discounts'])->get('products_id');
+//        $Products = ProductListItem::with(['discounts'])->get('products_id');
 
-        return view('livewire.cart-items');
+        return view('livewire.Carts.cart-items');
     }
 
 //

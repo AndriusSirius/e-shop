@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Carts;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +19,7 @@ class Carts extends Component
 
     public function render()
     {
-        return view('livewire.cart');
+        return view('livewire.carts.carts');
     }
 
 

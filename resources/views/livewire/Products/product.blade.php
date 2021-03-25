@@ -1,5 +1,5 @@
 <x-app-layout>
-{{--    @livewire('header')--}}
+    @livewire('header')
     <div class="bg-gray-100">
         <div class="py-6 container mx-auto">
             <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
@@ -49,13 +49,20 @@
 
                         <div class="my-8">
                             <p class="font-semibold text-xs text-gray-500 mb-6">Kodas: 488447</p>
-                            <p class="font-bold text-3xl text-black">{{ $product['price'] }} €</p>
+                            @if($product->discount)
+                                <p class=" line-through text-red-400">{{ $product->price }} €</p>
+                                <p class="font-bold text-3xl text-black">{{ ($product->price * (100 - $product->discount->percentage) / 100) }} €</p>
+
+                            @else
+                                <p class="font-bold text-3xl text-black">{{ $product->price }} €</p>
+
+                            @endif
                         </div>
                         <div class="my-4 ">
-                            <label class="font-semibold text-xl text-gray-500">
+                            <label for="quantity" class="font-semibold text-xl text-gray-500">
                                 Kiekis:
-                                <input class="mx-2 border text-center w-14" type="text" wire.model="quantity">
                             </label>
+                            <input id="quantity" class="ml-4 h-20 border text-center w-48 " type="number" wire.model="quantity">
                         </div>
                         <div class="my-8">
                             <button wire:click="addToCart({{ $product->id }})"

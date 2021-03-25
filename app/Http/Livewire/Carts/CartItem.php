@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Carts;
 
 use Livewire\Component;
 use App\Models\Cart;
@@ -17,7 +17,7 @@ class CartItem extends Component
 
     public function render()
     {
-        return view('livewire.cart-item');
+        return view('livewire.Carts.cart-item');
     }
 
     public function delete()

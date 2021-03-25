@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Products;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
@@ -16,19 +16,15 @@ class ProductListItem extends Component
     public function mount(){
         $this->price = $this->product_list_item->price;
 
-        foreach ($this->product_list_item->discounts as $disc){
-            if ($disc->percentage > 0){
-                if (now() > $disc->from && now() <= $disc->to){
-                    $this->discount = $disc->percentage;
-                    $this->priceWithDiscount = ($this->price * (100-$this->discount) / 100);
-                }
-            }
+        if ($this->product_list_item->discount){
+            $this->discount = $this->product_list_item->discount->percentage;
+            $this->priceWithDiscount = ($this->price * (100 - $this->discount) / 100);
         }
     }
 
     public function render()
     {
-        return view('livewire.product-list-item');
+        return view('livewire.products.product-list-item');
     }
     public function addToCart($productId)
     {
@@ -41,8 +37,8 @@ class ProductListItem extends Component
         Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);
 
 
-        Cart::update($product. $qty);
-        $count = Cart::where('quantity')->count();
+//        Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->update($productId. $qty);
+//        $count = Cart::where('quantity')->count();
 
         $this->emit('productAdded');
     }

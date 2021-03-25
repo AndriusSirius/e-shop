@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Orders;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -34,12 +34,12 @@ class OrderCheckout extends Component
 
 //        $this->cartTotal = Cart::where('user_id', Auth::id())->count();
 //        $this->user = User::all();
-//        $this->order = Cart::with(['products', 'images', 'discounts'])->where('user_id', Auth::id())->get();
+//        $this->order = Cart::with(['Products', 'images', 'discounts'])->where('user_id', Auth::id())->get();
     }
 
     public function render()
     {
-        return view('livewire.order-checkout');
+        return view('livewire.orders.order-checkout');
     }
 
 }

@@ -112,7 +112,7 @@
                                                             {{ $orderitem->products->title }}
                                                         </h3>
 
-                                                        @livewire('order-minus-plus', ['order_item' => $orderitem],key($orderitem->id))
+                                                        @livewire('orders.order-minus-plus', ['order_item' => $orderitem],key($orderitem->id))
 
                                                     </div>
                                                 </div>

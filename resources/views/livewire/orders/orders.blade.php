@@ -29,34 +29,14 @@
             <span>Pristatymo mokestis:</span>
             <span>€3.99</span>
         </div>
-        @foreach($order as $order_list)
-            @livewire('order-price', compact('order_list'))
-        @endforeach
 
-{{--@if($discount)--}}
-{{--    <p class="text-sm text-gray-600 line-through lg:text-left md:text-center  sm:text-center">--}}
-{{--        {{$price}} €--}}
-{{--    </p>--}}
-{{--    <p class="font-bold text-lg lg:text-left md:text-center  sm:text-center">--}}
-{{--        <!-- KAINA SU NUOLAIDA -->--}}
-{{--        {{ $priceWithDiscount }} €--}}
-{{--    </p>--}}
-{{--    <p class="text-xs text-red-500 ">{{ $discount }} %</p>--}}
-{{--@else--}}
-{{--    <p class="font-bold text-lg lg:text-right md:text-center  sm:text-center">--}}
-{{--        <!-- KAINA BE NUOLAIDOS -->--}}
-{{--        {{$price}} €--}}
-{{--    </p>--}}
-{{--@endif--}}
-{{--            {{$order}}--}}
+        @livewire('orders.order-price', compact('order'))
 
-
-{{--</x-app-layout>--}}
-{{--<x-app-layout>--}}
-{{--    @livewire('header')--}}
-
-{{--    @livewire('order-checkout')--}}
-
-{{--    @include('section')--}}
-
-{{--</x-app-layout>--}}
+        <a href="{{route('order_checkout')}}">
+            <button
+                class="border-2 text-sm uppercase w-full text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white">
+                pereiti prie apmokėjimo
+            </button>
+        </a>
+    </div>
+</div>

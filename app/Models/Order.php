@@ -33,9 +33,12 @@ class Order extends Model
     {
         return $this->belongsTo(Cart::class, 'carts_id');
     }
-    public function discounts()
+    public function discount()
     {
-        return $this->hasMany(Discounts::class, 'products_id', 'products_id');
+        return $this->hasOne(Discounts::class, 'products_id', 'products_id')
+            ->where('from', '<=', Carbon::today()->toDateString())
+            ->where('to', '>=', Carbon::today()->toDateString())
+            ->orderByDesc('percentage');
     }
 
 }
