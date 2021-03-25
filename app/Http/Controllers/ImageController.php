@@ -15,7 +15,7 @@ class ImageController extends Controller
     {
         //
 
-        return view('home', compact('discounts', 'products'));
+        return view('home', compact('discounts', 'Products'));
     }
 
     /**

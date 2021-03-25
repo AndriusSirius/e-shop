@@ -25,10 +25,10 @@ class ProductController extends Controller
 
     }
     public function detail ($id){
-        $product = Product::with(['cart','images', 'discounts'])->find($id);
+        $product = Product::with(['cart','images', 'discount'])->find($id);
         $cartTotal = Cart::where('user_id', Auth::id())->count();
 
-        return view('livewire.product', compact('product', 'cartTotal'));
+        return view('livewire.products.product', compact('product', 'cartTotal'));
 
     }
 

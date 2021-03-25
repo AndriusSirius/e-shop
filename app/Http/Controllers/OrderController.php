@@ -19,8 +19,8 @@ class OrderController extends Controller
     {
         $cartTotal = Cart::where('user_id', Auth::id())->count();
         $user = User::where('id', Auth::id())->get();
-        $order = Cart::with(['products', 'images' , 'discounts'])->where('user_id', Auth::id())->get();
-        return view('livewire.order-checkout', compact('order', 'cartTotal', 'user'));
+        $order = Cart::with(['Products', 'images' , 'discount'])->where('user_id', Auth::id())->get();
+        return view('livewire.orders.order-checkout', compact('order', 'cartTotal', 'user'));
     }
 
     /**

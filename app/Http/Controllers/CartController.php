@@ -16,12 +16,12 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function index()
     {
         $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
         $cartTotal = Cart::where('user_id', Auth::id())->count();
-        return view('livewire.cart', compact('cart', 'cartTotal'));
+        return view('livewire.carts.carts', compact('cart', 'cartTotal'));
     }
 
     /**

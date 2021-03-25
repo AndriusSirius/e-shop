@@ -1,4 +1,4 @@
-<section class="py-6 container mx-auto ">
+<section wire:poll.10s="fireUpdateCart" class="py-6 container mx-auto ">
     <div class="w-full">
         <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
             <ol class="list-none p-0 inline-flex">
@@ -40,13 +40,13 @@
                                 viso</h3>
                         </div>
                     @endif
-                    {{-- @foreach ($cart as $cart_item) --}}
+                    {{-- @foreach ($Carts as $cart_item) --}}
                     {{-- {{$cart_item}} --}}
                     {{-- <hr> --}}
                     {{-- @endforeach --}}
 
                     @foreach ($cart as $cart_item)
-                        @livewire('cart-item', ['cart_item' => $cart_item], key($cart_item->id))
+                        @livewire('carts.cart-item', ['cart_item' => $cart_item], key($cart_item->id))
                     @endforeach
 
                     <a href="{{ route('home') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
@@ -58,18 +58,7 @@
                         Tęskite apsipirkimą
                     </a>
                 </div>
-
-{{--                                        {{$order_list}}--}}
-                            @livewire('orders')
-                        <a href="{{route('order_checkout')}}">
-                            <button
-                                class="border-2 text-sm uppercase w-full text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white">
-                                pereiti prie apmokėjimo
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
+                @livewire('orders.orders')
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ class Discounts extends Migration
             $table->date('from')->nullable();
             $table->date('to')->nullable();
 
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->foreign('products_id')->references('id')->on('Products');
 
         });
     }

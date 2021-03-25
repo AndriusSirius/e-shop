@@ -19,7 +19,7 @@ class ProductCategory extends Migration
 
             $table->primary(['products_id', 'categories_id']);
 
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->foreign('products_id')->references('id')->on('Products');
             $table->foreign('categories_id')->references('id')->on('categories');
         });
     }
