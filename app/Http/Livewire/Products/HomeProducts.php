@@ -11,7 +11,7 @@ class HomeProducts extends Component
 
     public function render()
     {
-        $this->product_list = Product::take(5)->get();
+        $this->product_list = Product::take(10)->get();
         return view('livewire.Products.home-products');
     }
 }
