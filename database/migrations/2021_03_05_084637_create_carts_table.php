@@ -13,7 +13,7 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Carts', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('products_id');
@@ -21,7 +21,7 @@ class CreateCartsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('products_id')->references('id')->on('Products');
+            $table->foreign('products_id')->references('id')->on('products');
 
         });
     }
@@ -33,6 +33,6 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Carts');
+        Schema::dropIfExists('carts');
     }
 }
