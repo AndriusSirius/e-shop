@@ -3,7 +3,6 @@
 @include('head')
 <body class="antialiased">
     @include('navigation-menu')
-    @include('testing')
     @include('Products.home-products')
 {{--    @livewire('products.home-products')--}}
     @include('footer')
