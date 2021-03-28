@@ -1,6 +1,6 @@
 @include('head')
 
-@include('livewire.navigation-menu')
+@include('navigation-menu')
 
 <div class="grid grid-cols-1 mx-auto pb-16">
     <h1 class="text-center font-bold text-9xl p-16"> 500 <h1>

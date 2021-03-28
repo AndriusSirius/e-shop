@@ -1,5 +1,4 @@
 <x-app-layout>
-        @livewire('header')
     <div class="container mx-auto">
 
         <section class="py-6">
