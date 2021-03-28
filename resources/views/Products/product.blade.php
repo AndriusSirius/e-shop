@@ -1,5 +1,4 @@
 <x-app-layout>
-    @livewire('header')
     <div class="bg-gray-100">
         <div class="py-6 container mx-auto">
             <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
@@ -62,7 +61,7 @@
                             <label for="quantity" class="font-semibold text-xl text-gray-500">
                                 Kiekis:
                             </label>
-                            <input id="quantity" class="ml-4 h-20 border text-center w-48 " type="number" wire.model="quantity">
+                            <input id="quantity" class="ml-4 h-14 border text-center w-20" type="number" value="1" wire.model="quantity">
                         </div>
                         <div class="my-8">
                             <button wire:click="addToCart({{ $product->id }})"
