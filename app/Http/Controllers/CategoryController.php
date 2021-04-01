@@ -13,14 +13,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
 
         $categories = Category::all()->sortBy('nr');
         $categories_first_level = Category::with('subcategories')->where('parent_id', null)->get()->sortBy('nr');
-
+        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
+        view()->share('ParentCategories',$ParentCategories);
 //        return "kategorijų sąrašas";
-        return view('category.index', compact('categories', 'categories_first_level'));
+//        return view('category.category', compact('categories', 'categories_first_level'));
     }
 
     /**

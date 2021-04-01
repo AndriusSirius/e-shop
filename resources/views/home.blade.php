@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-@include('head')
-<body class="antialiased">
-    @include('navigation-menu')
+<x-app-layout>
     @include('Products.home-products')
 {{--    @livewire('products.home-products')--}}
-    @include('footer')
 {{--    @livewire('admin.show-admin')--}}
-    @livewireScripts
+</x-app-layout>
 
-</body>
-</html>
 
