@@ -1,3 +1,4 @@
+
 @foreach($ParentCategories as $category)
 <div @click.away="open = false" class="lg:absolute lg:relative z-50 lg:m-10 " x-data="{ open: false }">
     <button @click="open = !open" class="flex flex-row items-center w-full text-sm focus:outline-none focus:shadow-outline font-bold text-black text-base">

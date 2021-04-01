@@ -16,11 +16,11 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = Category::all()->sortBy('nr');
-        $categories_first_level = Category::with('subcategories')->where('parent_id', null)->get()->sortBy('nr');
+//         $categories = Category::all()->sortBy('nr');
+//         $categories_first_level = Category::with('subcategories')->where('parent_id', null)->get()->sortBy('nr');
 
-//        return "kategorijų sąrašas";
-        return view('category.index', compact('categories', 'categories_first_level'));
+// //        return "kategorijų sąrašas";
+//         return view('category.index', compact('categories', 'categories_first_level'));
     }
 
     /**
@@ -30,12 +30,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-//        $category_tree = self::categoryTree(null, null, 2);
-//        foreach ($category_tree as $key => $category){
-//            $category_tree[$key]["pavadinimas"] = str_repeat('- ', $category_tree[$key]["lygis"]).$category_tree[$key]["pavadinimas"];
-//        }
-//
-//        return view('category.create', compact('category_tree'));
+       $category_tree = self::categoryTree(null, null, 2);
+       foreach ($category_tree as $key => $category){
+           $category_tree[$key]["pavadinimas"] = str_repeat('- ', $category_tree[$key]["lygis"]).$category_tree[$key]["pavadinimas"];
+       }
+
+       return view('category.create', compact('category_tree'));
     }
 
     /**
@@ -106,9 +106,9 @@ class CategoryController extends Controller
         foreach ($category_list as $category) {
             $list[] = [
                 'id' => $category->id,
-                'pavadinimas' => $category->pavadinimas,
-                'nuoroda' => $category->nuoroda,
-                'lygis' => $current_level,
+                'name' => $category->name,
+                'link' => $category->link,
+                'level' => $current_level,
             ];
             if (isset($category->subcategories) && ($current_level < $max_levels || $max_levels == null)) {
                 $list = array_merge($list, self::categoryTree($category->subcategories, $current_level + 1, $max_levels));
@@ -132,7 +132,7 @@ class CategoryController extends Controller
         $subcategories = $categories;
 
         foreach ($args as $link) {
-            $category = $subcategories->firstWhere('name', $link);
+            $category = $subcategories->firstWhere('link', $link);
             if ($category) {
                 $ids[] = $category->id;
                 $route_categories->add($category);
@@ -144,9 +144,24 @@ class CategoryController extends Controller
         }
 
         if ($category) {
-            return view('category.listing3', compact('category', 'categories', 'ids', 'route_categories'));
+            return view('category.category', compact('category', 'categories', 'ids', 'route_categories'));
         } else {
             return abort(404);
         }
+    }
+    public function fullLink(Category $category){
+        $FLink = $category->link;
+
+        $parent = $category->parent;
+        if ($parent){
+            do{
+                if ($parent != null){
+                    $FLink = $parent->link . "/" . $FLink;
+                }
+                $parent = $parent->parent;
+            } while ($parent != null);
+        }
+
+        return $FLink;
     }
 }

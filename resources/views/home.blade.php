@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @include('head')
-<body class="antialiased">
+<body class="antialiased ">
     @include('navigation-menu')
+    {{-- @include('titulinis'); --}}
     @include('Products.home-products')
 {{--    @livewire('products.home-products')--}}
     @include('footer')
