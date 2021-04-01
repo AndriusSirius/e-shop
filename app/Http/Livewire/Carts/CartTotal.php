@@ -8,9 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class CartTotal extends Component
 {
+    public  $cartTotal;
+
+    protected $listeners=[
+        'productAdded'=>'render',
+    ];
+
     public function render()
     {
-        $cartTotal = Cart::where('user_id', Auth::id())->count();
-        return view('livewire.Carts.cart-total', compact('cartTotal'));
+        $this->cartTotal = Cart::where('user_id', Auth::id())->get()->sum('quantity');
+//        dd($this->cartTotal);
+        return view('livewire.Carts.cart-total');
     }
+
 }

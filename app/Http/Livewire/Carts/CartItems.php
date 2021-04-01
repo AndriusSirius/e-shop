@@ -15,6 +15,8 @@ class CartItems extends Component
     public $user;
     protected $listeners = [
         'updateCart'=>'render',
+        'productAdded'=>'render',
+
     ];
 
     public function fireUpdateCart(){

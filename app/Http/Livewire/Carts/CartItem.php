@@ -10,7 +10,6 @@ class CartItem extends Component
     public Cart $cart_item;
     public $quantity;
 
-
     public function mount(){
         $this->quantity = $this->cart_item->quantity;
     }
@@ -24,6 +23,8 @@ class CartItem extends Component
     {
         $this->cart_item->delete();
         $this->emit('updateCart');
+        $this->emit('productAdded');
+
 
     }
 
@@ -51,6 +52,8 @@ class CartItem extends Component
             }
         }
         $this->emit('updateCart');
+        $this->emit('productAdded');
+
 
     }
 }
