@@ -19,7 +19,7 @@ class Carts extends Component
 
     public function render()
     {
-        return view('livewire.carts.carts');
+        return view('livewire.Carts.carts');
     }
 
 

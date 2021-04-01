@@ -2,17 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use App\Models\Product;
-use App\Models\Cart;
-use App\Models\Discounts;
-use App\Http\Livewire\Header;
 
-
-class ProductController extends Controller
+class AllProducts extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,15 +14,7 @@ class ProductController extends Controller
     public function index()
     {
 
-
     }
-    public function detail ($id){
-        $product = Product::with(['cart','images', 'discount'])->find($id);
-        $cartTotal = Cart::where('user_id', Auth::id())->count();
-
-        return view('Products.product', compact('product', 'cartTotal'));
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +45,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return redirect()->route('product_list');
+        //
     }
 
     /**

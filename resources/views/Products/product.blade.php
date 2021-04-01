@@ -1,8 +1,7 @@
 <x-app-layout>
-    @livewire('header')
     <div class="bg-gray-100">
         <div class="py-6 container mx-auto">
-            <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
+            <div class="text-black font-bold my-12 ml-5" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
                     <li class="flex items-center">
                         <p>Pagrindinis</p>
@@ -23,14 +22,13 @@
                     </li>
                 </ol>
             </div>
-            <br>
         </div>
     </div>
 
     <div class="w-full bg-gray-100">
 
         <div class="flex">
-            <div class="container mx-auto rounded bg-white overflow-hidden mb-24">
+            <div class="container mx-auto rounded bg-white overflow-hidden mb-12">
                 <div class="p-4 m-3">
                     <span class="text-2xl text-black-200 font-semibold uppercase">{{ $product['title'] }} </span>
                 </div>
@@ -58,25 +56,10 @@
 
                             @endif
                         </div>
-                        <div class="my-4 ">
-                            <label for="quantity" class="font-semibold text-xl text-gray-500">
-                                Kiekis:
-                            </label>
-                            <input id="quantity" class="ml-4 h-20 border text-center w-48 " type="number" wire.model="quantity">
-                        </div>
-                        <div class="my-8">
-                            <button wire:click="addToCart({{ $product->id }})"
-                                class="bg-white w-64 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
-                                <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                                Į krepšelį
-                            </button>
-                        </div>
 
-                        <div class="my-8 border-b-2 font-semibold text-gray-500">
+                            @livewire('carts.add-cart-button-product', compact('product'))
+
+                        <div class="my-10 border-b-2 font-semibold text-gray-500">
                             SVARBU
                         </div>
                         <ul class="my-6 px-6 ">
@@ -94,8 +77,8 @@
         </div>
 
         <div class="flex h-full">
-            <div class="container mx-auto bg-white m-5">
-                <ul class="block w-11/12 my-4 mx-auto" x-data="{selected:null}">
+            <div class="container mx-auto bg-white">
+                <ul class="block w-11/12 my-14 mx-auto" x-data="{selected:null}">
                     <li class="flex align-center flex-col">
                         <h4 @click="selected !== 0 ? selected = 0 : selected = null"
                             class="py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t"><i class="fas fa-plus"></i> Charakteristikos
@@ -122,7 +105,7 @@
                         <h4 @click="selected !== 2 ? selected = 2 : selected = null"
                             :class="{'mt-2 py-4 border-solid border-2 border-blue-700  cursor-pointer px-5 py-3 bg-white text-blue-700 text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}"><i class="fas fa-plus"></i> Svarbu</h4>
                         <p x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
-                            Perkrauti kompiuteri kad veiktų
+                            SVARBI INFORMACIJA
                         </p>
                     </li>
                 </ul>

@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
         view()->share('ParentCategories',$ParentCategories);
 
-        $Products = \App\Models\Product::all();
-        return view('home', compact('Products'));
+        $product_list = \App\Models\Product::all();
+        return view('home', compact('product_list'));
 
     }
 }

@@ -25,8 +25,8 @@ class CreateOrders extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('carts_id')->references('id')->on('Carts');
-            $table->foreign('products_id')->references('id')->on('Products');
+            $table->foreign('carts_id')->references('id')->on('carts');
+            $table->foreign('products_id')->references('id')->on('products');
         });
     }
 

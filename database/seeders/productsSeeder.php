@@ -14,7 +14,7 @@ class productsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Šaldytuvas Snaigė RF31SM-S0002F0',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'RF31SM-S0002F0',
@@ -43,7 +43,7 @@ class productsSeeder extends Seeder
             'warranty' => '3 metai'
         ]);
 
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Šaldytuvas Samsung RB34T675ES9/EF',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => ' RB34T675ES9/EF',
@@ -71,7 +71,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Šaldytuvas Samsung RB31HSR2DSA/EF',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => ' RB31HSR2DSA/EF',
@@ -84,7 +84,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina Electrolux EW7W447W',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => ' EW7W447W',
@@ -97,7 +97,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina AEG L6SE47SE',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'AEG L6SE47SE',
@@ -110,7 +110,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina Beko WUE 8633 XST',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'Beko WUE 8633 XST',
@@ -123,7 +123,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina Electrolux EW7W447W',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => ' EW7W447W',
@@ -136,7 +136,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina AEG L6SE47SE',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'AEG L6SE47SE',
@@ -149,7 +149,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Skalbimo mašina Beko WUE 8633 XST',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'Beko WUE 8633 XST',
@@ -162,7 +162,7 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '3 metai'
         ]);
-        DB::table('Products')->insert([
+        DB::table('products')->insert([
             'title' => 'Kavos virimo aparatas PHILIPS LatteGo EP5334/10',
             'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
             'model' => 'EP5334/10',

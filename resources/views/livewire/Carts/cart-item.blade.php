@@ -50,6 +50,6 @@
     @endif
 
     <button wire:click="delete()"
-            class="font-semibold hover:text-red-500 text-gray-500 text-lg border-none">x
+            class="font-semibold mr-3 hover:text-red-500 text-gray-500 text-lg border-none">x
     </button>
 </div>
