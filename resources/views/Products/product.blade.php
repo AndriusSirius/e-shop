@@ -114,9 +114,6 @@
 
     </div>
 
-
-        @include('section')
-
 </x-app-layout>
 
 {{-- OWL --}}

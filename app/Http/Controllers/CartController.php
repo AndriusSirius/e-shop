@@ -19,6 +19,7 @@ class CartController extends Controller
 
     public function index()
     {
+
         $cart = \App\Models\Cart::with(['products', 'images', 'users'])->get();
         $cartTotal = Cart::where('user_id', Auth::id())->count();
         return view('livewire.Carts.carts', compact('cart', 'cartTotal'));
