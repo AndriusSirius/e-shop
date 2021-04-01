@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="fixed top-0 flex bg-white flex-col mx-auto lg:items-center w-full lg:justify-between lg:flex-row border-b ">
+<nav x-data="{ open: false }" class=" z-50 fixed top-0 flex bg-white flex-col mx-auto lg:items-center w-full lg:justify-between lg:flex-row border-b ">
     <div class=" flex flex-row justify-between ">
-        <div class="">
+        <div>
             <a href="{{ route('home') }}"><img class="object-contain h-24 ml-7  " src="{{ asset('images/Logotipas.png') }}"></a>
         </div>
         <button class="lg:hidden rounded-lg m-4  focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -76,7 +76,7 @@
             @endguest
     </div>
 </nav>
-<nav class="fixed top-24 w-full">
+<nav class="fixed top-24 w-full z-50">
 <div x-data="{ show: true }" x-show="show"
      class=" flex justify-between items-center bg-red-500 border border-red-400 px-4 py-3 rounded relative" role="alert">
     <div>
