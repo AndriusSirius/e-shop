@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Collection;
 
 class CategoryController extends Controller
 {
@@ -18,10 +19,10 @@ class CategoryController extends Controller
     {
         $categories = Category::all()->sortBy('nr');
         $categories_first_level = Category::with('subcategories')->where('parent_id', null)->get()->sortBy('nr');
-        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-        view()->share('ParentCategories',$ParentCategories);
-//        return "kategorijų sąrašas";
-//        return view('category.category', compact('categories', 'categories_first_level'));
+        $ParentCategories = \App\Models\Category::where('parent_id', 0)->get();
+        view()->share('ParentCategories', $ParentCategories);
+        //        return "kategorijų sąrašas";
+        //        return view('category.category', compact('categories', 'categories_first_level'));
     }
 
     /**
@@ -31,12 +32,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-       $category_tree = self::categoryTree(null, null, 2);
-       foreach ($category_tree as $key => $category){
-           $category_tree[$key]["pavadinimas"] = str_repeat('- ', $category_tree[$key]["lygis"]).$category_tree[$key]["pavadinimas"];
-       }
+        $category_tree = self::categoryTree(null, null, 2);
+        foreach ($category_tree as $key => $category) {
+            $category_tree[$key]["pavadinimas"] = str_repeat('- ', $category_tree[$key]["lygis"]) . $category_tree[$key]["pavadinimas"];
+        }
 
-       return view('category.create', compact('category_tree'));
+        return view('category.create', compact('category_tree'));
     }
 
     /**
@@ -100,21 +101,33 @@ class CategoryController extends Controller
     public static function categoryTree($category_list = null, $current_level = null, $max_levels = null)
     {
         if ($category_list == null) {
-            $category_list = Category::with('subcategories')->where('parent_id', null)->get()->sortBy('nr');
+            $category_list = Category::with('subcategories')->where('parent_id', 0)->get()->sortBy('nr');
             $current_level = 0;
         }
-        $list = [];
+
+        $list = null;
+
         foreach ($category_list as $category) {
-            $list[] = [
+            $element = collect([
                 'id' => $category->id,
                 'name' => $category->name,
                 'link' => $category->link,
                 'level' => $current_level,
-            ];
+            ]);
+            if (!$list) {
+                $list = collect($element);
+            } else {
+                $list->push($element);
+            }
             if (isset($category->subcategories) && ($current_level < $max_levels || $max_levels == null)) {
-                $list = array_merge($list, self::categoryTree($category->subcategories, $current_level + 1, $max_levels));
+                $subcategories = self::categoryTree($category->subcategories, $current_level + 1, $max_levels);
+
+                if ($subcategories) {
+                    $list->merge($subcategories);
+                }
             }
         }
+        // dump($list);
         return $list;
     }
 
@@ -150,13 +163,16 @@ class CategoryController extends Controller
             return abort(404);
         }
     }
-    public function fullLink(Category $category){
+
+    public function fullLink(Category $category)
+    {
         $FLink = $category->link;
 
         $parent = $category->parent;
-        if ($parent){
-            do{
-                if ($parent != null){
+
+        if ($parent) {
+            do {
+                if ($parent != null) {
                     $FLink = $parent->link . "/" . $FLink;
                 }
                 $parent = $parent->parent;
