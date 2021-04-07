@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Cart;
 use Illuminate\View\View;
+use App\Models\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     public function register()
     {
         //
@@ -27,16 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = CategoryController::categoryTree();
+        $categories = Category::with('subcategories')->where('parent_id', 0)->get()->sortBy('nr');
         view()->share('ParentCategories',$categories);
-        // $cat = CategoryController::listing3();
-        // view()->share('cat',$cat);
-
-
-
-//        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-//        view()->share('ParentCategories',$ParentCategories);
-
         $product_list = \App\Models\Product::all();
         return view('home', compact('product_list'));
 

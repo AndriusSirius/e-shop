@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             'name' => 'Smulki buitinė technika',
-            'link' => 'Smulki buitinė technika',
+            'link' => 'Smulki-buitinė-technika',
             'parent_id' => '0',
             'nr' => '1',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
@@ -25,7 +25,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => 'Stambi buitinė technika',
-            'link' => 'Stambi buitinė technika',
+            'link' => 'Stambi-buitinė-technika',
             'parent_id' => '0',
             'nr' => '2',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
@@ -33,7 +33,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => 'Namų technika',
-            'link' => 'Namų technika',
+            'link' => 'Namų-technika',
             'parent_id' => '0',
             'nr' => '3',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
@@ -65,7 +65,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => 'Kavos virimo aparatai',
-            'link' => 'Kavos virimo aparatai',
+            'link' => 'Kavos-virimo-aparatai',
             'parent_id' => '1',
             'nr' => '7',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),

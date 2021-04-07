@@ -1,4 +1,3 @@
-
 @foreach($ParentCategories as $category)
     <div @click.away="open = false" class="lg:absolute lg:relative z-50 lg:m-10 " x-data="{ open: false }">
         <button @click="open = !open" class="flex flex-row items-center w-full text-sm focus:outline-none focus:shadow-outline font-bold text-black text-base">
@@ -8,8 +7,8 @@
         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="sm:relative lg:absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-96">
             <div class="mt-4 px-1 py-1 bg-white rounded-md shadow dark-mode:bg-gray-800">
                 <div class="grid grid-cols-2 gap-2 lg:z-auto ">
-                   @if(count($category->subcategory))
-                        @include('category.subcategory',['subcategories' => $category->subcategory])
+                   @if(count($category->subcategories))
+                        @include('category.subcategory',['subcategories' => $category->subcategories])
                     @endif
                 </div>
             </div>
