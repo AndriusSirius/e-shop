@@ -1,8 +1,8 @@
-<section class=" mt-52 container">
+<section class=" my-14 container">
 
-    <h2 class="font-bold  text-xl">Naujausi pasiūlymai:</h2>
-    <div class="owl-carousel h-80 owl-theme bg-white rounded">
-        @foreach ($Products as $product)
+    <h2 class=" bg-gray-200 p-2 font-bold rounded-t-xl text-xl">Smulki Buitinė Technika:</h2>
+    <div class=" border border-gray-200  owl-carousel h-80 owl-theme bg-white rounded">
+        @foreach ($news as $product)
             <div class=" overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2" >
                 <a href="{{ route('product', [$product->id]) }}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full"
@@ -16,6 +16,9 @@
         @endforeach
 
     </div>
+    <a class="p-1" href="#">
+        <span class="text-blue-700 flex font-bold justify-end  hover:underline ">Peržiūrėti Visus produktus </span>
+    </a>
     <link rel="stylesheet" href="{{ asset('owl/owl.carousel.min.css') }}">
 
 

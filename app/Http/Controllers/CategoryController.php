@@ -127,11 +127,11 @@ class CategoryController extends Controller
                 }
             }
         }
-        // dump($list);
+
         return $list;
     }
 
-    public function listing3()
+    public static function listing3()
     {
         // neribotas kiekis nuorodų, naudojant kolekcijas
 
