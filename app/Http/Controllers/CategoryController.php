@@ -114,10 +114,11 @@ class CategoryController extends Controller
                 $list = array_merge($list, self::categoryTree($category->subcategories, $current_level + 1, $max_levels));
             }
         }
+
         return $list;
     }
 
-    public function listing3()
+    public static function listing3()
     {
         // neribotas kiekis nuorodų, naudojant kolekcijas
 

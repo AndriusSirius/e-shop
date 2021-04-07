@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $categories = CategoryController::categoryTree();
         view()->share('ParentCategories',$categories);
+        // $cat = CategoryController::listing3();
+        // view()->share('cat',$cat);
+
+
+
 //        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
 //        view()->share('ParentCategories',$ParentCategories);
 
