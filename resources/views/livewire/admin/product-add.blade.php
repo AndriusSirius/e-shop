@@ -1,78 +1,44 @@
-<x-jet-form-section submit="updateProfileInformation">
-    <x-slot name="title">
-        {{ __('Produkto pridejimas') }}
-    </x-slot>
+<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+    <div class="sm:flex sm:items-start">
+        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
 
-    <x-slot name="description">
-        {{ __('Prasome prideti nauja produkta.') }}
-    </x-slot>
+            <h3 class="text-lg py-2 mb-3 leading-6 font-medium text-gray-900">
+                Sukurti naują receptą
+            </h3>
 
-    <x-slot name="form">
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="title">Pavadinimas
+                    <input wire:model="title" id="title" class="block mt-1 w-full" type="text" name="title" required>
+                </label>
+            </div>
 
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="title" value="{{ __('Pavadinimas') }}" />
-            <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="state.title" autocomplete="title" />
-            <x-jet-input-error for="title" class="mt-2" />
+            <!-- summary -->
+            <div class="mb-3 w-full">
+                <label for="summary">Aprašymas
+                    <input wire:model="summary" id="summary" class="block mt-1 w-full" type="text" required>
+                </label>
+            </div>
         </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="summary" value="{{ __('Santrauka') }}" />
-            <x-jet-input id="summary" type="text" class="mt-1 block w-full" wire:model.defer="state.summary" autocomplete="summary" />
-            <x-jet-input-error for="summary" class="mt-2" />
-        </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="type" value="{{ __('Tipas') }}" />
-            <x-jet-input id="type" type="text" class="mt-1 block w-full" wire:model.defer="state.type" autocomplete="type" />
-            <x-jet-input-error for="type" class="mt-2" />
-        </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="price" value="{{ __('Kaina') }}" />
-            <x-jet-input id="price" type="text" class="mt-1 block w-full" wire:model.defer="state.price" autocomplete="price" />
-            <x-jet-input-error for="price" class="mt-2" />
-        </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="discount" value="{{ __('Nuolaida') }}" />
-            <x-jet-input id="discount" type="text" class="mt-1 block w-full" wire:model.defer="state.discount" autocomplete="discount" />
-            <x-jet-input-error for="discount" class="mt-2" />
-        </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="quantity" value="{{ __('Kiekis') }}" />
-            <x-jet-input id="quantity" type="text" class="mt-1 block w-full" wire:model.defer="state.quantity" autocomplete="quantity" />
-            <x-jet-input-error for="quantity" class="mt-2" />
-        </div>
-
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="content" value="{{ __('Aprašymas') }}" />
-            <x-jet-input id="content" type="text" class="mt-1 block w-full" wire:model.defer="state.content" autocomplete="content" />
-            <x-jet-input-error for="content" class="mt-2" />
-        </div>
-        <div class="mb-2"> <span>Noutraukos</span>
-            <div class="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center hover:cursor-pointer">
-                <div class="absolute">
-                    <div class="flex flex-col items-center "> <i class="fa fa-cloud-upload fa-3x text-gray-200"></i> <span class="block text-gray-400 font-normal">Pridekite nuotrauka čia</span> <span class="block text-gray-400 font-normal">arba</span> <span class="block text-blue-400 font-normal">Narsykite failus</span> </div>
-                </div> <input type="file" class="h-full w-full opacity-0" name="">
-            </div>                            
-        </div>
-
-        
-    </x-slot>
-
-    <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
-
-        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-            <p class="font-bold">Naujo produkto pridejimas</p>
-            <p class="text-sm">{{ __('Sėkmingai pridetas') }}</p>
-        </div>
-
-        </x-jet-action-message>
-
-        <button class="px-4 py-2 mt-2 ml-4 border-2 w-36 text-sm text-center border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white" wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Prideti') }}
+    </div>
+    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" wire:click.prevent="save()"
+            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 pl-2 py-1 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+            <svg class="fill-current w-4 h-4 mr-2" viewBox="0 0 20 20">
+                <path
+                    d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z">
+                </path>
+            </svg>
+            Sukurti
         </button>
-    </x-slot>
-</x-jet-form-section>
+        <button type="button" wire:click.prevent="cancelProduktasCreate()"
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 pl-2 py-1 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+            <svg class="fill-current w-4 h-4 mr-2" viewBox="0 0 20 20">
+                <path
+                    d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z">
+                </path>
+            </svg>
+            Atšaukti
+        </button>
+    </div>
+</div>

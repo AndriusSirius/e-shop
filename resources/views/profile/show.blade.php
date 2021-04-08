@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto">
+    <div class="container mx-auto my-28">
 
         <section class="py-6">
             <nav class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">

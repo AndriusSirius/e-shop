@@ -21,6 +21,11 @@ use App\Http\Controllers\CartController;
 //PAGRINDINIS
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home']);
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+Route::get('/all_products', [\App\Http\Controllers\AllProducts::class, 'all'])->name('all_products');
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');;
+
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS
 
@@ -30,4 +35,4 @@ Route::get('/order_checkout', [\App\Http\Controllers\OrderController::class, 'in
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');
 // Kategorijos
 
-Route::get('/{nuoroda1}/{nuoroda2?}/{nuoroda3?}/', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');
+Route::get('/{link}', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');

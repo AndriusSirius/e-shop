@@ -47,7 +47,6 @@
             <!-- Page Content -->
 
                 {{ $slot }}
-            @include('section')
             @include('footer')
 
         @stack('modals')

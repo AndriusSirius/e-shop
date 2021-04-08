@@ -33,11 +33,11 @@
                         <div class="flex mb-5 border-b p-5">
                             <h3 class="font-semibold text-black-600 text-xs uppercase w-2/5">Prekė</h3>
                             <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">
-                                Kiekis</h3>
+                                Prekės Kiekis</h3>
                             <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">
-                                Kaina</h3>
+                                Prekės Kaina</h3>
                             <h3 class="font-semibold text-center text-black-600 text-xs uppercase w-1/5 text-center">Iš
-                                viso</h3>
+                                viso suma</h3>
                         </div>
                     @endif
                     {{-- @foreach ($Carts as $cart_item) --}}

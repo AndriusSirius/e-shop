@@ -18,7 +18,9 @@ class HomeController extends Controller{
         // $Products = DB::table('discounts')->join('Products', 'discounts.products_id', '=', 'Products.id')->join('images', 'images.products_id', '=', 'Products.id')->get();
 
        $news = Product::take(5)->get();
-       return view('home', compact('news'));
+       $all = Product::all();
+
+       return view('home', compact('news', 'all'));
         $product_list = Product::take(10)->get();
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
         return view('home', compact( 'ParentCategories', 'product_list'));

@@ -1,16 +1,16 @@
 <section class=" my-14 container">
 
-    <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-700">
-        <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-700 text-2xl fas fa-home"></i> NAMŲ TECHNIKA</h2>
+    <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-500">
+        <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-500 text-2xl fas fa-laptop-house"></i> VISOS PREKĖS</h2>
     </div>
     <div class="px-6 py-6 border border-gray-200  owl-carousel owl-theme bg-white rounded">
-        @foreach ($news as $product)
-            <div class=" overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2">
+        @foreach ($all as $product)
+            <div class=" overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2" >
                 <a href="{{ route('product', [$product->id]) }}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full"
                         src="{{ asset($product->images->first()->path) }}">
                     <div class="mt-5">
-                        <p class=" mx-2 text-center uppercase font-bold hover:underline">{{ $product->title }}</p>
+                        <p class=" mx-2 text-center uppercase font-bold hover:underline" >{{$product->title}}</p>
                     </div>
                 </a>
             </div>
@@ -18,8 +18,7 @@
         @endforeach
 
     </div>
-
-    <a href="" class="flex justify-end font-semibold text-indigo-600 text-lg mt-10">
+    <a href="{{ route('all_products') }}" class="flex justify-end font-semibold text-indigo-600 text-lg mt-10">
         Peržiūrėkite visus produktus
         <svg class="fill-current ml-2 text-indigo-600 w-4" aria-hidden="true" focusable="false" data-prefix="fas"
             data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"

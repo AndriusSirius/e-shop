@@ -5,6 +5,9 @@
     <div >
         @include('titulinis.smulki_titulinis')
     </div>
+    <div>
+        @include('titulinis.all_products')
+    </div>
     <div >
         @include('titulinis.stambi_titulinis')
     </div>

@@ -1,13 +1,15 @@
 <section class=" mt-52 container">
-    <h2 class=" bg-gray-200 p-2 font-bold rounded-t-xl text-xl">Naujausi pasiūlymai:</h2>
-    <div class=" border border-gray-200  owl-carousel h-80 owl-theme bg-white rounded">
+    <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-900">
+        <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-900 text-2xl fas fa-feather-alt"></i> NAUJAUSI PASIŪLYMAI</h2>
+    </div>
+    <div class="px-6 py-6 border border-gray-200  owl-carousel owl-theme bg-white rounded">
         @foreach ($news as $product)
-            <div class="   overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2" >
+            <div class="   overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2">
                 <a href="{{ route('product', [$product->id]) }}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full"
                         src="{{ asset($product->images->first()->path) }}">
                     <div class="mt-5">
-                        <p class=" mx-2 text-center uppercase font-bold hover:underline" >{{$product->title}}</p>
+                        <p class=" mx-2 text-center uppercase font-bold hover:underline">{{ $product->title }}</p>
                     </div>
                 </a>
             </div>

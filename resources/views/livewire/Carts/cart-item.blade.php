@@ -1,4 +1,4 @@
-<div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+<div class="flex items-center hover:bg-gray-100 px-4 py-4">
     <div class="flex w-2/5">
         <!-- product -->
         @foreach($cart_item->images as $img)

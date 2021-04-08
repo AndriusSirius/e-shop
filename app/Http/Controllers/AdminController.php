@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Admin;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
-class AllProducts extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function all()
+    public function index()
     {
-        // $Products = DB::table('discounts')->join('Products', 'discounts.products_id', '=', 'Products.id')->join('images', 'images.products_id', '=', 'Products.id')->get();
-
-        $product_list = Product::paginate(9);
-        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-        return view('allproducts', compact( 'ParentCategories', 'product_list'));
-
+        $produktai = Product::all();
+        return view('livewire.admin.show-admin', compact('produktai'));
     }
 
     /**
@@ -49,10 +43,10 @@ class AllProducts extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Admin $admin)
     {
         //
     }
@@ -60,10 +54,10 @@ class AllProducts extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -72,10 +66,10 @@ class AllProducts extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Admin $admin)
     {
         //
     }
@@ -83,10 +77,10 @@ class AllProducts extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Admin $admin)
     {
         //
     }

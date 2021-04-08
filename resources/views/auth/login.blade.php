@@ -90,9 +90,9 @@
                                     Susikurkite naują vartotoją.
                                 </p>
                                 <ul class="list-disc ml-4">
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                                    <li>Tik registruoti vartotojai gali užsisakyti prekes.</li>
+                                    <li>Jūsų duomenys saugomi.</li>
+                                    <li>Registracija trunka vos porą minučių!</li>
                                 </ul>
                                 <br>
                                 <a href="register"><button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
