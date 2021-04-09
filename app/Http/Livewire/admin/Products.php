@@ -13,6 +13,8 @@ class Products extends Component
     public $edit, $delete;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
+
+
     protected function rules()
     {
         return [
@@ -73,7 +75,7 @@ class Products extends Component
         $this->produktas->product_sign = $this->product_sign;
         $this->produktas->color = $this->color;
         $this->produktas->energy = $this->energy;
-        $this->produktas->warranty = $this->warranty;
+        $this->produktas->warranty = $this->produktas->warranty;
 
         $this->produktas->save();
     }
@@ -83,10 +85,10 @@ class Products extends Component
         $this->delete = true;
     }
 
-    public function deleteCancel()
-    {
-        $this->delete = false;
-    }
+    // public function deleteCancel()
+    // {
+    //     $this->delete = false;
+    // }
 
     public function deleteConfirm()
     {

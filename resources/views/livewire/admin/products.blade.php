@@ -12,7 +12,7 @@
         </td>
 
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-            {{ $summary }}
+            {{ $quantity }}
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <button wire:click.prevent="showEdit"
@@ -73,84 +73,79 @@
             <div class="text-right">
 
             </div>
-            <form action="{{route('carts')}}" method="POST">
+            <form action="{{route('admin')}}" method="POST">
             <div class="w-full h-full">
                 <!-- title -->
-                <div class="mb-3">
-                    <label for="title_{{ $produktas->id }}" :value="__('title*')" />Pavadinimas
-                    <input wire:model="title" id="title_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
+                <div class="my-3">
+                    <label class="uppercase ml-2 font-semibold" for="title_{{ $produktas->id }}" :value="__('title*')" />Pavadinimas
+                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="title" id="title_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
                         required autofocus />
 
                 </div>
 
-                <div class="mb-3 w-full">
-                    <label for="summary_{{ $produktas->id }}" :value="__('summary')" />Aprašymas
-                    <input wire:model="summary" id="summary_{{ $produktas->id }}" class="block mt-1 w-full"
+                <div class="my-3 w-full">
+                    <label  class="uppercase ml-2 font-semibold"for="summary_{{ $produktas->id }}" :value="__('summary')" />Aprašymas
+                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="summary" id="summary_{{ $produktas->id }}" class="block mt-1 w-full"
                         type="text" required />
 
-                    <div class="mb-3 w-full">
-                        <label for="model_{{ $produktas->id }}" :value="__('model')" />Modelis
-                        <input wire:model="model" id="model_{{ $produktas->id }}" class="block mt-1 w-full"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="model_{{ $produktas->id }}" :value="__('model')" />Modelis
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="model" id="model_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
 
                     </div>
 
-                    <div class="mb-3 w-full">
-                        <label for="price_{{ $produktas->id }}" :value="__('price')" />Kaina
-                        <input wire:model="price" id="price_{{ $produktas->id }}" class="block mt-1 w-full"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="price_{{ $produktas->id }}" :value="__('price')" />Kaina
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="price" id="price_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
                     <!-- content -->
-                    <div class="mb-full">
-                        <label for="content_{{ $produktas->id }}" :value="__('content')" />Tekstas
-                        <textarea wire:model="content" id="content_{{ $produktas->id }}" cols="30" rows="5"
+                    <div class="my-full">
+                        <label class="uppercase ml-2 font-semibold" for="content_{{ $produktas->id }}" :value="__('content')" />Tekstas
+                        <textarea class="block rounded-lg mt-1 border-blue-500 border-2" wire:model="content" id="content_{{ $produktas->id }}" cols="100" rows="10"
                             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"></textarea>
                     </div>
 
-                    <div class="mb-3 w-full">
-                        <label for="quantity_{{ $produktas->id }}" :value="__('quantity')" />Kiekis
-                        <input wire:model="quantity" id="quantity_{{ $produktas->id }}" class="block mt-1 w-full"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="quantity_{{ $produktas->id }}" :value="__('quantity')" />Kiekis
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="quantity" id="quantity_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
 
-                    <div class="mb-3 w-full">
-                        <label for="type_{{ $produktas->id }}" :value="__('type')" />Tipas
-                        <input wire:model="type" id="type_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="type_{{ $produktas->id }}" :value="__('type')" />Tipas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="type" id="type_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
                             required />
                     </div>
 
 
-                    <div class="mb-3 w-full">
-                        <label for="product_sign_{{ $produktas->id }}" :value="__('product_sign')" />Produkto ženklas
-                        <input wire:model="product_sign" id="product_sign_{{ $produktas->id }}"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="product_sign_{{ $produktas->id }}" :value="__('product_sign')" />Produkto ženklas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="product_sign" id="product_sign_{{ $produktas->id }}"
                             class="block mt-1 w-full" type="text" required />
                     </div>
 
-                    <div class="mb-3 w-full">
-                        <label for="color_{{ $produktas->id }}" :value="__('color')" />Spalva
-                        <input wire:model="color" id="color_{{ $produktas->id }}" class="block mt-1 w-full"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="color_{{ $produktas->id }}" :value="__('color')" />Spalva
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="color" id="color_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
 
-                    <div class="mb-3 w-full">
+                    <div class="my-3 w-full">
 
-                        <label for="energy_{{ $produktas->id }}" :value="__('energy')" />Energija
-                        <input wire:model="energy" id="energy_{{ $produktas->id }}" class="block mt-1 w-full"
+                        <label class="uppercase ml-2 font-semibold" for="energy_{{ $produktas->id }}" :value="__('energy')" />Energija
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="energy" id="energy_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
 
-                    <div class="mb-3 w-full">
-                        <label for="warranty_{{ $produktas->id }}" :value="__('warranty')" />Garantija
-                        <input wire:model="warranty" id="warranty_{{ $produktas->id }}" class="block mt-1 w-full"
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="warranty_{{ $produktas->id }}" :value="__('warranty')" />Garantija
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="warranty" id="warranty_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
-
-
-
                 </div>
             </form>
-
-
         </td>
         <td class="px-6 py-4 text-right text-sm font-medium align-top bg-yellow-50">
             <button wire:click.prevent="hideEdit"
