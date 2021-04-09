@@ -77,7 +77,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            @livewire('admin.product-add', compact('produktas'))
+                            @livewire('admin.product-add')
                         </div>
                     </li>
                     <li class="flex align-center flex-col">

@@ -100,6 +100,12 @@
                         <input wire:model="price" id="price_{{ $produktas->id }}" class="block mt-1 w-full"
                             type="text" required />
                     </div>
+                    <!-- content -->
+                    <div class="mb-full">
+                        <label for="content_{{ $produktas->id }}" :value="__('content')" />Tekstas
+                        <textarea wire:model="content" id="content_{{ $produktas->id }}" cols="30" rows="5"
+                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"></textarea>
+                    </div>
 
                     <div class="mb-3 w-full">
                         <label for="quantity_{{ $produktas->id }}" :value="__('quantity')" />Kiekis
@@ -140,12 +146,7 @@
                     </div>
 
 
-                    <!-- content -->
-                    <div class="mb-full">
-                        <label for="content_{{ $produktas->id }}" :value="__('content')" />Tekstas
-                        <textarea wire:model="content" id="content_{{ $produktas->id }}" cols="30" rows="5"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"></textarea>
-                    </div>
+
                 </div>
             </form>
 

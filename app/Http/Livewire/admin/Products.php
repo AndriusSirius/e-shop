@@ -16,17 +16,17 @@ class Products extends Component
     protected function rules()
     {
         return [
-            'title' => 'required|min:6',
-            'summary' => 'required|min:6',
-            'model' => 'required|min:6',
-            'price' => 'required|min:6',
-            'quantity' => 'required|min:6',
-            'content' => 'required|min:6',
-            'type' => 'required|min:6',
-            'product_sign' => 'required|min:6',
-            'color' => 'required|min:6',
-            'energy' => 'required|min:6',
-            'warranty' => 'required|min:6',
+            'title' => 'min:6',
+            'summary' => 'min:6',
+            'model' => 'min:6',
+            'price' => 'min:2',
+            'quantity' => 'min:1',
+            'content' => 'min:100',
+            'type' => 'min:6',
+            'product_sign' => 'min:3',
+            'color' => 'min:3',
+            'energy' => 'min:3',
+            'warranty' => 'min:1',
         ];
     }
 
@@ -45,6 +45,7 @@ class Products extends Component
         $this->color = $this->produktas->color;
         $this->energy = $this->produktas->energy;
         $this->warranty = $this->produktas->warranty;
+
     }
 
     public function showEdit()
@@ -59,19 +60,20 @@ class Products extends Component
 
     public function saveChanges()
     {
-        dd($this->produktas);
+
         $this->validate();
 
         $this->produktas->title = $this->title;
         $this->produktas->summary = $this->summary;
         $this->produktas->model = $this->model;
         $this->produktas->price = $this->price;
+        $this->produktas->quantity = $this->quantity;
         $this->produktas->content = $this->content;
-        $this->type = $this->produktas->type;
-        $this->product_sign = $this->produktas->product_sign;
-        $this->color = $this->produktas->color;
-        $this->energy = $this->produktas->energy;
-        $this->warranty = $this->produktas->warranty;
+        $this->produktas->type = $this->type;
+        $this->produktas->product_sign = $this->product_sign;
+        $this->produktas->color = $this->color;
+        $this->produktas->energy = $this->energy;
+        $this->produktas->warranty = $this->warranty;
 
         $this->produktas->save();
     }
