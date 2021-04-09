@@ -23,7 +23,7 @@
              <!-- model -->
             <div class="mb-3">
                 <label for="model">Modelis
-                    <input wire:model="model" id="model" class="block mt-1 w-full" type="text" model="model" required>
+                    <input wire:model="model" id="model" class="block mt-1 w-full" type="text" name="model" required>
                 </label>
             </div>
 
@@ -37,7 +37,7 @@
             <!-- quantity -->
             <div class="mb-3">
                 <label for="quantity">Kiekis
-                    <input wire:model="quantity" id="model" class="block mt-1 w-full" type="text" name="quantity" required>
+                    <input wire:model="quantity" id="quantity" class="block mt-1 w-full" type="text" name="quantity" required>
                 </label>
             </div>
 
@@ -51,37 +51,38 @@
             <!-- product_sign -->
             <div class="mb-3">
                 <label for="product_sign">Produkto ženklas
-                    <input wire:model="product_sign" id="model" class="block mt-1 w-full" type="text" name="product_sign" required>
+                    <input wire:model="product_sign" id="product_sign" class="block mt-1 w-full" type="text" name="product_sign" required>
                 </label>
             </div>
 
          <!-- color -->
             <div class="mb-3">
                 <label for="color">Spalva
-                    <input wire:model="color" id="model" class="block mt-1 w-full" type="text" name="color" required>
+                    <input wire:model="color" id="color" class="block mt-1 w-full" type="text" name="color" required>
                 </label>
             </div>
 
             <!-- energy -->
             <div class="mb-3">
                 <label for="energy">Energija
-                    <input wire:model="energy" id="model" class="block mt-1 w-full" type="text" name="energy" required>
+                    <input wire:model="energy" id="energy" class="block mt-1 w-full" type="text" name="energy" required>
                 </label>
             </div>
 
             <!-- warranty -->
             <div class="mb-3">
                 <label for="warranty">Garantija
-                    <input wire:model="warranty" id="model" class="block mt-1 w-full" type="text" name="warranty" required>
+                    <input wire:model="warranty" id="warranty" class="block mt-1 w-full" type="text" name="warranty" required>
                 </label>
             </div>
 
            <!-- content -->
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="content">tekstas
-                    <textarea wire:model="content" id="model" class="block mt-1 w-full" type="text" cols="30" rows="5" name="content" required><textarea>
+                    <textarea wire:model="content"  id="content" cols="30" rows="10" name="content"></textarea>
+                    {{-- <textarea  id="content" class="block mt-1 w-full" type="text" cols="30" rows="5" name="content" required><textarea> --}}
                 </label>
-            </div> --}}
+            </div>
 
         </div>
     </div>

@@ -11,17 +11,17 @@ class ProductAdd extends Component
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
     protected $rules = [
-        'title' => 'required|min:6',
-        'summary' => 'required|min:6',
-        'model' => 'required|min:6',
-        'price' => 'required|min:6',
-        'quantity' => 'required|min:6',
-        'content' => 'required|min:6',
-        'type' => 'required|min:6',
-        'product_sign' => 'required|min:6',
-        'color' => 'required|min:6',
-        'energy' => 'required|min:6',
-        'warranty' => 'required|min:6',
+        'title' => 'required|min:10',
+        'summary' => 'required|min:50',
+        'model' => 'required|min:10',
+        'price' => 'required|min:1|numeric',
+        'quantity' => 'required|min:1|numeric',
+        'content' => 'required|min:100',
+        'type' => 'required|min:10',
+        'product_sign' => 'required|min:3',
+        'color' => 'required|min:3',
+        'energy' => 'required|min:5',
+        'warranty' => 'required|min:5',
 
     ];
 
@@ -56,9 +56,9 @@ class ProductAdd extends Component
     }
 
     public function save(){
-        dd($this->produktas);
-        $this->validate();
 
+        $this->validate();
+        // dd('test');
         $produktas = Product::create([
             'title' => $this->title,
             'summary' => $this->summary,
@@ -72,10 +72,10 @@ class ProductAdd extends Component
             'energy' => $this->energy,
             'warranty' => $this->warranty,
         ]);
-     dd();
+
         $this->emit('produktasPridetas');
         $this->crearFields();
-        $this->cancelProduktasCreate();
+        // $this->cancelProduktasCreate();
 
     }
 

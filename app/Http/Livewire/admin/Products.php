@@ -73,7 +73,7 @@ class Products extends Component
         $this->produktas->product_sign = $this->product_sign;
         $this->produktas->color = $this->color;
         $this->produktas->energy = $this->energy;
-        $this->produktas->warranty = $this->warranty;
+        $this->produktas->warranty = $this->produktas->warranty;
 
         $this->produktas->save();
     }

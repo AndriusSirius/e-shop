@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
 class AdminController extends Controller
 {
     /**
@@ -15,7 +16,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $produktai = Product::all();
+        $produktai = \App\Models\Product::with(['images', 'discount'])->get();
+        // $produktai = Product::all();
         return view('livewire.admin.show-admin', compact('produktai'));
     }
 
