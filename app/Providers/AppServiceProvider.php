@@ -31,8 +31,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $categories = Category::with('subcategories')->where('parent_id', 0)->get()->sortBy('nr');
         view()->share('ParentCategories',$categories);
-        $product_list = \App\Models\Product::all();
-        return view('home', compact('product_list'));
 
     }
 }

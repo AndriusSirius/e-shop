@@ -59,11 +59,11 @@
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Kategorija
+                                            Modelis
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Nuoroda
+                                            Aprašymas
                                         </th>
                                         <th scope="col" class="relative px-6 py-3 w-1">
                                             <span class="sr-only">Valdymas</span>
@@ -71,12 +71,13 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
+
                                     @foreach ($produktai as $produktas)
                                         @livewire('admin.products', compact(['produktas']), key($produktas->id))
                                     @endforeach
                                 </tbody>
                             </table>
-                            @livewire('admin.product-add')
+                            @livewire('admin.product-add', compact('produktas'))
                         </div>
                     </li>
                     <li class="flex align-center flex-col">
