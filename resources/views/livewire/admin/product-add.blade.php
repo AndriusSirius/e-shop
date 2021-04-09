@@ -3,7 +3,7 @@
         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
 
             <h3 class="text-lg py-2 mb-3 leading-6 font-medium text-gray-900">
-                Sukurti naują receptą
+                Sukurti naują Produktą
             </h3>
 
             <!-- Name -->
@@ -16,9 +16,73 @@
             <!-- summary -->
             <div class="mb-3 w-full">
                 <label for="summary">Aprašymas
-                    <input wire:model="summary" id="summary" class="block mt-1 w-full" type="text" required>
+                    <input wire:model="summary" id="summary" class="block mt-1 w-full" type="text" name="summary" required>
                 </label>
             </div>
+
+             <!-- model -->
+            <div class="mb-3">
+                <label for="model">Modelis
+                    <input wire:model="model" id="model" class="block mt-1 w-full" type="text" model="model" required>
+                </label>
+            </div>
+
+          <!-- price -->
+            <div class="mb-3 w-full">
+                <label for="price">Kaina
+                    <input wire:model="price" id="price" class="block mt-1 w-full" type="number" name="price" required>
+                </label>
+            </div>
+
+            <!-- quantity -->
+            <div class="mb-3">
+                <label for="quantity">Kiekis
+                    <input wire:model="quantity" id="model" class="block mt-1 w-full" type="text" name="quantity" required>
+                </label>
+            </div>
+
+            <!-- type -->
+            <div class="mb-3 w-full">
+                <label for="type">Tipas
+                    <input wire:model="type" id="type" class="block mt-1 w-full" type="text" name="type" required>
+                </label>
+            </div>
+
+            <!-- product_sign -->
+            <div class="mb-3">
+                <label for="product_sign">Produkto ženklas
+                    <input wire:model="product_sign" id="model" class="block mt-1 w-full" type="text" name="product_sign" required>
+                </label>
+            </div>
+
+         <!-- color -->
+            <div class="mb-3">
+                <label for="color">Spalva
+                    <input wire:model="color" id="model" class="block mt-1 w-full" type="text" name="color" required>
+                </label>
+            </div>
+
+            <!-- energy -->
+            <div class="mb-3">
+                <label for="energy">Energija
+                    <input wire:model="energy" id="model" class="block mt-1 w-full" type="text" name="energy" required>
+                </label>
+            </div>
+
+            <!-- warranty -->
+            <div class="mb-3">
+                <label for="warranty">Garantija
+                    <input wire:model="warranty" id="model" class="block mt-1 w-full" type="text" name="warranty" required>
+                </label>
+            </div>
+
+           <!-- content -->
+            {{-- <div class="mb-3">
+                <label for="content">tekstas
+                    <textarea wire:model="content" id="model" class="block mt-1 w-full" type="text" cols="30" rows="5" name="content" required><textarea>
+                </label>
+            </div> --}}
+
         </div>
     </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

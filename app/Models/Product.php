@@ -14,10 +14,15 @@ class Product extends Model
     protected $fillable = [
         'title',
         'summary',
-        'type',
+        'model',
         'price',
         'quantity',
         'content',
+        'type',
+        'product_sign',
+        'color',
+        'energy',
+        'warranty',
         'created_at',
         'updated_at'
 

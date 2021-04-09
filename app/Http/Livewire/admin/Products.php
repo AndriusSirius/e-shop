@@ -11,60 +11,85 @@ class Products extends Component
 {
     public $produktas;
     public $edit, $delete;
-    public $title, $summary, $model, $price, $content;
+    public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
     protected function rules()
     {
         return [
-            'title' => 'required|min:6',
-            'summary' => 'required|min:6',
-            'model' => 'required|min:6',
-            'price' => 'required|min:6',
-            'content' => 'required|min:6',
-            'type' => 'required|min:6',
+            'title' => 'min:6',
+            'summary' => 'min:6',
+            'model' => 'min:6',
+            'price' => 'min:2',
+            'quantity' => 'min:1',
+            'content' => 'min:100',
+            'type' => 'min:6',
+            'product_sign' => 'min:3',
+            'color' => 'min:3',
+            'energy' => 'min:3',
+            'warranty' => 'min:1',
         ];
     }
 
-    public function mount(){
+    public function mount()
+    {
         $this->edit = false;
         $this->delete = false;
         $this->title = $this->produktas->title;
         $this->summary = $this->produktas->summary;
         $this->model = $this->produktas->model;
         $this->price = $this->produktas->price;
+        $this->quantity = $this->produktas->quantity;
         $this->content = $this->produktas->content;
+        $this->type = $this->produktas->type;
+        $this->product_sign = $this->produktas->product_sign;
+        $this->color = $this->produktas->color;
+        $this->energy = $this->produktas->energy;
+        $this->warranty = $this->produktas->warranty;
+
     }
 
-    public function showEdit(){
+    public function showEdit()
+    {
         $this->edit = true;
     }
 
-    public function hideEdit(){
+    public function hideEdit()
+    {
         $this->edit = false;
     }
 
-    public function saveChanges(){
-//        dd($this->produktas);
+    public function saveChanges()
+    {
+
         $this->validate();
 
         $this->produktas->title = $this->title;
         $this->produktas->summary = $this->summary;
         $this->produktas->model = $this->model;
         $this->produktas->price = $this->price;
+        $this->produktas->quantity = $this->quantity;
         $this->produktas->content = $this->content;
+        $this->produktas->type = $this->type;
+        $this->produktas->product_sign = $this->product_sign;
+        $this->produktas->color = $this->color;
+        $this->produktas->energy = $this->energy;
+        $this->produktas->warranty = $this->warranty;
 
         $this->produktas->save();
     }
 
-    public function delete(){
+    public function delete()
+    {
         $this->delete = true;
     }
 
-    public function deleteCancel(){
+    public function deleteCancel()
+    {
         $this->delete = false;
     }
 
-    public function deleteConfirm(){
+    public function deleteConfirm()
+    {
         $this->produktas->delete();
         $this->emit('produktasIstrintas');
     }
