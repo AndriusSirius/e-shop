@@ -1,4 +1,4 @@
-<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 @if($show) hidden @endif">
     <div class="sm:flex sm:items-start">
         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
 
@@ -8,80 +8,78 @@
 
             <!-- Name -->
             <div class="mb-3">
-                <label for="title">Pavadinimas
-                    <input wire:model="title" id="title" class="block mt-1 w-full" type="text" name="title" required>
+                <label class="uppercase ml-2 font-semibold " for="title">Pavadinimas
+                    <input wire:model="title" id="title" class="block mt-1 border-blue-500 border-2 rounded-lg w-full" type="text" name="title" required>
                 </label>
             </div>
 
             <!-- summary -->
-            <div class="mb-3 w-full">
-                <label for="summary">Aprašymas
-                    <input wire:model="summary" id="summary" class="block mt-1 w-full" type="text" name="summary" required>
+            <div class="my-3 w-full">
+                <label class="uppercase ml-2 font-semibold" for="summary">Aprašymas
+                    <input wire:model="summary" id="summary" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="summary" required>
                 </label>
             </div>
 
              <!-- model -->
-            <div class="mb-3">
-                <label for="model">Modelis
-                    <input wire:model="model" id="model" class="block mt-1 w-full" type="text" name="model" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="model">Modelis
+                    <input wire:model="model" id="model" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="model" required>
                 </label>
             </div>
 
           <!-- price -->
-            <div class="mb-3 w-full">
-                <label for="price">Kaina
-                    <input wire:model="price" id="price" class="block mt-1 w-full" type="number" name="price" required>
+            <div class="my-3 w-full">
+                <label class="uppercase ml-2 font-semibold" for="price">Kaina
+                    <input wire:model="price" id="price" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="number" name="price" required>
                 </label>
             </div>
 
             <!-- quantity -->
-            <div class="mb-3">
-                <label for="quantity">Kiekis
-                    <input wire:model="quantity" id="quantity" class="block mt-1 w-full" type="text" name="quantity" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="quantity">Kiekis
+                    <input wire:model="quantity" id="quantity" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="number" name="quantity" required>
                 </label>
             </div>
 
             <!-- type -->
-            <div class="mb-3 w-full">
-                <label for="type">Tipas
-                    <input wire:model="type" id="type" class="block mt-1 w-full" type="text" name="type" required>
+            <div class="my-3 w-full">
+                <label class="uppercase ml-2 font-semibold" for="type">Tipas
+                    <input wire:model="type" id="type" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="type" required>
                 </label>
             </div>
 
             <!-- product_sign -->
-            <div class="mb-3">
-                <label for="product_sign">Produkto ženklas
-                    <input wire:model="product_sign" id="product_sign" class="block mt-1 w-full" type="text" name="product_sign" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="product_sign">Produkto ženklas
+                    <input wire:model="product_sign" id="product_sign" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="product_sign" required>
                 </label>
             </div>
 
          <!-- color -->
-            <div class="mb-3">
-                <label for="color">Spalva
-                    <input wire:model="color" id="color" class="block mt-1 w-full" type="text" name="color" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="color">Spalva
+                    <input wire:model="color" id="color" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="color" required>
                 </label>
             </div>
 
             <!-- energy -->
-            <div class="mb-3">
-                <label for="energy">Energija
-                    <input wire:model="energy" id="energy" class="block mt-1 w-full" type="text" name="energy" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="energy">Energija
+                    <input wire:model="energy" id="energy" class="block rounded-lg mt-1 w-full border-blue-500 border-2" type="text" name="energy" required>
                 </label>
             </div>
 
             <!-- warranty -->
-            <div class="mb-3">
-                <label for="warranty">Garantija
-                    <input wire:model="warranty" id="warranty" class="block mt-1 w-full" type="text" name="warranty" required>
+            <div class="my-3">
+                <label class="uppercase ml-2 font-semibold" for="warranty">Garantija
+                    <input wire:model="warranty" id="warranty" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="warranty" required>
                 </label>
             </div>
 
            <!-- content -->
             <div class="mb-3">
-                <label for="content">tekstas
-                    <textarea wire:model="content"  id="content" cols="30" rows="10" name="content"></textarea>
-                    {{-- <textarea  id="content" class="block mt-1 w-full" type="text" cols="30" rows="5" name="content" required><textarea> --}}
-                </label>
+                <label class="uppercase ml-2 font-semibold" for="content">tekstas
+                    <textarea class="rounded-lg block border-blue-500 border-2" wire:model="content"  id="content" cols="100" rows="10" name="content"></textarea>                </label>
             </div>
 
         </div>
@@ -107,3 +105,4 @@
         </button>
     </div>
 </div>
+

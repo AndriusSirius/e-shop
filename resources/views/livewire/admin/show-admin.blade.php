@@ -48,6 +48,8 @@
                                             Pridėti naują prekę
                                         </a>
                                     </div>
+                                    @livewire('admin.product-add')
+
                                     <tr>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
@@ -76,7 +78,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            @livewire('admin.product-add')
                         </div>
                     </li>
                     <li class="flex align-center flex-col">

@@ -34,11 +34,12 @@ class ProductAdd extends Component
     }
 
     public function showProduktasCreate(){
-        $this->show = true;
+        // dd('test');
+        $this->show = false;
     }
 
     public function cancelProduktasCreate(){
-        $this->show = false;
+        $this->show = true;
     }
 
     public function crearFields(){
