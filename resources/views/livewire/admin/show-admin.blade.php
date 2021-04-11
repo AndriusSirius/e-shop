@@ -22,86 +22,99 @@
             </div>
             <br>
         </div>
-        <div class="flex h-full">
-            <div class="container mx-auto bg-white">
-                <ul class="block w-11/12 my-14 mx-auto" x-data="{selected:null}">
-                    <li class="flex align-center flex-col">
-                        <h4 @click="selected !== 0 ? selected = 0 : selected = null"
-                            class="py-4 border-solid border-2 border-blue-700 cursor-pointer px-5 py-3 bg-white text-blue-700 uppercase font-semibold text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">
-                            <i class="fas fa-sitemap"></i> kategorijų valdymas
-                        </h4>
-                        <div x-show="selected == 0" class="border py-4 px-2">
+        <div class="flex flex-wrap overflow-hidden sm:-mx-1">
 
+            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="font-semibold uppercase text-blue-700 text-lg"><i class="fab fa-shopify"></i> Produktų
+                    valdymas</h2>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <div class="flex justify-end">
+                            <a href="#" onclick="Livewire.emit('showProduktasCreate'); return false;"
+                                class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none mb-6">
+                                Pridėti naują prekę
+                            </a>
                         </div>
-                    </li>
-                    <li class="flex align-center flex-col">
-                        <h4 @click="selected !== 1 ? selected = 1 : selected = null"
-                            class="mt-2 py-4 border-solid border-2 border-red-700 cursor-pointer px-5 py-3 bg-white text-red-700 uppercase font-semibold text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">
-                            <i class="fas fa-shopping-bag"></i> produktų valdymas
-                        </h4>
-                        <div x-show="selected == 1" class="border py-4 px-2">
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50">
-                                    <div class="flex justify-end">
-                                        <a href="#" onclick="Livewire.emit('showProduktasCreate'); return false;"
-                                            class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none mb-6">
-                                            Pridėti naują prekę
-                                        </a>
-                                    </div>
-                                    @livewire('admin.product-add')
+                        @livewire('admin.product-add')
 
-                                    <tr>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
-                                            #
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Pavadinimas
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Modelis
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Kiekis
-                                        </th>
-                                        <th scope="col" class="relative px-6 py-3 w-1">
-                                            <span class="sr-only">Valdymas</span>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    @foreach ($produktai as $produktas)
-                                        @livewire('admin.products', compact(['produktas']), key($produktas->id))
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                    <li class="flex align-center flex-col">
-                        <h4 @click="selected !== 2 ? selected = 2 : selected = null"
-                            :class="{'mt-2 py-4 border-solid border-2 border-yellow-700 cursor-pointer px-5 py-3 bg-white text-yellow-700 uppercase font-semibold text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 2}">
-                            <i class="fas fa-user-friends"></i> vartotojų valdymas
-                        </h4>
-                        <div x-show="selected == 2" :class="{'border py-4 px-2': true, 'rounded-b': selected == 2}">
-                        </div>
-                    </li>
-                    <li class="flex align-center flex-col">
-                        <h4 @click="selected !== 3 ? selected = 3 : selected = null"
-                            :class="{'mt-2 py-4 border-solid border-2 border-green-700 cursor-pointer px-5 py-3 bg-white text-green-700 uppercase font-semibold text-left inline-block hover:opacity-75 hover:shadow hover:-mb-3': true, 'rounded-b': selected != 3}">
-                            <i class="fab fa-shopify"></i> užsakymų valdymas
-                        </h4>
-                        <div x-show="selected == 3" :class="{'border py-4 px-2': true, 'rounded-b': selected == 3}">
-                        </div>
-                    </li>
-                </ul>
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                #
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Pavadinimas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Modelis
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Kiekis
+                            </th>
+                            <th scope="col" class="relative px-6 py-3 w-1">
+                                <span class="sr-only">Valdymas</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach ($produktai as $produktas)
+                            @livewire('admin.products', compact(['produktas']), key($produktas->id))
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class="m-4">
+                    {{ $produktai->links() }}
+                </div>
             </div>
-        </div>
-        <div class="flex border-t-2 border-solid border-dark">
-            <p class="p-4 text-sm text-gray-300 font-semibold">* Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Deserunt assumenda quia quam labore, consequatur beatae?</p>
+
+            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="font-semibold uppercase text-yellow-700 text-lg"><i class="fas fa-code-branch"></i>
+                    Kategorijų valdymas</h2>
+            </div>
+
+            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="font-semibold uppercase text-blue-900 text-lg"><i class="fas fa-users"></i> Vartotojų
+                    valdymas</h2>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                #
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Vardas Pavardė
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Miestas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                El.paštas
+                            </th>
+                            <th scope="col" class="relative px-6 py-3 w-1">
+                                <span class="sr-only">Valdymas</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach ($vartotojai as $user)
+                            @livewire('admin.users', compact(['user']), key($user->id))
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i> Užsakymų
+                    valdymas</h2>
+            </div>
+
         </div>
     </section>
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -16,9 +17,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $produktai = \App\Models\Product::with(['images', 'discount'])->get();
+        $produktai = \App\Models\Product::with(['images', 'discount'])->paginate(9);
+        $vartotojai = User::paginate(9);
         // $produktai = Product::all();
-        return view('livewire.admin.show-admin', compact('produktai'));
+        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai'));
     }
 
     /**
