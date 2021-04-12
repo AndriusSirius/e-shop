@@ -14,7 +14,7 @@ class ProductAdd extends Component
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
-    public $path, $input_field_name, $products;
+    public $path, $input_field_name;
 
     protected $rules = [
         'title' => 'required|min:1',
@@ -64,11 +64,9 @@ class ProductAdd extends Component
 
     public function save(){
 
-        $products_id = $this->id;
-
         $this->validate();
 
-        Product::create([
+        $data = Product::create([
             'title' => $this->title,
             'summary' => $this->summary,
             'model' => $this->model,
@@ -96,7 +94,7 @@ class ProductAdd extends Component
 
         Image::create([
            'path' => $way,
-           'products_id' => $products_id,
+           'products_id' => $data->id,
         ]);
 
         $this->path = null;

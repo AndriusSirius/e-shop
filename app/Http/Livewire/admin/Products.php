@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Discounts;
+use App\Models\Image;
 
 
 class Products extends Component
@@ -85,14 +87,15 @@ class Products extends Component
         $this->delete = true;
     }
 
-    // public function deleteCancel()
-    // {
-    //     $this->delete = false;
-    // }
+    public function deleteCancel()
+    {
+        $this->delete = false;
+    }
 
     public function deleteConfirm()
     {
         $this->produktas->delete();
+
         $this->emit('produktasIstrintas');
     }
 
