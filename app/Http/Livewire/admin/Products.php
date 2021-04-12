@@ -12,6 +12,7 @@ use App\Models\Image;
 class Products extends Component
 {
     public $produktas;
+    // test
     public $edit, $delete;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
