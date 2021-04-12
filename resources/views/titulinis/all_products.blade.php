@@ -1,4 +1,4 @@
-<section class=" my-14 container">
+<section class=" my-14 container px-10">
 
     <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-500">
         <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-500 text-2xl fas fa-laptop-house"></i> VISOS PREKĖS</h2>
@@ -10,7 +10,7 @@
                     <img alt="Placeholder" class="block object-contain h-48 w-full"
                         src="{{ asset($product->images->first()->path) }}">
                     <div class="mt-5">
-                        <p class=" mx-2 text-center uppercase font-bold hover:underline" >{{$product->title}}</p>
+                        <p class=" mx-5 text-center uppercase font-bold hover:underline" >{{$product->title}}</p>
                     </div>
                 </a>
             </div>

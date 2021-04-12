@@ -1,4 +1,4 @@
-<section class=" my-14 container">
+<section class=" my-14 container px-10">
 
     <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-700">
         <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-700 text-2xl fas fa-home"></i> NAMŲ TECHNIKA</h2>

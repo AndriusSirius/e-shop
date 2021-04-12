@@ -4,11 +4,22 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+//$role = Role::create(['name' => 'user']);
+//$permission = Permission::create(['name' => 'buy_products']);
+//
+//$role->givePermissionTo($permission);
+//$permission->assignRole($role);
 
 class User extends Authenticatable
 {
@@ -17,6 +28,9 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
+
+
 
     /**
      * The attributes that are mass assignable.
@@ -35,6 +49,7 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $guard_name = 'web';
     /**
      * The attributes that should be hidden for arrays.
      *
