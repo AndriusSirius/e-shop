@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RolesSeeder extends Seeder
 {
@@ -15,17 +17,22 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'name' => 'user',
-            'guard_name' => 'web',
-            'created_at' => Carbon::now()->format('Y-m-d H:i'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
-        ]);
-        DB::table('roles')->insert([
-            'name' => 'admin',
-            'guard_name' => 'web2',
-            'created_at' => Carbon::now()->format('Y-m-d H:i'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
-        ]);
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
+        // create permissions
+        Permission::create(['name' => 'edit_all']);
+        Permission::create(['name' => 'buy_products']);
+
+        // create roles and assign created permissions
+
+        // this can be done as separate statements
+        $role = Role::create(['name' => 'admin']);
+        $role->givePermissionTo('edit_all');
+
+        $role = Role::create(['name' => 'user']);
+        $role->givePermissionTo('buy_products');
+
+
+
     }
 }

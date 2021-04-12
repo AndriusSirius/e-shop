@@ -17,12 +17,12 @@ class Model_Has_Permissions extends Seeder
     {
         DB::table('model_has_permissions')->insert([
             'permission_id' => '1',
-            'model_type' => 'nezinau ka cia rasyti',
+            'model_type' => 'App\Models\User',
             'model_id' => '1'
         ]);
         DB::table('model_has_permissions')->insert([
             'permission_id' => '2',
-            'model_type' => 'nezinau ka cia rasyti',
+            'model_type' => 'App\Models\User',
             'model_id' => '2'
         ]);
     }

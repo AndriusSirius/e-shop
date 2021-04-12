@@ -20,11 +20,16 @@ use App\Http\Controllers\CartController;
 
 //PAGRINDINIS
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home']);
+//Route::get('/home', function (){
+//    if(auth()->user()){
+//        auth()->user()->assignRole('admin');
+//    }
+//});
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
 Route::get('/all_products', [\App\Http\Controllers\AllProducts::class, 'all'])->name('all_products');
 
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('admin');
 
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');
 //KREPŠELIS

@@ -46,9 +46,11 @@
                     <x-jet-dropdown-link href="{{ route('profile.show') }}">
                         {{ __('Profilis') }}
                     </x-jet-dropdown-link>
+                    @role('admin')
                     <x-jet-dropdown-link href="{{ route('admin') }}">
                         {{ __('Administratoriaus pultas') }}
                     </x-jet-dropdown-link>
+                    @endrole
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
