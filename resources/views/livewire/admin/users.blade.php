@@ -1,17 +1,17 @@
 <tr>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
-            {{ $produktas->id }}
+            {{ $user->id }}
         </td>
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            {{ $produktas->title }}
+            {{ $user->name }} {{ $Lastname }}
         </td>
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            {{ $model }}
+            {{ $country }}
         </td>
 
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-            {{ $quantity }}
+            {{ $email }}
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <button wire:click.prevent="showEdit"
@@ -26,7 +26,7 @@
         </td>
     @elseif($delete)
         <td class="px-6 py-4 align-top bg-red-100">
-            {{ $produktas->id }}
+            {{ $user->id }}
         </td>
         <td colspan="4" class="px-6 py-8 bg-red-100 text-center">
             <h4 class="mb-8 font-bold flex flex-row justify-center">
@@ -66,82 +66,62 @@
         </td>
     @else
         <td class="px-6 py-4 align-top bg-yellow-50">
-            {{ $produktas->id }}
+            {{ $user->id }}
         </td>
         <td colspan="3" class="px-6 py-4  bg-yellow-50">
             <div class="text-right">
 
             </div>
-            <form action="{{route('admin')}}" method="POST">
-            <div class="w-full h-full">
-                <!-- title -->
-                <div class="my-3">
-                    <label class="uppercase ml-2 font-semibold" for="title_{{ $produktas->id }}" :value="__('title*')" />Pavadinimas
-                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="title" id="title_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
-                        required autofocus />
-
-                </div>
-
-                <div class="my-3 w-full">
-                    <label  class="uppercase ml-2 font-semibold"for="summary_{{ $produktas->id }}" :value="__('summary')" />Aprašymas
-                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="summary" id="summary_{{ $produktas->id }}" class="block mt-1 w-full"
-                        type="text" required />
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="model_{{ $produktas->id }}" :value="__('model')" />Modelis
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="model" id="model_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
-
+            <form action="{{ route('admin') }}" method="POST">
+                <div class="w-full h-full">
+                    <!-- name -->
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="name_{{ $user->id }}"
+                            value="__('name*')" >Vardas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="name"
+                            id="name_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="price_{{ $produktas->id }}" :value="__('price')" />Kaina
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="price" id="price_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="Lastname_{{ $user->id }}"
+                            value="__('Lastname*')" >Pavardė
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="Lastname"
+                            id="Lastname_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
-                    <!-- content -->
-                    <div class="my-full">
-                        <label class="uppercase ml-2 font-semibold" for="content_{{ $produktas->id }}" :value="__('content')" />Tekstas
-                        <textarea class="block rounded-lg mt-1 border-blue-500 border-2" wire:model="content" id="content_{{ $produktas->id }}" cols="100" rows="10"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"></textarea>
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="email_{{ $user->id }}"
+                            value="__('email*')" >El.paštas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="email"
+                            id="email_{{ $user->id }}" class="block mt-1 w-full" type="email" required autofocus />
                     </div>
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="quantity_{{ $produktas->id }}" :value="__('quantity')" />Kiekis
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="quantity" id="quantity_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="country_{{ $user->id }}"
+                            value="__('country*')" >Šalis
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="country"
+                            id="country_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="type_{{ $produktas->id }}" :value="__('type')" />Tipas
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="type" id="type_{{ $produktas->id }}" class="block mt-1 w-full" type="text"
-                            required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="city_{{ $user->id }}"
+                            value="__('city*')" >Miestas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="city"
+                            id="city_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
-
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="product_sign_{{ $produktas->id }}" :value="__('product_sign')" />Produkto ženklas
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="product_sign" id="product_sign_{{ $produktas->id }}"
-                            class="block mt-1 w-full" type="text" required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="address_{{ $user->id }}"
+                            value="__('address*')" >Adresas(Rajonas, gatvė, namo numeris.)
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="address"
+                            id="address_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="color_{{ $produktas->id }}" :value="__('color')" />Spalva
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="color" id="color_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="phone_number_{{ $user->id }}"
+                            value="__('phone_number*')" >Telefono numeris
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="phone_number"
+                            id="phone_number_{{ $user->id }}" class="block mt-1 w-full" type="number" required autofocus />
                     </div>
-
-                    <div class="my-3 w-full">
-
-                        <label class="uppercase ml-2 font-semibold" for="energy_{{ $produktas->id }}" :value="__('energy')" />Energija
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="energy" id="energy_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
-                    </div>
-
-                    <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="warranty_{{ $produktas->id }}" :value="__('warranty')" />Garantija
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="warranty" id="warranty_{{ $produktas->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                    <div class="my-3">
+                        <label class="uppercase ml-2 font-semibold" for="post_code_{{ $user->id }}"
+                            value="__('post_code*')" >Pašto kodas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="post_code"
+                            id="post_code_{{ $user->id }}" class="block mt-1 w-full" type="text" required autofocus />
                     </div>
                 </div>
             </form>

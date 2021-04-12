@@ -4,20 +4,26 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Product;
+use App\Models\Image;
+use Livewire\WithFileUploads;
 
 class ProductAdd extends Component
 {
+    use WithFileUploads;
+
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
+    public $path, $input_field_name, $products;
+
     protected $rules = [
-        'title' => 'required|min:10',
-        'summary' => 'required|min:50',
-        'model' => 'required|min:10',
+        'title' => 'required|min:1',
+        'summary' => 'required|min:1',
+        'model' => 'required|min:1',
         'price' => 'required|min:1|numeric',
         'quantity' => 'required|min:1|numeric',
-        'content' => 'required|min:100',
-        'type' => 'required|min:10',
+        'content' => 'required|min:1',
+        'type' => 'required|min:1',
         'product_sign' => 'required|min:3',
         'color' => 'required|min:3',
         'energy' => 'required|min:5',
@@ -42,7 +48,7 @@ class ProductAdd extends Component
         $this->show = true;
     }
 
-    public function crearFields(){
+    public function clearFields(){
         $this->title = null;
         $this->summary = null;
         $this->model = null;
@@ -58,9 +64,11 @@ class ProductAdd extends Component
 
     public function save(){
 
+        $products_id = $this->id;
+
         $this->validate();
-        // dd('test');
-        $produktas = Product::create([
+
+        Product::create([
             'title' => $this->title,
             'summary' => $this->summary,
             'model' => $this->model,
@@ -74,9 +82,29 @@ class ProductAdd extends Component
             'warranty' => $this->warranty,
         ]);
 
+        $way = null;
+        if ($this->path != null){
+            $pavadinimas = $this->id.".".$this->path->extension();
+            $this->path->storeAs('produktai', $pavadinimas);
+
+            $way = 'storage/produktai/'.$pavadinimas;
+        }
+
+        $this->validate([
+            'path' => 'nullable|image|max:1024',
+        ]);
+
+        Image::create([
+           'path' => $way,
+           'products_id' => $products_id,
+        ]);
+
+        $this->path = null;
+
+        $this->input_field_name = "image_".rand();
+
         $this->emit('produktasPridetas');
-        $this->crearFields();
-        // $this->cancelProduktasCreate();
+        $this->clearFields();
 
     }
 

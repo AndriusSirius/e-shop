@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -17,10 +17,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-
         if(Auth::user()->hasPermissionTo('edit_all')){
-        $produktai = \App\Models\Product::with(['images', 'discount'])->get();
-        return view('livewire.admin.show-admin', compact('produktai'));
+            $produktai = \App\Models\Product::with(['images', 'discount'])->paginate(9);
+        $vartotojai = User::paginate(9);
+        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai'));
         }
         elseif(Auth::user()->hasPermissionTo('buy_products')){
             return redirect()->route('home')->with('warning', 'Tvarkyti produktus gali tik administratorius');
@@ -29,7 +29,6 @@ class AdminController extends Controller
             return redirect()->route('home')->with('warning', 'Tvarkyti produktus gali tik administratorius');
 
         }
-        // $produktai = Product::all();
     }
 
     /**

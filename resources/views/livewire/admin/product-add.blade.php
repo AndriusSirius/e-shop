@@ -9,77 +9,95 @@
             <!-- Name -->
             <div class="mb-3">
                 <label class="uppercase ml-2 font-semibold " for="title">Pavadinimas
-                    <input wire:model="title" id="title" class="block mt-1 border-blue-500 border-2 rounded-lg w-full" type="text" name="title" required>
+                    <input wire:model="title" id="title" class="block mt-1 w-full border-blue-700" type="text" name="title" required>
                 </label>
             </div>
 
             <!-- summary -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="summary">Aprašymas
-                    <input wire:model="summary" id="summary" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="summary" required>
+                    <input wire:model="summary" id="summary" class="block mt-1 w-full border-blue-700" type="text" name="summary" required>
                 </label>
             </div>
 
              <!-- model -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="model">Modelis
-                    <input wire:model="model" id="model" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="model" required>
+                    <input wire:model="model" id="model" class="block mt-1 w-full border-blue-700" type="text" name="model" required>
                 </label>
             </div>
 
           <!-- price -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="price">Kaina
-                    <input wire:model="price" id="price" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="number" name="price" required>
+                    <input wire:model="price" id="price" class="block mt-1 w-full border-blue-700" type="number" name="price" required>
                 </label>
             </div>
 
             <!-- quantity -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="quantity">Kiekis
-                    <input wire:model="quantity" id="quantity" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="number" name="quantity" required>
+                    <input wire:model="quantity" id="quantity" class="block mt-1 w-full border-blue-700" type="number" name="quantity" required>
                 </label>
             </div>
 
             <!-- type -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="type">Tipas
-                    <input wire:model="type" id="type" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="type" required>
+                    <input wire:model="type" id="type" class="block mt-1 w-full border-blue-700" type="text" name="type" required>
                 </label>
             </div>
 
             <!-- product_sign -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="product_sign">Produkto ženklas
-                    <input wire:model="product_sign" id="product_sign" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="product_sign" required>
+                    <input wire:model="product_sign" id="product_sign" class="block mt-1 w-full border-blue-700" type="text" name="product_sign" required>
                 </label>
             </div>
 
          <!-- color -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="color">Spalva
-                    <input wire:model="color" id="color" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="color" required>
+                    <input wire:model="color" id="color" class="block mt-1 w-full border-blue-700" type="text" name="color" required>
                 </label>
             </div>
 
             <!-- energy -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="energy">Energija
-                    <input wire:model="energy" id="energy" class="block rounded-lg mt-1 w-full border-blue-500 border-2" type="text" name="energy" required>
+                    <input wire:model="energy" id="energy" class="block mt-1 w-full border-blue-700" type="text" name="energy" required>
                 </label>
             </div>
 
             <!-- warranty -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="warranty">Garantija
-                    <input wire:model="warranty" id="warranty" class="block mt-1 rounded-lg w-full border-blue-500 border-2" type="text" name="warranty" required>
+                    <input wire:model="warranty" id="warranty" class="block mt-1 w-full border-blue-700" type="text" name="warranty" required>
                 </label>
             </div>
 
            <!-- content -->
             <div class="mb-3">
                 <label class="uppercase ml-2 font-semibold" for="content">tekstas
-                    <textarea class="rounded-lg block border-blue-500 border-2" wire:model="content"  id="content" cols="100" rows="10" name="content"></textarea>                </label>
+                    <textarea class="block mt-1 w-full border-blue-700" wire:model="content"  id="content" cols="100" rows="10" name="content"></textarea>                </label>
+            </div>
+
+            <div class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/4">
+
+                <div class="pt-3" >
+
+                    <input type="file" wire:model="path" id="{{ $input_field_name }}">
+
+                    <div wire:loading wire:target="path">Failas keliamas...</div>
+
+                    @if ($path)
+
+                        <div class=" my-2 relative">
+                            <img src="{{ $path->temporaryUrl() }}" class="max-w-full max-h-44 rounded mx-auto">
+                        </div>
+
+                    @endif
+                </div>
             </div>
 
         </div>

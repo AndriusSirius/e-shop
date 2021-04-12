@@ -1,4 +1,4 @@
-<section class=" mt-52 container">
+<section class=" mt-52 container px-10">
     <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-900">
         <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-900 text-2xl fas fa-feather-alt"></i> NAUJAUSI PASIŪLYMAI</h2>
     </div>
