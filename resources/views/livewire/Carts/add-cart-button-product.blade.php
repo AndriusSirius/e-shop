@@ -1,8 +1,8 @@
 {{--{{$product->cart->quantity}}--}}
-<div class="flex justify-center w-1/5">
+<div class="flex justify-center w-1/5 ml-20 lg:ml-0" >
     <div class="my-8">
         <div class="my-4 ">
-            <p for="quantity" class="font-semibold text-xl text-gray-500">
+            <p class="font-semibold text-xl text-gray-500">
                 Kiekis:
             </p>
             <button wire:click="minusQuantity">
@@ -12,7 +12,7 @@
                 </svg>
             </button>
 
-                <input id="quantity" class="ml-4 h-14 border text-center w-20" type="number" wire:model="quantity">
+                <input id="quantity" class="ml-4 mr-4 h-14 border mt-2 text-center w-20" type="number" wire:model="quantity">
 
             <button wire:click="plusQuantity">
                 <svg class="fill-current text-gray-600 w-5" viewBox="0 0 448 512">
@@ -22,7 +22,7 @@
             </button>
         </div>
         <button wire:click="addToCart({{ $product->id }})"
-                class="bg-white w-64 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
+                class="bg-white w-48 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold ">
             <svg class="h-6  inline mx-1" xmlns="http://www.w3.org/2000/svg" fill="none"
                  viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

@@ -2,7 +2,7 @@
 
 <x-guest-layout>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto mt-6">
 
         <section class="py-6">
             <div class="container mx-auto">
