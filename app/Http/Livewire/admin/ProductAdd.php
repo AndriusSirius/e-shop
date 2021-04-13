@@ -14,7 +14,8 @@ class ProductAdd extends Component
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
-    public $path, $input_field_name;
+    public $input_field_name;
+    public $path  = [];
 
     protected $rules = [
         'title' => 'required|min:1',
@@ -82,14 +83,14 @@ class ProductAdd extends Component
 
         $way = null;
         if ($this->path != null){
-            $pavadinimas = $this->id.".".$this->path->extension();
-            $this->path->storeAs('produktai', $pavadinimas);
+            $pavadinimas = $this->id.".".$this->path[0]->extension();
+            $this->path[0]->storeAs('produktai', $pavadinimas);
 
             $way = 'storage/produktai/'.$pavadinimas;
         }
 
         $this->validate([
-            'path' => 'nullable|image|max:1024',
+            'path.*' => 'nullable|image|max:1024',
         ]);
 
         Image::create([

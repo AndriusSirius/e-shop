@@ -92,7 +92,7 @@ class productsSeeder extends Seeder
             'quantity' => 110,
             'content' => 'Skalbimo mašina tiesios Zuuper!!!',
             'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'type' => 'Skalbimo mašina',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
@@ -118,7 +118,7 @@ class productsSeeder extends Seeder
             'quantity' => 21,
             'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
             'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'type' => 'Skalbimo mašina',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
@@ -131,7 +131,7 @@ class productsSeeder extends Seeder
             'quantity' => 110,
             'content' => 'Skalbimo mašina tiesios Zuuper!!!',
             'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'type' => 'Skalbimo mašina',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
@@ -144,7 +144,7 @@ class productsSeeder extends Seeder
             'quantity' => 11,
             'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
             'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'type' => 'Skalbimo mašina',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
@@ -157,7 +157,7 @@ class productsSeeder extends Seeder
             'quantity' => 21,
             'content' => 'Skalbimo mašina AEG tiesios Zuuper!!!',
             'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'type' => 'Skalbimo mašina',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
@@ -169,11 +169,38 @@ class productsSeeder extends Seeder
             'price' => '265',
             'quantity' => 21,
             'content' => 'PHILIPS LatteGo  tiesiog Zuuper!!!',
-            'product_sign' => 'Snaigė',
-            'type' => 'Šaldytuvas',
+            'product_sign' => 'Philips',
+            'type' => 'Kavos aparatas',
             'color' => 'Rožinė',
             'energy' => '2kw',
             'warranty' => '3 metai'
+        ]);
+
+        DB::table('products')->insert([
+            'title' => 'Televizorius TV|OLED/4K/Smart|Wireless LAN',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => '|LG|65"|OLED/4K/Smart|',
+            'price' => '2059 ',
+            'quantity' => 21,
+            'content' => 'Televizorius TV tiesiog Zuuper!!!',
+            'product_sign' => 'Philips',
+            'type' => 'Televyzorius',
+            'color' => 'Rožinė',
+            'energy' => '999kw',
+            'warranty' => '10 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Televizorius Samsung QE55LS03TAUXXH',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'QE55LS03TAUXXH',
+            'price' => '1010 ',
+            'quantity' => 21,
+            'content' => 'Televizorius TV samsung tiesiog Zuuper!!!',
+            'product_sign' => 'Philips',
+            'type' => 'Televyzorius',
+            'color' => 'Raudonas',
+            'energy' => '999kw',
+            'warranty' => '10 metai'
         ]);
     }
 }
