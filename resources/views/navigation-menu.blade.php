@@ -1,29 +1,28 @@
-<nav x-data="{ open: false }" class=" z-50 fixed top-0 flex bg-white flex-col mx-auto lg:items-center w-full lg:justify-between lg:flex-row border-b ">
-    <div class=" flex flex-row justify-between ">
-        <div>
-            <a href="{{ route('home') }}"><img class="object-contain h-24 ml-7  " src="{{ asset('images/Logotipas.png') }}"></a>
+<nav x-data="{ open: false }" class=" z-10 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
+    <div class=" flex flex-row justify-between">
+        <div class=" sm:justify-center">
+            <a href="{{ route('home') }}"><img class="object-contain h-24 m-3 " src="{{ asset('images/Logotipas.png') }}"></a>
         </div>
-        <button class="lg:hidden rounded-lg m-4  focus:outline-none focus:shadow-outline" @click="open = !open">
+        <button class="lg:hidden rounded-lg m-8  focus:outline-none focus:shadow-outline" @click="open = !open">
             <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                 <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                 <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
         </button>
     </div>
-    <div :class="{'flex': open, 'hidden': !open}" class="flex-col  pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
+    <div :class="{'flex': open, 'hidden': !open}" class="  flex-col pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
         @include('category.category')
 
     </div>
-    <div class="inline  flex justify-end mr-7 pb-4 lg:pb-0">
+    <div class="inline flex justify-start ml-6 lg:mr-6 pb-4 lg:pb-0 ">
         @Auth
             <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             @livewire('carts.cart-total')
-            <x-jet-dropdown >
+            <x-jet-dropdown>
 
                 <x-slot name="trigger">
-
                     <button type="button" class="inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                         <svg class="w-6 h-6 m-2 stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
