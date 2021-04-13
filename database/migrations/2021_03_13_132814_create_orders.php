@@ -16,16 +16,14 @@ class CreateOrders extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('carts_id');
             $table->unsignedBigInteger('products_id');
-            $table->binary('status');
-            $table->integer('item_discount');
+            $table->string('status');
             $table->string('shipping');
             $table->integer('total');
+            $table->text('content');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('carts_id')->references('id')->on('carts');
             $table->foreign('products_id')->references('id')->on('products');
         });
     }

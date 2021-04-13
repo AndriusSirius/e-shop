@@ -134,6 +134,7 @@
 
                 <div id="user_orders" class="tabcontent hidden">
                     <h2 class="border-b-2 text-xl p-2 mb-2 text-gray-900 font-sans font-bold">Mano užsakymai</h2>
+                    @livewire('profile.order-show')
                 </div>
 
                 <div id="user_settings" class="tabcontent hidden">
