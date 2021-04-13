@@ -2,15 +2,14 @@
 
 namespace App\Http\Livewire\Orders;
 
+use App\Http\Livewire\Carts\Carts;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Cart;
-use App\Models\User;
+use App\Models\Order;
 
 class OrderCheckout extends Component
 {
     public $cartTotal = 0;
-    public $user;
     public $order;
 
     protected $listeners = [
@@ -31,10 +30,6 @@ class OrderCheckout extends Component
                 $this->priceWithoutDiscount = $this->price * $this->order_list->quantity;
             }
         }
-
-//        $this->cartTotal = Cart::where('user_id', Auth::id())->count();
-//        $this->user = User::all();
-//        $this->order = Cart::with(['Products', 'images', 'discounts'])->where('user_id', Auth::id())->get();
     }
 
     public function render()

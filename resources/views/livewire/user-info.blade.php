@@ -29,15 +29,6 @@
     </label>
 </div>
 
-<div class="mt-8">
-    <h4 class="text-sm text-gray-500 font-medium">Papildomas komentaras</h4>
-    <div class="mt-6 flex">
-        <label class="block flex-1">
-                                                <textarea type="text" class="form-input mt-1 block w-full text-gray-700"
-                                                          placeholder="Komentaras"></textarea>
-        </label>
-    </div>
-</div>
 
 <div class="mt-8">
     <h4 class="text-sm text-gray-500 font-medium">Apmokėjimo metodas</h4>

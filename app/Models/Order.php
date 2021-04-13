@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Order extends Model
 {
@@ -12,11 +13,10 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'products_id',
-        'carts_id',
         'status',
-        'item_discount',
         'shipping',
         'total',
+        'content',
         'created_at',
         'updated_at'
     ];
@@ -29,10 +29,7 @@ class Order extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function cart()
-    {
-        return $this->belongsTo(Cart::class, 'carts_id');
-    }
+
     public function discount()
     {
         return $this->hasOne(Discounts::class, 'products_id', 'products_id')
