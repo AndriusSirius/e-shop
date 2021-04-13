@@ -94,5 +94,21 @@ class product_categoriesSeeder extends Seeder
             'products_id'=> '10',
             'categories_id' => '8'
         ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '11',
+            'categories_id' => '3'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '11',
+            'categories_id' => '9'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '12',
+            'categories_id' => '3'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '12',
+            'categories_id' => '9'
+        ]);
     }
 }

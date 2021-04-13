@@ -70,6 +70,14 @@ class ImagesSeeder extends Seeder
             'products_id' => 10,
             'path'=> 'storage/produktai/kavosaparatas.png'
         ]);
+        DB::table('images')->insert([
+            'products_id' => 11,
+            'path'=> 'storage/produktai/tv1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 12,
+            'path'=> 'storage/produktai/tv2.jpg'
+        ]);
 
     }
 }
