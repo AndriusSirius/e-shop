@@ -5,8 +5,10 @@
                 @include('Products.product-list-item')
             @endforeach
         </div>
-        <div class="container mx-auto w-2/3">
-            {{ $product_list->links() }}
-        </div>
+        @if($product_list->links())
+            <div class="container mx-auto w-2/3">
+                {{ $product_list->links() }}
+            </div>
+        @endif
     </section>
 </x-app-layout>

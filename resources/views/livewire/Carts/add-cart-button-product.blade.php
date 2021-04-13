@@ -12,7 +12,7 @@
                 </svg>
             </button>
 
-                <input id="quantity" class="ml-4 h-14 border text-center w-20" type="number" value="1" wire.model="quantity">
+                <input id="quantity" class="ml-4 h-14 border text-center w-20" type="number" wire:model="quantity">
 
             <button wire:click="plusQuantity">
                 <svg class="fill-current text-gray-600 w-5" viewBox="0 0 448 512">

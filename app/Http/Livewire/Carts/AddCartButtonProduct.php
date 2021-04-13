@@ -9,52 +9,36 @@ use Illuminate\Support\Facades\Auth;
 class AddCartButtonProduct extends Component
 {
     public $product, $quantity, $cartProduct;
-    public function mount(){
 
+    public function mount(){
+        $this->quantity = 1;
     }
 
     public function render()
     {
         return view('livewire.carts.add-cart-button-product');
     }
+
     public function addToCart($productId)
     {
         $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
-        if($qty->count() == 0){
-            Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId]);
+
+        if ($qty->count() == 0) {
+            Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId, 'quantity'=>$this->quantity]);
         }
-        else{
-            Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);
+        else {
+            Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+$this->quantity]);
         }
         $this->emit('productAdded');
     }
-    public function minusQuantity(){
+
+    public function minusQuantity()
+    {
         $this->quantity--;
-        $this->updatedQuantity();
-
     }
 
-    public function plusQuantity(){
-
+    public function plusQuantity()
+    {
         $this->quantity++;
-        $this->updatedQuantity();
-    }
-    public function updatedQuantity(){
-        foreach($this->product->cart as $cartProduct){
-        if(is_numeric($this->quantity)){
-            if($this->quantity > 0){
-                $cartProduct->quantity = $this->quantity;
-                $cartProduct->save();
-            }
-            else{
-                $cartProduct->delete();
-
-            }
-        }
-
-        }
-
-        $this->emit('updateCart');
-
     }
 }

@@ -40,4 +40,4 @@ Route::get('/order_checkout', [\App\Http\Controllers\OrderController::class, 'in
 Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'detail'])->name('product');
 // Kategorijos
 
-Route::get('/{link}', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');
+Route::get('/{link1}/{link2?}', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');
