@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Collection;
+use App\Models\Product;
 
 class CategoryController extends Controller
 {
@@ -136,17 +137,17 @@ class CategoryController extends Controller
         // neribotas kiekis nuorodų, naudojant kolekcijas
 
         $categories = Category::with('subcategories')
-            ->where('parent_id', null)
+            ->where('parent_id', 0)
             ->get()->sortBy('nr');
 
         $args = func_get_args();
-
         $ids = [];
         $route_categories = collect();
         $subcategories = $categories;
 
         foreach ($args as $link) {
             $category = $subcategories->firstWhere('link', $link);
+//            dd($subcategories);
             if ($category) {
                 $ids[] = $category->id;
                 $route_categories->add($category);
@@ -156,9 +157,11 @@ class CategoryController extends Controller
                 break;
             }
         }
-
+//        dd($category);
         if ($category) {
-            return view('category.category', compact('category', 'categories', 'ids', 'route_categories'));
+            $product_list = $category->products()->paginate(9);
+//            $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
+            return view('allproducts', compact('category', 'categories', 'ids', 'route_categories', 'product_list'));
         } else {
             return abort(404);
         }
