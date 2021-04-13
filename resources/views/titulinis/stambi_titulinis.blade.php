@@ -4,7 +4,7 @@
         <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-500 text-2xl fas fa-laptop-house"></i> STAMBI BUITINĖ TECHNIKA</h2>
     </div>
     <div class="px-6 py-6 border border-gray-200  owl-carousel owl-theme bg-white rounded">
-        @foreach ($news as $product)
+        @foreach ($stambiProducts as $product)
             <div class=" overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2" >
                 <a href="{{ route('product', [$product->id]) }}">
                     <img alt="Placeholder" class="block object-contain h-48 w-full"
@@ -18,7 +18,7 @@
         @endforeach
 
     </div>
-    <a href="" class="flex justify-end font-semibold text-indigo-600 text-lg mt-10">
+    <a href="{{ route('category_list', [$stambi->link]) }}" class="flex justify-end font-semibold text-indigo-600 text-lg mt-10">
         Peržiūrėkite visus produktus
         <svg class="fill-current ml-2 text-indigo-600 w-4" aria-hidden="true" focusable="false" data-prefix="fas"
             data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
