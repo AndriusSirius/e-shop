@@ -16,8 +16,7 @@
                 </h1>
             </div>
         </div>
-
-        @livewire('carts.add-cart-button', compact('product_list_item'), key($product_list_item->id))
+    @livewire('carts.add-cart-button', compact('product_list_item'), key($product_list_item->id))
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
