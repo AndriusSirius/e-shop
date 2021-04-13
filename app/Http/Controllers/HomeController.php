@@ -18,14 +18,32 @@ class HomeController extends Controller{
     public function home()
     {
         // $Products = DB::table('discounts')->join('Products', 'discounts.products_id', '=', 'Products.id')->join('images', 'images.products_id', '=', 'Products.id')->get();
-       $news = Product::take(5)->orderByDesc('id')->get();
+
+       $news = Product::orderBy('id', 'desc')->take(12)->get();
        $all = Product::all();
+       $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
 
-       return view('home', compact('news', 'all'));
-        $product_list = Product::take(10)->get();
-        $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-        return view('home', compact( 'ParentCategories', 'product_list'));
+       $stambi = $ParentCategories->find(2);
+       $stambiProducts = $stambi->products()->take(12)->get();
 
+       $smulki = $ParentCategories->find(1);
+       $smulkiProducts = $smulki->products()->take(12)->get();
+
+       $namu = $ParentCategories->find(3);
+       $namuProducts = $namu->products()->take(12)->get();
+
+//        dd($ParentCategories->find(2)->products()->take(3)->get());
+
+       return view('home', compact(
+           'news',
+           'all',
+           'stambi',
+           'stambiProducts',
+           'smulki',
+           'smulkiProducts',
+           'namu',
+           'namuProducts',
+       ));
     }
 
 }
