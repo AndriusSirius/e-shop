@@ -8,7 +8,7 @@
 
             @if ($path)
                 <div class=" my-2 relative">
-                    <img src="{{ $path->temporaryUrl() }}" class="max-w-full max-h-44 rounded mx-auto">
+                    {{-- <img src="{{ $path->temporaryUrl() }}" class="max-w-full max-h-44 rounded mx-auto"> --}}
                 </div>
             @endif
 

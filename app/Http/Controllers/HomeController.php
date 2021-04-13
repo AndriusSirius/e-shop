@@ -18,7 +18,7 @@ class HomeController extends Controller{
     public function home()
     {
         // $Products = DB::table('discounts')->join('Products', 'discounts.products_id', '=', 'Products.id')->join('images', 'images.products_id', '=', 'Products.id')->get();
-       $news = Product::take(5)->get();
+       $news = Product::take(5)->orderByDesc('id')->get();
        $all = Product::all();
 
        return view('home', compact('news', 'all'));
