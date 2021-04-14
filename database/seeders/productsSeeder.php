@@ -202,5 +202,161 @@ class productsSeeder extends Seeder
             'energy' => '999kw',
             'warranty' => '10 metai'
         ]);
+        DB::table('products')->insert([
+            'title' => 'Įmontuojama mikrobangų krosnelė Miele M 2230 OBSW',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' Miele M 2230 OBSW',
+            'price' => '799 ',
+            'quantity' => 21,
+            'content' => 'Įmontuojama mikrobangų krosnelė Miele tiesiog Zuuper!!!',
+            'product_sign' => 'Miele',
+            'type' => 'mikrobangu krosnelė',
+            'color' => 'Juoda',
+            'energy' => '9kw',
+            'warranty' => '2 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Mikrobangų krosnelė AEG MBE2658SEM',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'MBE2658SEM',
+            'price' => '399 ',
+            'quantity' => 21,
+            'content' => 'mikrobangų krosnelė AEG tiesiog Zuuper!!!',
+            'product_sign' => 'AEG',
+            'type' => 'mikrobangu krosnelė',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '2 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Įmontuojama mikrobangų krosnelė Bosch BFR634GW1',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' BFR634GW1',
+            'price' => '459',
+            'quantity' => 21,
+            'content' => 'mikrobangų krosnelė AEG tiesiog Zuuper!!!',
+            'product_sign' => 'BOSH',
+            'type' => 'mikrobangu krosnelė',
+            'color' => 'Balta',
+            'energy' => '2kw',
+            'warranty' => '2 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Indaplovė Miele G 4943 brws',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => '  G 4943 brws',
+            'price' => '789',
+            'quantity' => 21,
+            'content' => ' G 4943 brws Miele tiesiog Zuuper!!!',
+            'product_sign' => 'Miele',
+            'type' => 'Indaplovė',
+            'color' => 'Balta',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Indaplovė AEG FSE63717P',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'AEG FSE63717P',
+            'price' => '549',
+            'quantity' => 21,
+            'content' => ' AEG FSE63717P tiesiog Zuuper!!!',
+            'product_sign' => 'AEG',
+            'type' => 'Indaplovė',
+            'color' => 'Balta',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Įmontuojama indaplovė Bosch SPU4EMI28S',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' SPU4EMI28S',
+            'price' => '569',
+            'quantity' => 21,
+            'content' => ' Įmontuojama indaplovė Bosch tiesiog Zuuper!!!',
+            'product_sign' => 'BOSCH',
+            'type' => 'Indaplovė',
+            'color' => 'Balta',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Įmontuojama indaplovė Bosch SMV6ZCX42E',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' SMV6ZCX42E',
+            'price' => '760',
+            'quantity' => 21,
+            'content' => ' Įmontuojama indaplovė Bosch tiesiog Zuuper!!!',
+            'product_sign' => 'BOSCH',
+            'type' => 'Indaplovė',
+            'color' => 'Balta',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Indukcinė kaitlentė Electrolux EIT61443B',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' EIT61443B',
+            'price' => '429',
+            'quantity' => 21,
+            'content' => ' kaitlente tiesiog Zuuper!!!',
+            'product_sign' => 'Eletrolux',
+            'type' => 'Kaitlentė',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Indukcinė kaitlentė Samsung NZ64H57477K/EU',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => ' NZ64H57477K/EU',
+            'price' => '429',
+            'quantity' => 21,
+            'content' => ' kaitlente tiesiog Zuuper!!!',
+            'product_sign' => 'Samsung',
+            'type' => 'Kaitlentė',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Orkaitė NEFF CMS1522N (C15MS22N0)',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'CMS1522N',
+            'price' => '649',
+            'quantity' => 21,
+            'content' => ' kaitlente tiesiog Zuuper!!!',
+            'product_sign' => ' NEFF',
+            'type' => 'Orkaite',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Orkaitė ELECTROLUX EOC6P71X',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'EOC6P71X',
+            'price' => '649',
+            'quantity' => 21,
+            'content' => ' Orkaite tiesiog Zuuper!!!',
+            'product_sign' => ' ELECTROLUX',
+            'type' => 'Orkaite',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
+        DB::table('products')->insert([
+            'title' => 'Orkaitė ELECTROLUX EOD6P71X',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'EOD6P71X',
+            'price' => '429',
+            'quantity' => 21,
+            'content' => ' Orkaite tiesiog Zuuper!!!',
+            'product_sign' => ' ELECTROLUX',
+            'type' => 'Orkaite',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
     }
 }

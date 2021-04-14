@@ -70,13 +70,13 @@
                 </div>
             </div>
 
-            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
-                <h2 class="font-semibold uppercase text-yellow-700 text-lg"><i class="fas fa-code-branch"></i>
+            <div class="border-b-2 mt-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="mb-6 font-semibold uppercase text-yellow-700 text-lg"><i class="fas fa-code-branch"></i>
                     Kategorijų valdymas</h2>
             </div>
 
-            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
-                <h2 class="font-semibold uppercase text-blue-900 text-lg"><i class="fas fa-users"></i> Vartotojų
+            <div class="border-b-2 mt-2  w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="mb-6 font-semibold uppercase text-blue-900 text-lg"><i class="fas fa-users"></i> Vartotojų
                     valdymas</h2>
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -110,8 +110,8 @@
                 </table>
             </div>
 
-            <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
-                <h2 class="font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i> Užsakymų
+            <div class="border-b-2 mt-2  w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="mb-6 font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i> Užsakymų
                     valdymas</h2>
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -126,6 +126,10 @@
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Prekės pavadinimas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Pristatymas
                             </th>
                             <th scope="col"
@@ -133,9 +137,9 @@
                                 Užsakymo būsena
                             </th>
                             <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Komentaras
-                        </th>
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Komentaras
+                            </th>
                             <th scope="col" class="relative px-6 py-3 w-1">
                                 <span class="sr-only">Valdymas</span>
                             </th>
