@@ -18,7 +18,9 @@ class Orders extends Component
 
     public function mount()
     {
+
         $this->order = Cart::with(['Products', 'discount'])->where('user_id', Auth::id())->get();
+//        $this->price = $this->order;
     }
 
     public function render()

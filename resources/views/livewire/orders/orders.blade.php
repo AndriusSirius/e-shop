@@ -1,10 +1,16 @@
 {{--<x-app-layout>--}}
-<div id="summary" class="px-8 py-10 bg-gray-100 sm:w-1/3 md:w-1/3 lg:w-1/4">
+{{--    {{$order}}--}}
+@empty($order)
+    @foreach($order as $one_order)
+    @endforeach
+@endempty
+
+<div id="summary" class=" mr-2 ml-2 lg-ml-0 lg:mr-7 px-8 py-10 bg-gray-100 sm:w-1/3 md:w-1/3 lg:w-1/4">
     <h1 class="font-semibold text-2xl border-b pb-8">Užsakymo apskaita</h1>
-    <div class="flex justify-between mt-10 mb-5">
-        <span class="font-semibold text-sm uppercase">Prekės:</span>
-        <span class="font-semibold text-sm">Kaina be PVM: 590€</span>
-    </div>
+    {{--        <div class="flex justify-between mt-10 mb-5">--}}
+    {{--                    <span class="font-semibold text-sm uppercase"> Prekės: {{$one_order->quantity}}</span>--}}
+    {{--                    <span class="font-semibold text-sm">Bendra kaina: @livewire('orders.order-price', compact('order'))</span>--}}
+    {{--        </div>--}}
     <div>
         <label class="font-medium inline-block mb-3 text-sm uppercase">Pristatymas</label>
         <select class="block p-2 text-gray-600 w-full text-sm">
@@ -21,16 +27,19 @@
         Patvirtinti
     </button>
     <div class="border-t mt-8">
-        <div class="flex justify-between font-semibold p-3">
-            <span>PVM mokestis:</span>
-            <span>€10</span>
-        </div>
+        {{--        <div class="flex justify-between font-semibold p-3">--}}
+        {{--            <span>PVM mokestis:</span>--}}
+        {{--            <span>@livewire('orders.order-price', compact('order'))</span>--}}
+        {{--        </div>--}}
         <div class="flex justify-between font-semibold p-3 mb-1">
             <span>Pristatymo mokestis:</span>
-            <span>€3.99</span>
+            <span>5.68 €</span>
+        </div>
+        <div class="flex justify-between font-semibold p-3 mb-3">
+            <span>Užsakymo kaina:</span>
+            {{--                            <span>@livewire('orders.order-price', compact('order'))</span>--}}
         </div>
 
-        @livewire('orders.order-price', compact('order'))
 
         <a href="{{route('order_checkout')}}">
             <button
