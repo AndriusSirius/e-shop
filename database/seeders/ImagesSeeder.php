@@ -78,6 +78,170 @@ class ImagesSeeder extends Seeder
             'products_id' => 12,
             'path'=> 'storage/produktai/tv2.jpg'
         ]);
+        DB::table('images')->insert([
+            'products_id' => 13,
+            'path'=> 'storage/produktai/mikro.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 13,
+            'path'=> 'storage/produktai/mikro.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 14,
+            'path'=> 'storage/produktai/mikro1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 14,
+            'path'=> 'storage/produktai/mikro1.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 14,
+            'path'=> 'storage/produktai/mikro1.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 15,
+            'path'=> 'storage/produktai/mikro2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 15,
+            'path'=> 'storage/produktai/mikro2.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 15,
+            'path'=> 'storage/produktai/mikro2.2.jpg'
+        ]);
+        // DB::table('images')->insert([
+        //     'products_id' => 16,
+        //     'path'=> 'storage/produktai/mikro3.jpg'
+        // ]);
+        // DB::table('images')->insert([
+        //     'products_id' => 16,
+        //     'path'=> 'storage/produktai/mikro3.1.jpg'
+        // ]);
+        DB::table('images')->insert([
+            'products_id' => 16,
+            'path'=> 'storage/produktai/indaplove.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 17,
+            'path'=> 'storage/produktai/indaplove1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 18,
+            'path'=> 'storage/produktai/indaplove2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 18,
+            'path'=> 'storage/produktai/indaplove2.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 18,
+            'path'=> 'storage/produktai/indaplove2.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 18,
+            'path'=> 'storage/produktai/indaplove2.3.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 19,
+            'path'=> 'storage/produktai/indaplove3.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 19,
+            'path'=> 'storage/produktai/indaplove3.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 19,
+            'path'=> 'storage/produktai/indaplove3.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 19,
+            'path'=> 'storage/produktai/indaplove3.3.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 19,
+            'path'=> 'storage/produktai/indaplove3.4.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 20,
+            'path'=> 'storage/produktai/kaitlente.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 20,
+            'path'=> 'storage/produktai/kaitlente.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 20,
+            'path'=> 'storage/produktai/kaitlente1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 21,
+            'path'=> 'storage/produktai/kaitlente.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 21,
+            'path'=> 'storage/produktai/kaitlente.2.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 21,
+            'path'=> 'storage/produktai/kaitlente.2.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 21,
+            'path'=> 'storage/produktai/kaitlente.2.3.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 21,
+            'path'=> 'storage/produktai/kaitlente.2.4.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 22,
+            'path'=> 'storage/produktai/orkaite.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 22,
+            'path'=> 'storage/produktai/orkaite.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 22,
+            'path'=> 'storage/produktai/orkaite.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 22,
+            'path'=> 'storage/produktai/orkaite.3.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 23,
+            'path'=> 'storage/produktai/orkaite1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 23,
+            'path'=> 'storage/produktai/orkaite1.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 23,
+            'path'=> 'storage/produktai/orkaite1.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 23,
+            'path'=> 'storage/produktai/orkaite1.3.jpg'
+        ]);
 
+        DB::table('images')->insert([
+            'products_id' => 24,
+            'path'=> 'storage/produktai/orkaite2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 24,
+            'path'=> 'storage/produktai/orkaite2.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 24,
+            'path'=> 'storage/produktai/orkaite2.2.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 24,
+            'path'=> 'storage/produktai/orkaite2.3.jpg'
+        ]);
     }
 }
