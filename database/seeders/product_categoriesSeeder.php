@@ -19,40 +19,96 @@ class product_categoriesSeeder extends Seeder
             'categories_id' => '2'
         ]);
         DB::table('product_category')->insert([
+            'products_id'=> '1',
+            'categories_id' => '4'
+        ]);
+        DB::table('product_category')->insert([
             'products_id'=> '2',
             'categories_id' => '2'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '2',
+            'categories_id' => '4'
         ]);
         DB::table('product_category')->insert([
             'products_id'=> '3',
             'categories_id' => '2'
         ]);
         DB::table('product_category')->insert([
+            'products_id'=> '3',
+            'categories_id' => '4'
+        ]);
+        DB::table('product_category')->insert([
             'products_id'=> '4',
             'categories_id' => '2'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '4',
+            'categories_id' => '5'
         ]);
         DB::table('product_category')->insert([
             'products_id'=> '5',
             'categories_id' => '2'
         ]);
         DB::table('product_category')->insert([
+            'products_id'=> '5',
+            'categories_id' => '5'
+        ]);
+        DB::table('product_category')->insert([
             'products_id'=> '6',
             'categories_id' => '2'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '6',
+            'categories_id' => '5'
         ]);
         DB::table('product_category')->insert([
             'products_id'=> '7',
             'categories_id' => '2'
         ]);
         DB::table('product_category')->insert([
+            'products_id'=> '7',
+            'categories_id' => '5'
+        ]);
+        DB::table('product_category')->insert([
             'products_id'=> '8',
             'categories_id' => '2'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '8',
+            'categories_id' => '5'
         ]);
         DB::table('product_category')->insert([
             'products_id'=> '9',
             'categories_id' => '2'
         ]);
         DB::table('product_category')->insert([
+            'products_id'=> '9',
+            'categories_id' => '5'
+        ]);
+        DB::table('product_category')->insert([
             'products_id'=> '10',
             'categories_id' => '1'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '10',
+            'categories_id' => '8'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '11',
+            'categories_id' => '3'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '11',
+            'categories_id' => '9'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '12',
+            'categories_id' => '3'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '12',
+            'categories_id' => '9'
         ]);
     }
 }

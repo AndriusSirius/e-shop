@@ -48,6 +48,14 @@ class CategorySeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
         DB::table('categories')->insert([
+            'name' => 'Skalbimo mašinos',
+            'link' => 'skalbimo-masinos',
+            'parent_id' => '2',
+            'nr' => '4',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('categories')->insert([
             'name' => 'Orkaitės',
             'link' => 'orkaites',
             'parent_id' => '2',
@@ -97,7 +105,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => 'Mikrobangų krosnelės',
-            'link' => 'Mikrobanges',
+            'link' => 'Mikrobangu-krosneles',
             'parent_id' => '2',
             'nr' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
