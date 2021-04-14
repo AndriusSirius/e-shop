@@ -9,10 +9,14 @@
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            {{ $shipping }}
+            {{ $list->products['title'] }} <span class="font-bold">({{ $list->total }})</span>
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
+            {{ $shipping }}
+        </td>
+
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-green-600">
             {{ $status }}
         </td>
 

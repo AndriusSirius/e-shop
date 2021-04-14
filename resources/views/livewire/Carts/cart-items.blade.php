@@ -1,4 +1,4 @@
-<section wire:poll.10s="fireUpdateCart" class="py-6 container mx-auto ">
+<section wire:poll.10s="fireUpdateCart" class="py-6 container mx-auto mt-24">
     <div class="w-full">
         <div class="text-black font-bold my-8 ml-5" aria-label="Breadcrumb">
             <ol class="list-none p-0 inline-flex">
