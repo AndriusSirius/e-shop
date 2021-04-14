@@ -113,6 +113,40 @@
             <div class="border-b-2 w-full overflow-hidden sm:my-1 sm:px-1">
                 <h2 class="font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i> Užsakymų
                     valdymas</h2>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                #
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Vardas Pavardė
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Pristatymas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Užsakymo būsena
+                            </th>
+                            <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Komentaras
+                        </th>
+                            <th scope="col" class="relative px-6 py-3 w-1">
+                                <span class="sr-only">Valdymas</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach ($orderList as $list)
+                            @livewire('admin.orders', compact(['list']), key($list->id))
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
         </div>

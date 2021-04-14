@@ -5,7 +5,7 @@
                 @include('Products.product-list-item')
             @endforeach
         </div>
-        @if($product_list->links())
+        @if ($product_list->links())
             <div class="container mx-auto w-2/3">
                 {{ $product_list->links() }}
             </div>

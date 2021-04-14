@@ -97,7 +97,7 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'name' => 'Mikrobangų krosnelės',
-            'link' => 'orkaites',
+            'link' => 'Mikrobanges',
             'parent_id' => '2',
             'nr' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
