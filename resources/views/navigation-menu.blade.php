@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class=" z-10 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
+<nav x-data="{ open: false }" class=" z-50 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
     <div class=" flex flex-row justify-between">
         <div class=" sm:justify-center">
             <a href="{{ route('home') }}"><img class="object-contain h-24 m-3 " src="{{ asset('images/Logotipas.png') }}"></a>
@@ -10,7 +10,7 @@
             </svg>
         </button>
     </div>
-    <div :class="{'flex': open, 'hidden': !open}" class="  flex-col pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
+    <div :class="{'flex': open, 'hidden': !open}" class=" flex-col pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
         @include('category.category')
 
     </div>
