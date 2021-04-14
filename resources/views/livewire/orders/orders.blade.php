@@ -1,9 +1,9 @@
 {{--<x-app-layout>--}}
 {{--    {{$order}}--}}
-@empty($order)
-    @foreach($order as $one_order)
-    @endforeach
-@endempty
+{{--@empty($order)--}}
+{{--    @foreach($order as $one_order)--}}
+{{--    @endforeach--}}
+{{--@endempty--}}
 
 <div id="summary" class=" mr-2 ml-2 lg-ml-0 lg:mr-7 px-8 py-10 bg-gray-100 sm:w-1/3 md:w-1/3 lg:w-1/4">
     <h1 class="font-semibold text-2xl border-b pb-8">Užsakymo apskaita</h1>
