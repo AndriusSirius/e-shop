@@ -37,7 +37,6 @@ class ImagesUpload extends Component
 
     public function send(){
 
-        dd('test');
         $this->validate([
             'path' => 'image|max:1024', // 1MB Max
 //            kai daug paveiksliukų

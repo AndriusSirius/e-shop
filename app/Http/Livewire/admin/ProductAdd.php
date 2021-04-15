@@ -14,8 +14,7 @@ class ProductAdd extends Component
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
-    public $input_field_name;
-    public $path  = [];
+    public $path, $input_field_name;
 
     protected $rules = [
         'title' => 'required|min:1',
@@ -86,16 +85,15 @@ class ProductAdd extends Component
             'warranty' => $this->warranty,
         ]);
         $this->validate([
-            'path.*' => 'nullable|image|max:1024',
-        ]);
+            'path' => 'nullable|image|max:1024',]);
         $way = [];
         if ($this->path != null) {
             $count = count($this->path);
 
             for ($i = 0; $i > $count; $i++) {
 
-                $pavadinimas = $this->id . "." . $this->path[$i]->extension();
-                $this->path[$i]->storeAs('produktai', $pavadinimas);
+                $pavadinimas = $this->id.".".$this->path->extension();
+                $this->path->storeAs('produktai', $pavadinimas);
 
                 // // dd($i);
                 $way = ['storage/produktai/' . $pavadinimas];
