@@ -33,23 +33,27 @@ class ProductAdd extends Component
     ];
 
     protected $listeners = [
-      'showProduktasCreate' => 'showProduktasCreate',
+        'showProduktasCreate' => 'showProduktasCreate',
     ];
 
-    public function mount(){
+    public function mount()
+    {
         $this->show = true;
     }
 
-    public function showProduktasCreate(){
+    public function showProduktasCreate()
+    {
         // dd('test');
         $this->show = false;
     }
 
-    public function cancelProduktasCreate(){
+    public function cancelProduktasCreate()
+    {
         $this->show = true;
     }
 
-    public function clearFields(){
+    public function clearFields()
+    {
         $this->title = null;
         $this->summary = null;
         $this->model = null;
@@ -63,7 +67,8 @@ class ProductAdd extends Component
         $this->warranty = null;
     }
 
-    public function save(){
+    public function save()
+    {
 
         $this->validate();
 
@@ -80,31 +85,38 @@ class ProductAdd extends Component
             'energy' => $this->energy,
             'warranty' => $this->warranty,
         ]);
-
-        $way = null;
-        if ($this->path != null){
-            $pavadinimas = $this->id.".".$this->path[0]->extension();
-            $this->path[0]->storeAs('produktai', $pavadinimas);
-
-            $way = 'storage/produktai/'.$pavadinimas;
-        }
-
         $this->validate([
             'path.*' => 'nullable|image|max:1024',
         ]);
+        $way = [];
+        if ($this->path != null) {
+            $count = count($this->path);
 
+            for ($i = 0; $i > $count; $i++) {
+
+                $pavadinimas = $this->id . "." . $this->path[$i]->extension();
+                $this->path[$i]->storeAs('produktai', $pavadinimas);
+
+                // // dd($i);
+                $way = ['storage/produktai/' . $pavadinimas];
+            }
+            // print_r($this->path);
+        }
+        // die();
+
+
+        // dd($data->id);
         Image::create([
-           'path' => $way,
-           'products_id' => $data->id,
+            'path' => $way,
+            'products_id' => $data->id,
         ]);
 
         $this->path = null;
 
-        $this->input_field_name = "image_".rand();
+        $this->input_field_name = "image_" . rand();
 
         $this->emit('produktasPridetas');
         $this->clearFields();
-
     }
 
     public function render()
