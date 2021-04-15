@@ -69,7 +69,6 @@ class ProductAdd extends Component
 
     public function save()
     {
-
         $this->validate();
 
         $data = Product::create([
@@ -85,6 +84,7 @@ class ProductAdd extends Component
             'energy' => $this->energy,
             'warranty' => $this->warranty,
         ]);
+
         $way = [];
         if ($this->path != null) {
             $pavadinimas = $this->id . "." . $this->path->extension();
