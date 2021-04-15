@@ -1,8 +1,22 @@
-<section class=" my-14 container px-10">
+<section class="mt-48 my-14 container px-10">
+    <div class="justify-center bg-gray-100 flex flex-wrap overflow-hidden xl:-mx-4">
 
-    <div class="bg-gray-200 p-2 border-t-4 border-solid border-blue-500">
-        <h2 class="font-sans font-semibold text-xl ml-2"><i class="text-blue-500 text-2xl fas fa-laptop-house"></i> VISOS PREKĖS</h2>
-    </div>
+        <div class="w-96 p-2 m-2 text-center overflow-hidden xl:my-4 xl:px-4 xl:w-1/4">
+            <p class="text-center text-blue-800 border-r-2 border-solid border-gray-200 font-semibold text-2xl"><i class="fas fa-gifts"></i> AKCIJOS</p>
+        </div>
+
+        <div class="w-96 p-2 m-2 text-center overflow-hidden xl:my-4 xl:px-4 xl:w-1/4">
+            <p class="text-center text-black-300 border-r-2 border-solid border-gray-200 font-semibold text-2xl"><i class="fab fa-shopify"></i> IŠPARDAVIMAI</p>
+        </div>
+
+        <div class="w-96 p-2 m-2 text-center overflow-hidden xl:my-4 xl:px-4 xl:w-1/4">
+            <p class="text-center text-gray-500 font-semibold text-2xl"><i class="far fa-newspaper"></i> NAUJIENLAIŠKIS</p>
+        </div>
+
+      </div>
+    <h1 class="p-12 m-12 border-t-2 border-solid border-blue-700 text-center text-gray-200 font-semibold text-2xl xs:text-5xl md:text-6xl">
+        <span class="text-blue-700"><i class="fas fa-shopping-bag"></i> Visi</span> produktai
+    </h1>
     <div class="px-6 py-6 border border-gray-200  owl-carousel owl-theme bg-white rounded">
         @foreach ($all as $product)
             <div class=" overflow-hidden rounded-lg shadow-lg h-80  border-r-2 border-l-2" >

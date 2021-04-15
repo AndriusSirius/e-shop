@@ -29,6 +29,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 
 Route::get('/all_products', [\App\Http\Controllers\AllProducts::class, 'all'])->name('all_products');
 
+Route::get('/order_checkout/order_complete', [\App\Http\Controllers\OrderComplete::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('order_complete');
+
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('admin');
 
 //Route::get('/', [\App\Http\Livewire\Header::class, 'render'])->name('home');

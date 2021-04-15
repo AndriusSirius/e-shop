@@ -3,8 +3,8 @@
         <h4 class="text-sm text-gray-500 font-medium">Papildomas komentaras</h4>
         <div class="mt-6 flex">
             <label class="block flex-1">
-                <textarea type="text" name="content" wire:model="content" class="form-input mt-1 block w-full text-gray-700"
-                    placeholder="Komentaras"></textarea>
+                <textarea type="text" name="content" wire:model="content"
+                    class="form-input mt-1 block w-full text-gray-700" placeholder="Komentaras"></textarea>
             </label>
         </div>
     </div>
@@ -12,10 +12,13 @@
         <h4 class="text-sm text-gray-500 font-medium">Pristatymo metodas</h4>
         <div class="mt-6">
             <button
-                class="flex items-center justify-between w-full bg-white rounded-md border-2 border-blue-500 p-4 focus:outline-none">
+                class="flex items-center justify-between w-full bg-white rounded-md border-2 border-blue-500 p-4 focus:outline-none"
+                checked>
+
                 <label class="flex items-center">
                     <input type="radio" class="form-radio h-5 w-5 text-blue-600" name="shipping" wire:model="shipping"
-                        value="Kurjeriu" checked><span class="ml-2 text-sm text-gray-700">Kurjeriu</span>
+                        value="Kurjeriu" autofocus>
+                    <span class="ml-2 text-sm text-gray-700">Kurjeriu</span>
                 </label>
 
                 <span class="text-gray-600 text-sm">3.99€</span>
@@ -33,7 +36,7 @@
                 </svg>
                 <span class="mx-2">Grįžti atgal</span>
             </button>
-            <button type="button" wire:click.prevent="save()"
+            <button wire:click.prevent="save()"
                 class="bg-white w-56 p-2 hover:bg-blue-500 hover:text-white text-blue-500 border border-2 border-blue-700 transition duration-300 ease-in-out rounded-full text-lg focus:outline-none  focus:shadow-outline font-semibold">
                 <span>Apmokėti</span>
             </button>

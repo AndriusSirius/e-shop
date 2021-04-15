@@ -56,6 +56,8 @@ class OrderAdd extends Component
 
         $this->emit('OrderAdded');
         $this->clearFields();
+
+        return redirect()->route('order_complete');
     }
 
 
