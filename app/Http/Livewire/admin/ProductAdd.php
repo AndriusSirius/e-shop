@@ -85,31 +85,32 @@ class ProductAdd extends Component
             'energy' => $this->energy,
             'warranty' => $this->warranty,
         ]);
+
         $this->validate([
             'path.*' => 'nullable|image|max:1024',
         ]);
-        $way = [];
+
+
         if ($this->path != null) {
-            $count = count($this->path);
+            $way = [];
+            foreach ($this->path as $pathas) {
 
-            for ($i = 0; $i > $count; $i++) {
-
-                $pavadinimas = $this->id . "." . $this->path[$i]->extension();
-                $this->path[$i]->storeAs('produktai', $pavadinimas);
+                $pavadinimas = $this->id . "." . $pathas->extension();
+                $pathas->storeAs('produktai', $pavadinimas);
 
                 // // dd($i);
                 $way = ['storage/produktai/' . $pavadinimas];
+
+                 // dd($data->id);
+                Image::create([
+                    'path' => $way,
+                    'products_id' => $data->id,
+                ]);
+
             }
             // print_r($this->path);
         }
         // die();
-
-
-        // dd($data->id);
-        Image::create([
-            'path' => $way,
-            'products_id' => $data->id,
-        ]);
 
         $this->path = null;
 
