@@ -85,6 +85,7 @@ class ProductAdd extends Component
             'warranty' => $this->warranty,
         ]);
 
+
         $way = [];
         if ($this->path != null) {
             $pavadinimas = $this->id . "." . $this->path->extension();
