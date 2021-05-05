@@ -65,7 +65,6 @@ class Products extends Component
 
     public function saveChanges()
     {
-
         $this->validate();
 
         $this->produktas->title = $this->title;

@@ -19,6 +19,7 @@ class Discounts extends Migration
             $table->integer('percentage');
             $table->date('from')->nullable();
             $table->date('to')->nullable();
+            $table->timestamps();
 
             $table->foreign('products_id')->references('id')->on('products');
 

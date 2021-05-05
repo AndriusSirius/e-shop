@@ -19,10 +19,13 @@ class AdminController extends Controller
     public function index()
     {
         if(Auth::user()->hasPermissionTo('edit_all')){
+
             $produktai = \App\Models\Product::with(['images', 'discount'])->paginate(9);
             $vartotojai = User::paginate(9);
+            $nuolaidos = \App\Models\Discounts::with(['product'])->paginate(9);
             $orderList = Order::with(['users', 'products'])->get();
-        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai', 'orderList'));
+
+        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai', 'orderList', 'nuolaidos'));
         }
         elseif(Auth::user()->hasPermissionTo('buy_products')){
             return redirect()->route('home')->with('warning', 'Tvarkyti produktus gali tik administratorius');

@@ -78,15 +78,29 @@
 
            <!-- content -->
             <div class="mb-3">
-                <label class="uppercase ml-2 font-semibold" for="content">tekstas
+                <label class="uppercase ml-2 font-semibold" for="content">Apie prekę
                     <textarea class="block mt-1 w-full border-blue-700" wire:model="content"  id="content" cols="100" rows="10" name="content"></textarea>                </label>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="uppercase ml-2 font-semibold" for="content">Nuolaida(procentais)
+                    <input  class="block mt-1 w-full border-blue-700" type="number" name="percentage" wire:model="percentage">
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label class="uppercase ml-2 font-semibold" for="content">Nuolaidos data(Nuo - iki)
+                    <input class="block mt-1 w-full border-blue-700" type="date" name="from" wire:model="from">
+                    <input class="block mt-1 w-full border-blue-700" type="date" name="to" wire:model="to">
+                </label>
             </div>
 
             <div class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/4">
 
                 <div class="pt-3" >
 
-                    <input type="file" wire:model="path" id="{{ $input_field_name }}">
+                    <input type="file" wire:model="path" multiple>
 
                     <div wire:loading wire:target="path">Failas keliamas...</div>
 
