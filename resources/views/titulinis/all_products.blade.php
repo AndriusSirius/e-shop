@@ -2,7 +2,7 @@
     <div class="justify-center bg-gray-100 flex flex-wrap overflow-hidden xl:-mx-4">
 
         <div class="w-96 p-2 m-2 text-center overflow-hidden xl:my-4 xl:px-4 xl:w-1/4">
-            <p class="text-center text-blue-800 border-r-2 border-solid border-gray-200 font-semibold text-2xl"><i class="fas fa-gifts"></i> AKCIJOS</p>
+            <a href="{{ route('akcijos') }}"><p class="text-center text-blue-800 border-r-2 border-solid border-gray-200 font-semibold text-2xl"><i class="fas fa-gifts"></i> AKCIJOS</p></a>
         </div>
 
         <div class="w-96 p-2 m-2 text-center overflow-hidden xl:my-4 xl:px-4 xl:w-1/4">

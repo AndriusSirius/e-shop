@@ -97,13 +97,13 @@
 
                     <div class="my-3 w-full">
                         <label class="uppercase ml-2 font-semibold" for="link_{{ $kategorija->id }}"
-                            :value="__('link')" />Aprašymas
+                            :value="__('link')" />Nuoroda
                         <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="link"
                             id="link_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
 
                         <div class="my-3 w-full">
                             <label class="uppercase ml-2 font-semibold" for="nr_{{ $kategorija->id }}"
-                                :value="__('nr')" />Modelis
+                                :value="__('nr')" />NR
                             <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="nr"
                                 id="nr_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
 
