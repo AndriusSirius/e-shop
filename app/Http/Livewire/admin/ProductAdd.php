@@ -6,6 +6,9 @@ use Livewire\Component;
 use App\Models\Product;
 use App\Models\Image;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
+use App\Models\Discounts;
+use Carbon\Carbon;
 
 class ProductAdd extends Component
 {
@@ -14,8 +17,10 @@ class ProductAdd extends Component
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
+    public $percentage = 0, $from = '2021-01-01' , $to = '2021-01-01';
 
-    public $path, $input_field_name;
+    public $input_field_name;
+    public $path = [];
 
     protected $rules = [
         'title' => 'required|min:1',
@@ -65,6 +70,10 @@ class ProductAdd extends Component
         $this->color = null;
         $this->energy = null;
         $this->warranty = null;
+        $this->path = null;
+        $this->percentage = null;
+        $this->from = null;
+        $this->to = null;
     }
 
     public function save()
@@ -85,6 +94,9 @@ class ProductAdd extends Component
             'warranty' => $this->warranty,
         ]);
 
+        $this->validate([
+            'path.*' => 'image|max:7024',
+        ]);
 
         $way = [];
         if ($this->path != null) {
@@ -99,15 +111,33 @@ class ProductAdd extends Component
             'path.*' => 'nullable|image|max:1024',
         ]);
 
-        // dd($data->id);
-        Image::create([
-            'path' => $way,
+        foreach ($this->path as $photo) {
+
+            $random = rand();
+
+            $pavadinimas = $this->model . "-" . $random . "." . $photo->extension();
+
+            $photo->storeAs('produktai', $pavadinimas);
+
+            $way = 'storage/produktai/' . $pavadinimas;
+
+            Image::create([
+                'path' => $way,
+                'products_id' => $data->id,
+            ]);
+
+            $photo = null;
+
+        }
+
+        $this->validate();
+
+        Discounts::create([
             'products_id' => $data->id,
+            'percentage' => $this->percentage,
+            'from' => $this->from,
+            'to' => $this->to,
         ]);
-
-        $this->path = null;
-
-        $this->input_field_name = "image_" . rand();
 
         $this->emit('produktasPridetas');
         $this->clearFields();

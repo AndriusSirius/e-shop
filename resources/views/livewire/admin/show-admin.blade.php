@@ -75,6 +75,41 @@
                     Kategorijų valdymas</h2>
             </div>
 
+            <div class="border-b-2 mt-2 w-full overflow-hidden sm:my-1 sm:px-1">
+                <h2 class="mb-6 font-semibold uppercase text-pink-700 text-lg"><i class="fas fa-percentage"></i>
+                    Nuolaidų valdymas</h2>
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                    #
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Produktas
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Procentas
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Nuo Iki
+                                </th>
+                                <th scope="col" class="relative px-6 py-3 w-1">
+                                    <span class="sr-only">Valdymas</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach ($nuolaidos as $nuolaida)
+                                @livewire('admin.discounts', compact(['nuolaida']), key($nuolaida->id))
+                            @endforeach
+                        </tbody>
+                    </table>
+            </div>
+
             <div class="border-b-2 mt-2  w-full overflow-hidden sm:my-1 sm:px-1">
                 <h2 class="mb-6 font-semibold uppercase text-blue-900 text-lg"><i class="fas fa-users"></i> Vartotojų
                     valdymas</h2>
