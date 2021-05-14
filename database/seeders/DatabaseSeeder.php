@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             Model_Has_Permissions::class,
             Model_Has_Roles::class,
-             UserSeeder::class,
+            UserSeeder::class,
             productsSeeder::class,
             discountSeeder::class,
             product_categoriesSeeder::class,

@@ -16,6 +16,7 @@ class ProductCategory extends Migration
         Schema::create('product_category', function (Blueprint $table) {
             $table->unsignedBigInteger('products_id');
             $table->unsignedBigInteger('categories_id');
+            $table->timestamps();
 
             $table->primary(['products_id', 'categories_id']);
 
