@@ -11,18 +11,17 @@
     <div>
         <h4 class="text-sm text-gray-500 font-medium">Pristatymo metodas</h4>
         <div class="mt-6">
-            <button
-                class="flex items-center justify-between w-full bg-white rounded-md border-2 border-blue-500 p-4 focus:outline-none"
-                checked>
+            <div
+                class="flex items-center justify-between w-full bg-white rounded-md border-2 border-blue-500 p-4 focus:outline-none">
 
                 <label class="flex items-center">
                     <input type="radio" class="form-radio h-5 w-5 text-blue-600" name="shipping" wire:model="shipping"
-                        value="Kurjeriu" autofocus>
+                      value="Kurjeriu" checked>
                     <span class="ml-2 text-sm text-gray-700">Kurjeriu</span>
                 </label>
 
                 <span class="text-gray-600 text-sm">3.99€</span>
-            </button>
+            </div>
         </div>
     </div>
 
