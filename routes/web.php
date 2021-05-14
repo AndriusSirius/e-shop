@@ -44,6 +44,8 @@ Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'det
 
 Route::get('/{link1}/{link2?}', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');
 
+Route::get('/akcijos', [\App\Http\Controllers\OthersList::class, 'index'])->name('akcijos');
+
 //Route::get('/search', function (Request $request) {
 //    return \App\Models\Product::search($request->search)->get()->dd();
 //})->name('search');

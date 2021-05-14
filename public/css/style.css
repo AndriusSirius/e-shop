@@ -1,9 +1,6 @@
 .search_style{
-    display:block;
-    position: fixed;
-    top: 32px;
-    left: 10rem;
-    z-index: 50;
+    display:inline;
+    position: static;
 }
 /*.search_style:focus-visible{*/
 /*    display:block;*/
