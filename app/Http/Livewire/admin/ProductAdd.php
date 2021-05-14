@@ -78,7 +78,6 @@ class ProductAdd extends Component
 
     public function save()
     {
-
         $this->validate();
 
         $data = Product::create([
@@ -100,6 +99,17 @@ class ProductAdd extends Component
         ]);
 
         $way = [];
+        if ($this->path != null) {
+            $pavadinimas = $this->id . "." . $this->path->extension();
+
+            $this->path->storeAs('produktai', $pavadinimas);
+            // // dd($i);
+            $way = 'storage/produktai/' . $pavadinimas;
+            // die();
+        }
+        $this->validate([
+            'path.*' => 'nullable|image|max:1024',
+        ]);
 
         foreach ($this->path as $photo) {
 

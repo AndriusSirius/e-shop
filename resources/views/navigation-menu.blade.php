@@ -1,4 +1,11 @@
-<nav x-data="{ open: false }" class=" z-50 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
+    <div class=" fixed w-9/12 hidden bg-none z-50" id="search_content">
+        <div class="text-black ">
+            <form action="{{route('search')}} ">
+                <input id="searchfield" type="search" name="search" placeholder="Paieška" class=" rounded-xl w-full text-grey-800 transition focus:outline-none focus:border-transparent appearance-none leading-normal text-xl lg:text-2xl" autofocus>
+            </form>
+        </div>
+    </div>
+<nav x-data="{ open: false }" class="z-40 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
     <div class=" flex flex-row justify-between">
         <div class=" sm:justify-center">
             <a href="{{ route('home') }}"><img class="object-contain h-24 m-3 " src="{{ asset('images/Logotipas.png') }}"></a>
@@ -10,15 +17,18 @@
             </svg>
         </button>
     </div>
-    <div :class="{'flex': open, 'hidden': !open}" class=" flex-col pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
+    <div :class="{'flex': open, 'hidden': !open}" class=" z-40 flex-col pb-4 lg:pb-0 hidden lg:flex lg:justify-center lg:flex-row lg:z-auto">
         @include('category.category')
-
     </div>
     <div class="inline flex justify-start ml-6 lg:mr-6 pb-4 lg:pb-0 ">
         @Auth
-            <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+
+            <div id="search" class="cursor-pointer hover:bg-gray-50">
+                <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+
             @livewire('carts.cart-total')
             <x-jet-dropdown>
 
@@ -72,6 +82,16 @@
                 </x-slot>
             </x-jet-dropdown>
             @guest
+                <div id="search" class="cursor-pointer hover:bg-gray-50">
+                    <svg class="w-6 h-6 m-2 font-bold stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <a class="relative" href="{{ route('login') }}">
+                    <svg class=" w-6 h-6 m-2 stroke-current text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round"  strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </a>
                 <a href="{{ route('login') }}">
                     <svg class="w-6 h-6 m-2 stroke-current  text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />

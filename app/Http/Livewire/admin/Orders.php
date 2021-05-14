@@ -16,7 +16,7 @@ class Orders extends Component
             'status' => 'min:5',
             'shipping' => 'min:5',
             'total' => 'min:5',
-            'content' => 'min:3',
+            'content' => '',
         ];
     }
 

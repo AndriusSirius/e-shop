@@ -5,27 +5,27 @@
     <div class="flex flex-wrap overflow-hidden sm:-mx-px xl:-mx-4">
 
         <div class="justify-center overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/samsung.png') }}">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/samsung.png') }}">
         </div>
 
         <div class="justify-center mx-auto overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/electrolux.png') }}" alt="">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/electrolux.png') }}" alt="">
         </div>
 
         <div class="justify-center mx-auto overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-72 h-48" src="{{ asset('images/Beko_logo.png') }}" alt="">
+            <img class="object-contain object-center w-60 h-40" src="{{ asset('images/Beko_logo.png') }}" alt="">
         </div>
 
         <div class="justify-center mx-auto overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/philips.png') }}" alt="">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/philips.png') }}" alt="">
         </div>
 
         <div class="justify-center overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/AEG-Logo.png') }}">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/AEG-Logo.png') }}">
         </div>
 
         <div class="justify-center overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/LGI-logo.png') }}">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/LGI-logo.png') }}">
         </div>
 
         <div class="justify-center overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
@@ -33,7 +33,7 @@
         </div>
 
         <div class="justify-center overflow-hidden sm:my-px sm:px-px xl:my-8 xl:px-8 xl:w-1/4">
-            <img class="object-contain object-center w-96 h-48" src="{{ asset('images/Bosch_logo.png') }}">
+            <img class="object-contain object-center w-72 h-40" src="{{ asset('images/Bosch_logo.png') }}">
         </div>
 
     </div>

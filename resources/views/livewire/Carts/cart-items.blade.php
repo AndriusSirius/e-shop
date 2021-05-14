@@ -62,7 +62,10 @@
 
                         </div>
                 </div>
+                @if(count($cart) < 1)
+                @else
                 @livewire('orders.orders')
+                @endif
             </div>
         </div>
     </div>
