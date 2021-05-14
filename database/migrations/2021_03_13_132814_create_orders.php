@@ -20,7 +20,7 @@ class CreateOrders extends Migration
             $table->string('status');
             $table->string('shipping');
             $table->integer('total');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

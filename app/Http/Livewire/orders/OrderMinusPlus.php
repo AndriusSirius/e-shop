@@ -50,7 +50,7 @@ class OrderMinusPlus extends Component
             }
         }
         $this->emit('updateOrder');
-
+        $this->emit('productAdded');
     }
 }
 

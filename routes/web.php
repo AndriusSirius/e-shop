@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire;
 //use App\Http\Controllers\HomeController;
-use App\Http\Livewire\Header;
 use App\Http\Controllers\CartController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ use App\Http\Controllers\CartController;
 |
 */
 
-
+Route::get('search', [\App\Http\Controllers\SearchController::class, 'search'])->name('search');
 //PAGRINDINIS
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'home']);
 //Route::get('/home', function (){
@@ -43,3 +43,8 @@ Route::get('product/{id}', [\App\Http\Controllers\ProductController::class, 'det
 // Kategorijos
 
 Route::get('/{link1}/{link2?}', [\App\Http\Controllers\CategoryController::class, 'listing3'])->name('category_list');
+
+//Route::get('/search', function (Request $request) {
+//    return \App\Models\Product::search($request->search)->get()->dd();
+//})->name('search');
+
