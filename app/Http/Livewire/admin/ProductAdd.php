@@ -9,6 +9,8 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 use App\Models\Discounts;
 use Carbon\Carbon;
+use App\Models\Category;
+use App\Models\Product_category;
 
 class ProductAdd extends Component
 {
@@ -17,10 +19,12 @@ class ProductAdd extends Component
     public $show;
     public $title, $summary, $model, $price, $quantity, $content, $type, $product_sign, $color, $energy, $warranty;
 
-    public $percentage = 0, $from = '2021-01-01' , $to = '2021-01-01';
+    public $percentage = 0, $from = '2021-01-01', $to = '2021-01-01';
 
     public $input_field_name;
     public $path = [];
+    public $category_id = [];
+
 
     protected $rules = [
         'title' => 'required|min:1',
@@ -78,7 +82,7 @@ class ProductAdd extends Component
 
     public function save()
     {
-
+        // dd($this->category_id);
         $this->validate();
 
         $data = Product::create([
@@ -117,7 +121,6 @@ class ProductAdd extends Component
             ]);
 
             $photo = null;
-
         }
 
         $this->validate();
@@ -129,12 +132,28 @@ class ProductAdd extends Component
             'to' => $this->to,
         ]);
 
+
+
+
+        foreach ($this->category_id as $cat) {
+            Product_category::create([
+                'products_id' => $data->id,
+                'categories_id' => $cat,
+            ]);
+        }
+        $this->show = true;
         $this->emit('produktasPridetas');
         $this->clearFields();
+    }
+    public function  category()
+    {
+        return  Category::all();
     }
 
     public function render()
     {
-        return view('livewire.admin.product-add');
+        return view('livewire.admin.product-add', [
+            'categories' => $this->category(),
+        ]);
     }
 }
