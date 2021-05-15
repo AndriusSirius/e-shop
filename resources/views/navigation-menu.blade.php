@@ -1,4 +1,4 @@
-    <div class=" fixed w-9/12 hidden bg-none z-50" id="search_content">
+    <div class=" fixed w-9/12 hidden bg-none z-50 " id="search_content">
         <div class="text-black ">
             <form action="{{route('search')}} ">
                 <input id="searchfield" type="search" name="search" placeholder="Paieška" class=" rounded-xl w-full text-grey-800 transition focus:outline-none focus:border-transparent appearance-none leading-normal text-xl lg:text-2xl" autofocus>
