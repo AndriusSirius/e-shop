@@ -95,6 +95,7 @@ class Products extends Component
     public function deleteConfirm()
     {
         $this->produktas->delete();
+        $this->delete = false;
 
         $this->emit('produktasIstrintas');
     }
