@@ -73,78 +73,79 @@
             <div class="border-b-2 mt-2 w-full overflow-hidden sm:my-1 sm:px-1">
                 <h2 class="mb-6 font-semibold uppercase text-yellow-700 text-lg"><i class="fas fa-code-branch"></i>
                     Kategorijų valdymas</h2>
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <div class="flex justify-end">
-                                <a href="#" onclick="Livewire.emit('showKategorijaCreate'); return false;"
-                                    class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none mb-6">
-                                    Pridėti naują kategorija
-                                </a>
-                            </div>
-                            @livewire('admin.add-category')
-                            <tr>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
-                                    #
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Pavadinimas
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Link
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    kažkas
-                                </th>
-                                <th scope="col" class="relative px-6 py-3 w-1">
-                                    <span class="sr-only">Valdymas</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <h1 class="uppercase text-3xl text-red-500">nebaigta Dalis</h1>
-                        </tbody>
-                    </table>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <div class="flex justify-end">
+                            <a href="#" onclick="Livewire.emit('showKategorijaCreate'); return false;"
+                                class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none mb-6">
+                                Pridėti naują kategorija
+                            </a>
+                        </div>
+                        @livewire('admin.add-category')
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                #
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Pavadinimas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Link
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Valdymas
+                            </th>
+                        </tr>
+                    </thead>
+                    <h1 class="uppercase text-3xl text-red-500">nebaigta Dalis</h1>
+                    <tbody class="bg-white divide-y divide-gray-200">
+
+                        @foreach ($kategorijos as $kategorija)
+                            @livewire('admin.categories', compact(['kategorija']), key($kategorija->id))
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
 
             <div class="border-b-2 mt-2 w-full overflow-hidden sm:my-1 sm:px-1">
                 <h2 class="mb-6 font-semibold uppercase text-pink-700 text-lg"><i class="fas fa-percentage"></i>
                     Nuolaidų valdymas</h2>
-                    <h1 class="uppercase text-3xl text-red-500">nėra pridėjimo  Dalies</h1>
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
-                                    #
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Produktas
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Procentas
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Nuo Iki
-                                </th>
-                                <th scope="col" class="relative px-6 py-3 w-1">
-                                    <span class="sr-only">Valdymas</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($nuolaidos as $nuolaida)
-                                @livewire('admin.discounts', compact(['nuolaida']), key($nuolaida->id))
-                            @endforeach
-                        </tbody>
-                    </table>
+                <h1 class="uppercase text-3xl text-red-500">nėra pridėjimo Dalies</h1>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
+                                #
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Produktas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Procentas
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Nuo Iki
+                            </th>
+                            <th scope="col" class="relative px-6 py-3 w-1">
+                                <span class="sr-only">Valdymas</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach ($nuolaidos as $nuolaida)
+                            @livewire('admin.discounts', compact(['nuolaida']), key($nuolaida->id))
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
             <div class="border-b-2 mt-2  w-full overflow-hidden sm:my-1 sm:px-1">
@@ -183,7 +184,8 @@
             </div>
 
             <div class="border-b-2 mt-2  w-full overflow-hidden sm:my-1 sm:px-1">
-                <h2 class="mb-6 font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i> Užsakymų
+                <h2 class="mb-6 font-semibold uppercase text-green-700 text-lg"><i class="fas fa-shopping-cart"></i>
+                    Užsakymų
                     valdymas</h2>
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
