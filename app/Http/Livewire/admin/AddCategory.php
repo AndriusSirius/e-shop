@@ -23,6 +23,14 @@ class AddCategory extends Component
     {
         $this->show = true;
     }
+    public function clearFields()
+    {
+        $this->name = null;
+        $this->category_id = null;
+        $this->link = null;
+        $this->nr = null;
+
+    }
 
 
     public function showKategorijaCreate()
@@ -46,7 +54,7 @@ class AddCategory extends Component
         ]);
         $this->show = true;
         $this->emit('kategorijaPrideta');
-        // $this->clearFields();
+        $this->clearFields();
     }
     public function render()
     {
