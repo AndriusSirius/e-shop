@@ -75,6 +75,13 @@
                     Kategorijų valdymas</h2>
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
+                            <div class="flex justify-end">
+                                <a href="#" onclick="Livewire.emit('showKategorijaCreate'); return false;"
+                                    class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none mb-6">
+                                    Pridėti naują kategorija
+                                </a>
+                            </div>
+                            @livewire('admin.add-category')
                             <tr>
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1">
@@ -99,9 +106,6 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             <h1 class="uppercase text-3xl text-red-500">nebaigta Dalis</h1>
-                            @foreach ($kategorijos as $kategorija)
-                                @livewire('admin.categories', compact(['kategorija']), key($kategorija->id))
-                            @endforeach
                         </tbody>
                     </table>
             </div>
