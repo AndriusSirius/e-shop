@@ -29,6 +29,7 @@
             </div>
             <p>Kaina nuo:  <span id="priceValue"></span> </p>
         </div>
+{{--        Komentaras --}}
 
 
         <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
