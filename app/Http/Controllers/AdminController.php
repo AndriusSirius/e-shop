@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +25,9 @@ class AdminController extends Controller
             $vartotojai = User::paginate(9);
             $nuolaidos = \App\Models\Discounts::with(['product'])->paginate(9);
             $orderList = Order::with(['users', 'products'])->get();
+            $kategorijos = Category::paginate(9);
 
-        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai', 'orderList', 'nuolaidos'));
+        return view('livewire.admin.show-admin', compact('produktai', 'vartotojai', 'orderList', 'nuolaidos', 'kategorijos'));
         }
         elseif(Auth::user()->hasPermissionTo('buy_products')){
             return redirect()->route('home')->with('warning', 'Tvarkyti produktus gali tik administratorius');
