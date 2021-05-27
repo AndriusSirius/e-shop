@@ -21,7 +21,7 @@ class Discounts extends Migration
             $table->date('to')->nullable();
             $table->timestamps();
 
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
 
         });
     }

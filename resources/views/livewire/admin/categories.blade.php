@@ -1,18 +1,17 @@
 <tr>
+    {{ $kategorija }}
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
             {{ $kategorija->id }}
         </td>
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            <a href="{{ route('product', [$kategorija->id]) }}">{{ $kategorija->name }}</a>
-        </td>
-        <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            {{ $kategorija->link }}
+            {{ $kategorija->name }}
         </td>
 
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-
+            {{ $kategorija->link }}
         </td>
+
         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <button wire:click.prevent="showEdit"
                 class="bg-blue-300 hover:bg-blue-400 text-green-800 font-bold py-1 px-4 pl-2 rounded-full inline-flex items-center">
@@ -72,43 +71,45 @@
             <div class="text-right">
 
             </div>
-            <form action="{{ route('admin') }}" method="POST">
-                <div class="w-full h-full">
-                    <!-- title -->
-                    <div class="my-3">
-                        <label class="uppercase ml-2 font-semibold" for="category{{ $kategorija->id }}"
-                            :value="__('category')" />Tėvinė Kategorija
-                        <select id="category_{{ $kategorija->id }}" wire:model="id"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full">
-                            @foreach ($data as $kategorija)
-                                <option value="{{ $kategorija->id }}">{{ $kategorija->name }}</option>
-                            @endforeach
-                        </select>
-                        <label class="uppercase ml-2 font-semibold" for="category{{ $kategorija->id }}"
-                            :value="__('category')" />Kategorija
-                        <select id="category_{{ $kategorija->id }}" wire:model="id"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full">
-                            @foreach ($data as $kategorija)
-                                <option value="{{ $kategorija->id }}">{{ $kategorija->name }}</option>
-                            @endforeach
-                        </select>
+            <form action="{{route('admin')}}" method="POST">
+            <div class="w-full h-full">
+                <!-- title -->
+                <div class="my-3">
+                    <label class="uppercase ml-2 font-semibold" for="name_{{ $kategorija->id }}" :value="__('name*')" />Pavadinimas
+                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="name" id="name_{{ $kategorija->id }}" class="block mt-1 w-full" type="text"
+                        required autofocus />
 
-                    </div>
+                </div>
+
+                <div class="my-3 w-full">
+
 
                     <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="link_{{ $kategorija->id }}"
-                            :value="__('link')" />Nuoroda
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="link"
-                            id="link_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
-
-                        <div class="my-3 w-full">
-                            <label class="uppercase ml-2 font-semibold" for="nr_{{ $kategorija->id }}"
-                                :value="__('nr')" />NR
-                            <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="nr"
-                                id="nr_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
-
-                        </div>
+                        <label class="uppercase ml-2 font-semibold" for="link_{{ $kategorija->id }}" :value="__('link')" />
+                            Nuoroda
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="link" id="link_{{ $kategorija->id }}" class="block mt-1 w-full"
+                            type="text" required />
                     </div>
+                    <h2 class="mb-6 font-semibold uppercase text-yellow-700 text-lg">
+                        Reikia minčių</h2>
+                    <label class="uppercase ml-2 font-semibold " for="" :value="__('Kategorija*')" />Tėvinė kategorija
+                    <select  wire:model="category_id" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" name="parent_id" >
+
+                            <option value="{{ $kategorija->parent_id }}">{{ $kategorija->parent_id }}</option>
+
+                        @foreach($kategorijos as $kategorija)
+                            <option value="{{ $kategorija->id }}">{{ $kategorija->name }}</option>
+                        @endforeach
+                    </select>
+                </label>
+
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="nr_{{ $kategorija->id }}" :value="__('nr')" />Nr
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="nr" id="nr_{{ $kategorija->id }}" class="block mt-1 w-full"
+                            type="text" required />
+                    </div>
+
+                </div>
             </form>
         </td>
         <td class="px-6 py-4 text-right text-sm font-medium align-top bg-yellow-50">
@@ -129,7 +130,7 @@
                         d="M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306">
                     </path>
                 </svg>
-                <span>Ištrinti kategorija</span>
+                <span>Ištrinti produktą</span>
             </button>
             <br>
             <button wire:click.prevent="saveChanges"
