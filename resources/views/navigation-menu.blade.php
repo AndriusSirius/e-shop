@@ -1,5 +1,4 @@
-<nav x-data="{ open: false }"
-    class="z-40 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-around lg:flex-row border-b ">
+<nav x-data="{ open: false }" class="z-40 fixed top-0 flex bg-white flex-col lg:items-center w-full lg:justify-between lg:flex-row border-b ">
     <div class=" flex flex-row justify-between">
         <div class=" sm:justify-center">
             <a href="{{ route('home') }}"><img class="object-contain h-24 m-3 "

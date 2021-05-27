@@ -5,3 +5,11 @@ function search_content(){
     search_content.classList.toggle('search_style');
     search_content.autofocus;
 }
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("priceValue");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
