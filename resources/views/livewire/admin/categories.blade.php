@@ -1,5 +1,7 @@
 <tr>
-    {{ $kategorija }}
+    <pre>
+        {{ $kategorija }}
+    </pre>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
             {{ $kategorija->id }}
@@ -39,7 +41,7 @@
                     </svg>
                 </div>
                 <div class=" ml-4 pt-2">
-                    {{ __('Ar tikrai norite ištrinti šį produktą?') }}
+                    {{ __('Ar tikrai norite ištrinti šią kategoriją?') }}
                 </div>
             </h4>
             <div class="flex flex-row justify-center">
