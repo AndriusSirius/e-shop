@@ -25,7 +25,7 @@ class ProductController extends Controller
 
     }
     public function detail ($id){
-        $product = Product::with(['cart','images', 'discount'])->find($id);
+        $product = Product::with(['cart','images', 'discount', 'specs'])->find($id);
         $cartTotal = Cart::where('user_id', Auth::id())->count();
 
         return view('Products.product', compact('product', 'cartTotal'));
