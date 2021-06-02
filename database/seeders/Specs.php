@@ -4029,5 +4029,796 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Paviršiaus danga',
+            'value' => 'Stiklo keramika',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Montavimo tipas',
+            'value' => 'Įmontuojamos',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Rėmelis',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Laikiklių tipas',
+            'value' => 'Be laikiklių',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Kaitviečių skaičius',
+            'value' => '4',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Paviršiaus danga',
+            'value' => 'Stiklo keramika',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Galia',
+            'value' => '480 W',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Paviršiaus valdymas',
+            'value' => 'Sensorinis',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Aukštis',
+            'value' => '21.1 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Plotis',
+            'value' => '83 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Gylis',
+            'value' => '51.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Likutinės šilumos indikatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Apsaugos nuo vaikų užraktas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '21',
+            'specs_key' => 'Automatinis išsijungimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Energijos klasė',
+            'value' => 'A +',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Kiekvienos ertmės energijos vartojimo efektyvumo indeksas',
+            'value' => '103',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Ertmių skaičius',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės tipas',
+            'value' => 'Elektrinė',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Galia',
+            'value' => '3650 W',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Aukštis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Plotis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Gylis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Svoris',
+            'value' => '-',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės tūris',
+            'value' => '71 L',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės valdymas',
+            'value' => 'Elektroninis',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Laikmatis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės durų užraktas nuo vaikų',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės durų stiklai',
+            'value' => '2 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Orkaitės apšvietimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Grilis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Vidaus danga',
+            'value' => 'Nenurodyta',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Teleskopiniai bėgeliai',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'LCD ekranas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Kepimo skardos',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Kepimo grotelės',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Mėsos termometras',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Viršutinis ir apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Viršutinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Savaiminio išsivalymo funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Konvekcija',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Aušinimo ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Maks. kaitinimo temperatūra (°C)',
+            'value' => '250',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Gaminimo garuose funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Funkcijos',
+            'value' => 'Kepimas žemoje temperatūroje, Apatinis šildytuvas + viršutinis šildytuvas, Apatinis šildymas, Grilis + ventiliatorius, Apatinis šildymas eko',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '22',
+            'specs_key' => 'Priedai',
+            'value' => '1 grotelės, 1 kepimo skarda',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Energijos klasė',
+            'value' => 'A +',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Kiekvienos ertmės energijos vartojimo efektyvumo indeksas',
+            'value' => '103',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Ertmių skaičius',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės tipas',
+            'value' => 'Elektrinė',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Galia',
+            'value' => '3650 W',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Aukštis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Plotis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Gylis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Svoris',
+            'value' => '-',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės tūris',
+            'value' => '71 L',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės valdymas',
+            'value' => 'Elektroninis',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Laikmatis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės durų užraktas nuo vaikų',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės durų stiklai',
+            'value' => '2 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Orkaitės apšvietimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Grilis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Vidaus danga',
+            'value' => 'Nenurodyta',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Teleskopiniai bėgeliai',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'LCD ekranas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Kepimo skardos',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Kepimo grotelės',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Mėsos termometras',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Viršutinis ir apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Viršutinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Savaiminio išsivalymo funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Konvekcija',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Aušinimo ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Maks. kaitinimo temperatūra (°C)',
+            'value' => '250',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Gaminimo garuose funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Funkcijos',
+            'value' => 'Kepimas žemoje temperatūroje, Apatinis šildytuvas + viršutinis šildytuvas, Apatinis šildymas, Grilis + ventiliatorius, Apatinis šildymas eko',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '23',
+            'specs_key' => 'Priedai',
+            'value' => '1 grotelės, 1 kepimo skarda',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Energijos klasė',
+            'value' => 'A +',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Kiekvienos ertmės energijos vartojimo efektyvumo indeksas',
+            'value' => '103',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Ertmių skaičius',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės tipas',
+            'value' => 'Elektrinė',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Galia',
+            'value' => '3650 W',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Aukštis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Plotis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Gylis',
+            'value' => '59.5 cm',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Svoris',
+            'value' => '-',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės tūris',
+            'value' => '71 L',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės valdymas',
+            'value' => 'Elektroninis',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Laikmatis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės durų užraktas nuo vaikų',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės durų stiklai',
+            'value' => '2 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Orkaitės apšvietimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Grilis',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Vidaus danga',
+            'value' => 'Nenurodyta',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Teleskopiniai bėgeliai',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'LCD ekranas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Kepimo skardos',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Kepimo grotelės',
+            'value' => '1 vnt',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Mėsos termometras',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Viršutinis ir apatinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Viršutinis kaitinimas',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Savaiminio išsivalymo funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Konvekcija',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Aušinimo ventiliatorius',
+            'value' => 'Taip',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Maks. kaitinimo temperatūra (°C)',
+            'value' => '250',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Gaminimo garuose funkcija',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Funkcijos',
+            'value' => 'Kepimas žemoje temperatūroje, Apatinis šildytuvas + viršutinis šildytuvas, Apatinis šildymas, Grilis + ventiliatorius, Apatinis šildymas eko',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '24',
+            'specs_key' => 'Priedai',
+            'value' => '1 grotelės, 1 kepimo skarda',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
     }
 }
