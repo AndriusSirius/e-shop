@@ -16,69 +16,7 @@
     </div>
 {{--    FILTRAVIMAS  --}}
 
-    <div class="flex flex-wrap -mx-4 overflow-hidden lg:-mx-2 justify-center">
 
-        <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
-            <h4>Kaina</h4>
-            <div class="flex">
-            <h4>50 €</h4>
-            <form action="">
-                <input type="range" id="myRange" name="vol" min="50" max="5000" class="slider" >
-            </form>
-            <h4>5000 €</h4>
-            </div>
-            <p>Kaina nuo:  <span id="priceValue"></span> </p>
-        </div>
-        <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
-            <h4>Gamintojas</h4>
-            <form>
-            <input type="checkbox" id="manufacture1" name="manufacture" value="Bike">
-            <label for="manufacture1"> Samsung</label><br>
-            <input type="checkbox" id="manufacture2" name="vehicle2" value="Car">
-            <label for="manufacture2"> Bosch</label><br>
-            <input type="checkbox" id="manufacture3" name="vehicle3" value="Boat">
-            <label for="manufacture3"> LG </label>
-            </form>
-        </div>
-
-        <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
-            <h4>Tipas</h4>
-            <form>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> Šaldytuvas</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> Kavos virimo aparatas</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3">{{__('Skalbimo mašina')}}</label>
-            </form>
-        </div>
-
-        <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
-            <h4>Spalva</h4>
-            <form>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> Rožinė</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> Balta</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3"> Juoda</label>
-            </form>
-        </div>
-
-        <div class="my-4 px-4 w-1/6 overflow-hidden lg:my-2 lg:px-2">
-            <h4>Energijos klasė</h4>
-            <form>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> 2kw </label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2"> 3kw </label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3"> 5kw </label>
-            </form>
-        </div>
-
-
-    </div>
 
 
     <h1 class="p-12 m-12 border-t-2 border-solid border-blue-700 text-center text-gray-200 font-semibold text-2xl xs:text-5xl md:text-6xl">
