@@ -214,5 +214,13 @@ class product_categoriesSeeder extends Seeder
             'products_id'=> '24',
             'categories_id' => '6'
         ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '25',
+            'categories_id' => '1'
+        ]);
+        DB::table('product_category')->insert([
+            'products_id'=> '25',
+            'categories_id' => '7'
+        ]);
     }
 }
