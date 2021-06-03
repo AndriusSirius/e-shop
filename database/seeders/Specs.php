@@ -15,6 +15,7 @@ class Specs extends Seeder
      */
     public function run()
     {
+        // **************************Šaldytuvai*****************************
         DB::table('specs')->insert([
             'products_id' => '1',
             'specs_key' => 'Ilgis',
@@ -687,6 +688,11 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        //*******************************Skalbimo mašinos
+
+
+
+
         DB::table('specs')->insert([
             'products_id' => '4',
             'specs_key' => 'Ilgis',
@@ -2121,6 +2127,10 @@ class Specs extends Seeder
         ]);
 
 
+
+
+        // ************************Kavos Virimo aparatai
+
         DB::table('specs')->insert([
             'products_id' => '10',
             'specs_key' => 'Gylis',
@@ -2235,6 +2245,7 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        // ********************TV**********************
         DB::table('specs')->insert([
             'products_id' => '11',
             'specs_key' => 'Energijos efektyvumo klasė',
@@ -2403,6 +2414,10 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        // ***************************Mikrobangų*************************
+
+
+
         DB::table('specs')->insert([
             'products_id' => '12',
             'specs_key' => 'Energijos efektyvumo klasė',
@@ -2949,6 +2964,7 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        // ************************Indaplovės****************************
         DB::table('specs')->insert([
             'products_id' => '16',
             'specs_key' => 'Energijos klasė',
@@ -3931,6 +3947,10 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        // ********************Kaitlentė*****************************
+
+
+
         DB::table('specs')->insert([
             'products_id' => '20',
             'specs_key' => 'Paviršiaus danga',
@@ -4127,6 +4147,10 @@ class Specs extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
+        // *************************Orkaitės***************
+
+
+
         DB::table('specs')->insert([
             'products_id' => '22',
             'specs_key' => 'Energijos klasė',
@@ -4817,6 +4841,42 @@ class Specs extends Seeder
             'products_id' => '24',
             'specs_key' => 'Priedai',
             'value' => '1 grotelės, 1 kepimo skarda',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        // virduliai
+        DB::table('specs')->insert([
+            'products_id' => '25',
+            'specs_key' => 'Korpusas',
+            'value' => 'Nenurodyta',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '25',
+            'specs_key' => 'Galia',
+            'value' => '1200 W',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '25',
+            'specs_key' => 'Talpa',
+            'value' => '1 L',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '25',
+            'specs_key' => 'Reguliuojama temperatūra',
+            'value' => 'Ne',
+            'created_at' => Carbon::now()->format('Y-m-d H:i'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i'),
+        ]);
+        DB::table('specs')->insert([
+            'products_id' => '25',
+            'specs_key' => 'Išmanus įrenginys',
+            'value' => 'Ne',
             'created_at' => Carbon::now()->format('Y-m-d H:i'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i'),
         ]);
