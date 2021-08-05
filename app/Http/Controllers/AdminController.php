@@ -21,7 +21,7 @@ class AdminController extends Controller
     {
         if(Auth::user()->hasPermissionTo('edit_all')){
 
-            $produktai = \App\Models\Product::with(['images', 'discount'])->Simplepaginate(9);
+            $produktai = Product::with(['images', 'discount'])->Simplepaginate(9);
             $vartotojai = User::paginate(9);
             $nuolaidos = \App\Models\Discounts::with(['product'])->paginate(9);
             $orderList = Order::with(['users', 'products'])->get();

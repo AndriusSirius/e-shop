@@ -97,7 +97,6 @@ class Products extends Component
         $this->produktas->delete();
         $this->delete = false;
         $this->edit = false;
-
         $this->emit('produktasIstrintas');
     }
 
