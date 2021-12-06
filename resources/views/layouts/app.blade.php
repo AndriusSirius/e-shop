@@ -30,8 +30,9 @@
         </style>
     @livewireStyles
         <!-- Scripts -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
-    </head>
+        </head>
     <body class="font-sans antialiased ">
     <main>
         @include('navigation-menu')

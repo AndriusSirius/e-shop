@@ -13,7 +13,12 @@
             <p class="text-center text-gray-500 font-semibold text-2xl"><i class="far fa-newspaper"></i> NAUJIENLAIŠKIS</p>
         </div>
 
-      </div>
+    </div>
+{{--    FILTRAVIMAS  --}}
+
+
+
+
     <h1 class="p-12 m-12 border-t-2 border-solid border-blue-700 text-center text-gray-200 font-semibold text-2xl xs:text-5xl md:text-6xl">
         <span class="text-blue-700"><i class="fas fa-shopping-bag"></i> Visi</span> produktai
     </h1>
@@ -72,6 +77,5 @@
                 }
             }
         })
-
     </script>
 </section>
