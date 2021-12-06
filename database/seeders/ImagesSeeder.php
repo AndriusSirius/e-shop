@@ -243,5 +243,17 @@ class ImagesSeeder extends Seeder
             'products_id' => 24,
             'path'=> 'storage/produktai/orkaite2.3.jpg'
         ]);
+        DB::table('images')->insert([
+            'products_id' => 25,
+            'path'=> 'storage/produktai/virdulys.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 25,
+            'path'=> 'storage/produktai/virdulys1.1.jpg'
+        ]);
+        DB::table('images')->insert([
+            'products_id' => 25,
+            'path'=> 'storage/produktai/virdulys1.2.jpg'
+        ]);
     }
 }

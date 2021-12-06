@@ -19,12 +19,12 @@
                     </li>
                     <li>
                         <p class="text-gray-500" aria-current="page"> {{ $product['title'] }}</p>
+
                     </li>
                 </ol>
             </div>
         </div>
     </div>
-
     <div class="w-full bg-gray-100">
 
         <div class="flex">
@@ -44,7 +44,6 @@
 
                     </div>
                     <div class="px-6 flex flex-col w-full">
-
                         <div class="my-8">
                             <p class="font-semibold text-xs text-gray-500 mb-6">Kodas: 488447</p>
                             @if($product->discount)
@@ -85,11 +84,14 @@
                             </h4>
                         <div x-show="selected == 0" class="border py-4 px-2">
                             <ul class="ml-4">
-                                <li class="border-b-2 border-solid p-2">Modelis <span class="font-bold">{{ $product['model'] }}</span></li>
-                                <li class="border-b-2 border-solid p-2">Tipas <span class="font-bold">{{ $product['type'] }}</span></li>
-                                <li class="border-b-2 border-solid p-2"> Prekės ženklas <span class="font-bold">{{ $product['product_sign'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Modelis: <span class="font-bold">{{ $product['model'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2">Tipas: <span class="font-bold">{{ $product['type'] }}</span></li>
+                                <li class="border-b-2 border-solid p-2"> Prekės ženklas: <span class="font-bold">{{ $product['product_sign'] }}</span></li>
                                 <li class="border-b-2 border-solid p-2">Spalva <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['color'] }} </span></li>
-                                <li class="border-b-2 border-solid p-2"> Energija <span class="font-bold">{{ $product['energy'] }}</li>
+                                <li class="border-b-2 border-solid p-2"> Energija: <span class="font-bold">{{ $product['energy'] }}</li>
+                                @foreach($product->specs as $spec)
+                                <li class="border-b-2 border-solid p-2"> {{ $spec->specs_key }}: <span class="font-bold">{{ $spec->value}}</li>
+                                @endforeach
                                 <li class="border-b-2 border-solid p-2">Garantija <i class="text-lg fas fa-info-circle"></i>: <span class="font-bold">{{ $product['warranty'] }} </span></li>
                             </ul>
                         </div>

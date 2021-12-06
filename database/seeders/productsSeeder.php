@@ -358,5 +358,18 @@ class productsSeeder extends Seeder
             'energy' => '2kw',
             'warranty' => '5 metai'
         ]);
+        DB::table('products')->insert([
+            'title' => 'El. Virdulys, CLO4459',
+            'summary'=> 'lorem ipsum lorem lorem lorem lorem lorem',
+            'model' => 'CLO4459',
+            'price' => '429',
+            'quantity' => 21,
+            'content' => ' Virdulys, CLO4459 Zuuper!!!',
+            'product_sign' => ' Cloer',
+            'type' => 'Virdulys',
+            'color' => 'Juoda',
+            'energy' => '2kw',
+            'warranty' => '5 metai'
+        ]);
     }
 }

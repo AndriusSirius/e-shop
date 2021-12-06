@@ -1,96 +1,121 @@
-<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 @if($show) hidden @endif">
+<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 @if ($show) hidden @endif">
     <div class="sm:flex sm:items-start">
         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-
             <h3 class="text-lg py-2 mb-3 leading-6 font-medium text-gray-900">
                 Sukurti naują Produktą
             </h3>
-
             <!-- Name -->
             <div class="mb-3">
                 <label class="uppercase ml-2 font-semibold " for="title">Pavadinimas
-                    <input wire:model="title" id="title" class="block mt-1 w-full border-blue-700" type="text" name="title" required>
+                    <input wire:model="title" id="title" class="block mt-1 w-full border-blue-700" type="text"
+                        name="title" required>
                 </label>
             </div>
 
             <!-- summary -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="summary">Aprašymas
-                    <input wire:model="summary" id="summary" class="block mt-1 w-full border-blue-700" type="text" name="summary" required>
+                    <input wire:model="summary" id="summary" class="block mt-1 w-full border-blue-700" type="text"
+                        name="summary" required>
                 </label>
             </div>
 
-             <!-- model -->
+            <!-- model -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="model">Modelis
-                    <input wire:model="model" id="model" class="block mt-1 w-full border-blue-700" type="text" name="model" required>
+                    <input wire:model="model" id="model" class="block mt-1 w-full border-blue-700" type="text"
+                        name="model" required>
                 </label>
             </div>
 
-          <!-- price -->
+            <!-- price -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="price">Kaina
-                    <input wire:model="price" id="price" class="block mt-1 w-full border-blue-700" type="number" name="price" required>
+                    <input wire:model="price" id="price" class="block mt-1 w-full border-blue-700" type="number"
+                        name="price" required>
                 </label>
             </div>
 
             <!-- quantity -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="quantity">Kiekis
-                    <input wire:model="quantity" id="quantity" class="block mt-1 w-full border-blue-700" type="number" name="quantity" required>
+                    <input wire:model="quantity" id="quantity" class="block mt-1 w-full border-blue-700" type="number"
+                        name="quantity" required>
                 </label>
             </div>
 
             <!-- type -->
             <div class="my-3 w-full">
                 <label class="uppercase ml-2 font-semibold" for="type">Tipas
-                    <input wire:model="type" id="type" class="block mt-1 w-full border-blue-700" type="text" name="type" required>
+                    <input wire:model="type" id="type" class="block mt-1 w-full border-blue-700" type="text" name="type"
+                        required>
                 </label>
             </div>
 
             <!-- product_sign -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="product_sign">Produkto ženklas
-                    <input wire:model="product_sign" id="product_sign" class="block mt-1 w-full border-blue-700" type="text" name="product_sign" required>
+                    <input wire:model="product_sign" id="product_sign" class="block mt-1 w-full border-blue-700"
+                        type="text" name="product_sign" required>
                 </label>
             </div>
 
-         <!-- color -->
+            <!-- color -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="color">Spalva
-                    <input wire:model="color" id="color" class="block mt-1 w-full border-blue-700" type="text" name="color" required>
+                    <input wire:model="color" id="color" class="block mt-1 w-full border-blue-700" type="text"
+                        name="color" required>
                 </label>
             </div>
 
             <!-- energy -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="energy">Energija
-                    <input wire:model="energy" id="energy" class="block mt-1 w-full border-blue-700" type="text" name="energy" required>
+                    <input wire:model="energy" id="energy" class="block mt-1 w-full border-blue-700" type="text"
+                        name="energy" required>
                 </label>
             </div>
 
             <!-- warranty -->
             <div class="my-3">
                 <label class="uppercase ml-2 font-semibold" for="warranty">Garantija
-                    <input wire:model="warranty" id="warranty" class="block mt-1 w-full border-blue-700" type="text" name="warranty" required>
+                    <input wire:model="warranty" id="warranty" class="block mt-1 w-full border-blue-700" type="text"
+                        name="warranty" required>
                 </label>
             </div>
 
-           <!-- content -->
+            <!-- content -->
             <div class="mb-3">
                 <label class="uppercase ml-2 font-semibold" for="content">Apie prekę
-                    <textarea class="block mt-1 w-full border-blue-700" wire:model="content"  id="content" cols="100" rows="10" name="content"></textarea>                </label>
+                    <textarea class="block mt-1 w-full border-blue-700" wire:model="content" id="content" cols="100"
+                        rows="10" name="content"></textarea> </label>
             </div>
 
 
+              <div class="flex flex-wrap -mx-px overflow-hidden xl:-mx-px">
+
+                <div class="my-px px-px w-full overflow-hidden sm:w-full md:w-full lg:w-full xl:my-px xl:px-px xl:w-full">
+                    @foreach ($categories as $key => $category)
+                    <div class="mt-4">
+                          <label class="flex justify-start items-start" for="category_{{ $category->id}}">
+                            <input id="category_{{ $category->id }}" wire:model="category_id.{{$key}}" type="checkbox"  value="{{ $category->id }}" class="form-checkbox h-5 w-5 text-red-600">
+                                <span class="ml-2 text-gray-700">{{ $category->name }}</span>
+                            </label>
+                    </div>
+                    @endforeach
+                </div>
+
+              </div>
+
             <div class="mb-3">
-                <label class="uppercase ml-2 font-semibold" for="content">Nuolaida(procentais)
-                    <input  class="block mt-1 w-full border-blue-700" type="number" name="percentage" wire:model="percentage">
+                <label class="uppercase ml-2 font-semibold" for="percentage">Nuolaida(procentais)
+                    <input class="block mt-1 w-full border-blue-700" type="number" name="percentage"
+                        wire:model="percentage">
                 </label>
             </div>
 
             <div class="mb-3">
-                <label class="uppercase ml-2 font-semibold" for="content">Nuolaidos data(Nuo - iki)
+                <label class="uppercase ml-2 font-semibold" for="from">Nuolaidos data(Nuo - iki)
                     <input class="block mt-1 w-full border-blue-700" type="date" name="from" wire:model="from">
                     <input class="block mt-1 w-full border-blue-700" type="date" name="to" wire:model="to">
                 </label>
@@ -98,7 +123,7 @@
 
             <div class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/4">
 
-                <div class="pt-3" >
+                <div class="pt-3">
 
                     <input type="file" wire:model="path" multiple>
 
@@ -106,9 +131,9 @@
 
                     @if ($path)
 
-                        <div class=" my-2 relative">
-                            {{-- <img src="{{ $path->temporaryUrl() }}" class="max-w-full max-h-44 rounded mx-auto"> --}}
-                        </div>
+                        {{-- <div class=" my-2 relative"> --}}
+                        {{-- <img src="{{ $path->temporaryUrl() }}" class="max-w-full max-h-44 rounded mx-auto"> --}}
+                        {{-- </div> --}}
 
                     @endif
                 </div>
@@ -117,7 +142,7 @@
         </div>
     </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="button" wire:click.prevent="save()"
+        <button type="button" wire:click="save"
             class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 pl-2 py-1 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
             <svg class="fill-current w-4 h-4 mr-2" viewBox="0 0 20 20">
                 <path
@@ -137,4 +162,3 @@
         </button>
     </div>
 </div>
-

@@ -21,7 +21,8 @@ class AllProducts extends Controller
 
         $product_list = Product::paginate(9);
         $ParentCategories = \App\Models\Category::where('parent_id',0)->get();
-        return view('allproducts', compact( 'ParentCategories', 'product_list'));
+        $filterItems = Product::all();
+        return view('allproducts', compact( 'ParentCategories', 'product_list', 'filterItems'));
 
     }
 
