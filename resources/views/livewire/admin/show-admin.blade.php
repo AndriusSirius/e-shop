@@ -101,7 +101,6 @@
                             </th>
                         </tr>
                     </thead>
-                    <h1 class="uppercase text-3xl text-red-500">nebaigta Dalis</h1>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @foreach ($kategorijos as $kategorija)
                             @livewire('admin.categories', compact(['kategorija']), key($kategorija->id))

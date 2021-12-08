@@ -157,7 +157,7 @@ class CategoryController extends Controller
                 break;
             }
         }
-       dd($category);
+    //    dd($category);
         if ($category) {
             $product_list = $category->products()->paginate(9);
 //            $ParentCategories = \App\Models\Category::where('parent_id',0)->get();

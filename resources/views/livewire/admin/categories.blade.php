@@ -1,12 +1,12 @@
 <tr>
-    <pre>
-        {{ $kategorija }}
-    </pre>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
             {{ $kategorija->id }}
         </td>
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
+            @if ($kategorija->parent_id == 0)
+                *{{ $kategorija->name }}
+            @endif
             {{ $kategorija->name }}
         </td>
 
@@ -73,42 +73,42 @@
             <div class="text-right">
 
             </div>
-            <form action="{{route('admin')}}" method="POST">
-            <div class="w-full h-full">
-                <!-- title -->
-                <div class="my-3">
-                    <label class="uppercase ml-2 font-semibold" for="name_{{ $kategorija->id }}" :value="__('name*')" />Pavadinimas
-                    <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="name" id="name_{{ $kategorija->id }}" class="block mt-1 w-full" type="text"
-                        required autofocus />
-
-                </div>
-
-                <div class="my-3 w-full">
-
-
+            <form action="{{ route('admin') }}" method="POST">
+                <div class="w-full h-full">
+                    <!-- title -->
                     <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="link_{{ $kategorija->id }}" :value="__('link')" />
-                            Nuoroda
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="link" id="link_{{ $kategorija->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                        <label class="uppercase ml-2 font-semibold" for="name_{{ $kategorija->id }}"
+                            :value="__('name*')" />Pavadinimas
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="name"
+                            id="name_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required
+                            autofocus />
+
                     </div>
-                    <h2 class="mb-6 font-semibold uppercase text-yellow-700 text-lg">
-                        Reikia minčių</h2>
-                    <label class="uppercase ml-2 font-semibold " for="" :value="__('Kategorija*')" />Tėvinė kategorija
-                    <select  wire:model="category_id" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" name="parent_id" >
-
-                            <option value="{{ $kategorija->parent_id }}">{{ $kategorija->parent_id }}</option>
-
-                        @foreach($kategorijos as $kategorija)
-                            <option value="{{ $kategorija->id }}">{{ $kategorija->name }}</option>
-                        @endforeach
-                    </select>
-                </label>
 
                     <div class="my-3 w-full">
-                        <label class="uppercase ml-2 font-semibold" for="nr_{{ $kategorija->id }}" :value="__('nr')" />Nr
-                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="nr" id="nr_{{ $kategorija->id }}" class="block mt-1 w-full"
-                            type="text" required />
+                        <label class="uppercase ml-2 font-semibold" for="link_{{ $kategorija->id }}"
+                            :value="__('link')" />
+                        Nuoroda
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="link"
+                            id="link_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
+                    </div>
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold " for="parent_id{{ $kategorija->parent_id }}" :value="__('Kategorija*')" />Tėvinė
+                        kategorija
+
+                        <select class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="parent_id" name="parent_id" class="form-control" required>
+                            @foreach ($current_level as $goal)
+                                <option value="{{ $goal->id }}">{{ $goal->name }}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
+
+                    <div class="my-3 w-full">
+                        <label class="uppercase ml-2 font-semibold" for="nr_{{ $kategorija->id }}"
+                            :value="__('nr')" />Nr
+                        <input class="block rounded-lg mt-1 w-full border-blue-500 border-2" wire:model="nr"
+                            id="nr_{{ $kategorija->id }}" class="block mt-1 w-full" type="text" required />
                     </div>
 
                 </div>
