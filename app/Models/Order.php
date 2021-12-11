@@ -13,6 +13,7 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'products_id',
+        'order_nr',
         'status',
         'shipping',
         'total',
@@ -21,10 +22,16 @@ class Order extends Model
         'updated_at'
     ];
 
+    public function ordering()
+    {
+        return $this->belongsTo(Ordering::class, 'order_nr');
+    }
+
     public function products()
     {
         return $this->belongsTo(Product::class, 'products_id');
     }
+
     public function users()
     {
         return $this->belongsTo(User::class, 'user_id');
