@@ -1,7 +1,7 @@
 <tr>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
-            {{ $list->id }}
+            {{ $list->order_nr }}
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
