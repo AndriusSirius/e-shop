@@ -24,7 +24,7 @@ class AdminController extends Controller
             $produktai = Product::with(['images', 'discount'])->Simplepaginate(9);
             $vartotojai = User::paginate(9);
             $nuolaidos = \App\Models\Discounts::with(['product'])->paginate(9);
-            $orderList =  Order::with(['discount', 'ordering'])->get();
+            $orderList =  Order::with(['discount', 'ordering', 'status'])->get();
             $kategorijos = Category::with('subcategories')->get();
 
         return view('livewire.admin.show-admin', compact('produktai', 'vartotojai', 'orderList', 'nuolaidos', 'kategorijos'));

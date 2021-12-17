@@ -1,7 +1,7 @@
 <tr>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
-            {{ $list->id }}
+            # 000000{{ $list->id }}
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
@@ -9,16 +9,53 @@
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-             <span class="font-bold">({{ $list->total_cost }})</span>
+            <ol class="list-none lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+             @foreach ($list->ordering as $order_products)
+             <li class="mb-2 ml-2 mr-4">
+                <a href="{{ route('product', [$order_products->products_id]) }}"><i class="animate-pulse text-blue-700 fas fa-angle-double-right"></i> <span class="font-bold">{{ $order_products->product_title }} ({{ $order_products->total }})</span></a>
+            </li>
+             @endforeach
+            </ol>
+        </td>
+
+        <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
+            {{ $total_cost }} €
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
             {{ $shipping }}
         </td>
 
-        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-green-600">
-            {{ $status }}
+        @if (($list->status->id) == 1)
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-gray-400">
+            {{ $status->name }}
         </td>
+        @endif
+
+        @if (($list->status->id) == 2)
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-red-400">
+            {{ $status->name }}
+        </td>
+        @endif
+
+        @if (($list->status->id) == 3)
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-green-400">
+            {{ $status->name }}
+        </td>
+        @endif
+
+        @if (($list->status->id) == 4)
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-yellow-400 ">
+            {{ $status->name }}
+        </td>
+        @endif
+
+        @if (($list->status->id) == 5)
+        <td class="px-6 py-4 whitespace-nowraptext-sm font-bold text-sm text-blue-400">
+            {{ $status->name }}
+        </td>
+        @endif
+
 
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
             {{ $content }}
