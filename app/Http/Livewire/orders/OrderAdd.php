@@ -38,6 +38,7 @@ class OrderAdd extends Component
 
         $productsId = Cart::where(['user_id' => Auth::user()->id])->pluck('products_id');
         $total = Cart::where(['user_id' => Auth::user()->id])->pluck('quantity');
+        $productsTitle = Cart::where(['user_id' => Auth::user()->id])->pluck('title');
         $random = rand(450, 3000);
 
         $data = Order::create([
@@ -55,6 +56,7 @@ class OrderAdd extends Component
              Ordering::create([
                 'order_nr' => $data->id,
                 'products_id' => $productsId[$y],
+                'product_title' => $productsTitle[$y],
                 'total' => $total[$y],
             ]);
         }

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Carts;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +25,9 @@ class AddCartButton extends Component
     public function addToCart($productId)
     {
         $qty = Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId])->get('quantity');
+        $title = Product::where(['id'=>$productId])->pluck('title')->first();
         if($qty->count() == 0){
-            Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId]);
+            Cart::create(['user_id'=>Auth::user()->id, 'products_id'=>$productId, 'title'=>$title]);
         }
         else{
             Cart::where(['user_id'=>Auth::user()->id, 'products_id'=>$productId ])->update(['quantity'=>$qty[0]->quantity+1]);

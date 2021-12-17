@@ -1,7 +1,7 @@
 <tr>
     @if (!$edit)
         <td class="px-6 py-4 whitespace-nowrap">
-            {{ $list->order_nr }}
+            {{ $list->id }}
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
@@ -9,7 +9,7 @@
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">
-            {{ $list->products['title'] }} <span class="font-bold">({{ $list->total }})</span>
+             <span class="font-bold">({{ $list->total_cost }})</span>
         </td>
 
         <td class="px-6 py-4 whitespace-nowraptext-sm text-sm text-gray-900">

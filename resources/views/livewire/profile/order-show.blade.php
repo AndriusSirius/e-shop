@@ -42,11 +42,13 @@
                     <td
                         class="w-full lg:w-auto p-3 text-black-800 font-semibold uppercase text-left border border-b block lg:table-cell relative lg:static">
                         @foreach ($order->ordering as $item)
+                        <div class="lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                             <span
                                 class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">PREKĖS</span>
-                            <a href="{{ route('product', [$item->products_id]) }}">{{ $item->products_id }} id
+                            <a href="{{ route('product', [$item->products_id]) }}">{{ $item->product_title }}
                                 ({{ $item->total }}
                                 vnt)</a>
+                            </div>
                         @endforeach
                     </td>
 
