@@ -92,7 +92,21 @@
                         <span
                             class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">UŽSAKYMO
                             BŪSENA</span>
-                        <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">{{ $order->status }}</span>
+                            @if (($order->status_id) == 1)
+                             <span class="rounded bg-gray-400 py-1 px-3 text-xs font-bold">{{ $order->status->name }}</span>
+                            @endif
+                            @if (($order->status_id) == 2)
+                            <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">{{ $order->status->name }}</span>
+                           @endif
+                           @if (($order->status_id) == 3)
+                           <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">{{ $order->status->name }}</span>
+                          @endif
+                          @if (($order->status_id) == 4)
+                          <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold">{{ $order->status->name }}</span>
+                         @endif
+                         @if (($order->status_id) == 5)
+                         <span class="rounded bg-blue-400 py-1 px-3 text-xs font-bold">{{ $order->status->name }}</span>
+                        @endif
                     </td>
 
                 </tr>

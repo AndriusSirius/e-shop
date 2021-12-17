@@ -13,13 +13,18 @@ class Order extends Model
     protected $fillable = [
         'id',
         'user_id',
-        'status',
+        'status_id',
         'shipping',
         'content',
         'total_cost',
         'created_at',
         'updated_at'
     ];
+
+    public function status()
+    {
+        return $this->belongsTo(Orderstatu::class, 'status_id');
+    }
 
     public function ordering()
     {

@@ -15,7 +15,7 @@ class OrderShow extends Component
 
     public function mount()
     {
-        $this->orderItems = Order::with(['discount', 'ordering'])->where('user_id', Auth::id())->get();
+        $this->orderItems = Order::with(['discount', 'ordering', 'status'])->where('user_id', Auth::id())->get();
     }
 
     public function render()

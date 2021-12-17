@@ -18,7 +18,7 @@ class OrderAdd extends Component
 
     public $user, $cartTotal;
 
-    public $status = 'Apdorojamas', $shipping, $total, $content, $products_id;
+    public $status_id = 1, $shipping, $total, $content, $products_id;
 
     protected $rules = [
         'shipping' => 'required|min:1',
@@ -26,7 +26,7 @@ class OrderAdd extends Component
 
     public function clearFields()
     {
-        $this->status = null;
+        $this->status_id = null;
         $this->shipping = null;
         $this->total = null;
         $this->content = null;
@@ -43,7 +43,7 @@ class OrderAdd extends Component
 
         $data = Order::create([
             'user_id' => Auth::user()->id,
-            'status' => $this->status,
+            'status_id' => $this->status_id,
             'shipping' => $this->shipping,
             'total_cost' => $random,
             'content' => $this->content,
