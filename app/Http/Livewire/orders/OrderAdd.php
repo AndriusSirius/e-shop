@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Discounts;
 use App\Models\Ordering;
+use App\Models\Ordernumber;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -37,25 +38,26 @@ class OrderAdd extends Component
 
         $productsId = Cart::where(['user_id' => Auth::user()->id])->pluck('products_id');
         $total = Cart::where(['user_id' => Auth::user()->id])->pluck('quantity');
+        $random = rand(450, 3000);
 
-        $data = Ordering::create();
+        $data = Order::create([
+            'user_id' => Auth::user()->id,
+            'status' => $this->status,
+            'shipping' => $this->shipping,
+            'total_cost' => $random,
+            'content' => $this->content,
+        ]);
 
         for ($y = 0; $y < $cartTotal; $y++) {
 
             $this->validate();
 
-
-             Order::create([
-                'user_id' => Auth::user()->id,
-                'products_id' => $productsId[$y],
+             Ordering::create([
                 'order_nr' => $data->id,
-                'status' => $this->status,
-                'shipping' => $this->shipping,
+                'products_id' => $productsId[$y],
                 'total' => $total[$y],
-                'content' => $this->content,
             ]);
         }
-
 
         $this->validate();
 

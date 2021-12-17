@@ -11,25 +11,19 @@ class Order extends Model
     use HasFactory;
     protected $guarded = [];
     protected $fillable = [
+        'id',
         'user_id',
-        'products_id',
-        'order_nr',
         'status',
         'shipping',
-        'total',
         'content',
+        'total_cost',
         'created_at',
         'updated_at'
     ];
 
     public function ordering()
     {
-        return $this->belongsTo(Ordering::class, 'order_nr');
-    }
-
-    public function products()
-    {
-        return $this->belongsTo(Product::class, 'products_id');
+        return $this->hasMany(Ordering::class, 'order_nr');
     }
 
     public function users()
