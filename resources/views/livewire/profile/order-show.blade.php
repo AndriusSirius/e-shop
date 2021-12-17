@@ -40,16 +40,20 @@
 
 
                     <td
-                        class="w-full lg:w-auto p-3 text-black-800 font-semibold uppercase text-left border border-b block lg:table-cell relative lg:static">
+                        class="w-full lg:w-auto p-3 text-black-800 font-semibold text-left border border-b block lg:table-cell relative lg:static">
+                        <ol class="list-none lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                         @foreach ($order->ordering as $item)
-                        <div class="lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <span
-                                class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">PREKĖS</span>
-                            <a href="{{ route('product', [$item->products_id]) }}">{{ $item->product_title }}
-                                ({{ $item->total }}
-                                vnt)</a>
-                            </div>
+                            <li class="mb-2 ml-2 mr-4">
+                               <a href="{{ route('product', [$item->products_id]) }}"><i class="animate-pulse text-blue-700 fas fa-angle-double-right"></i> {{ $item->product_title }}
+                                @if (($item->total) == 1)
+
+                                @else
+                                <span class="text-gray-500">{{ $item->total }} vienetai</span></a>
+
+                                @endif
+                            </li>
                         @endforeach
+                    </ol>
                     </td>
 
                     @if (!isset($order->discount))
